@@ -1,6 +1,6 @@
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
-/*修改为了#CAFFFF和#ECFFFF*/
+/*修改为了#24292f*/
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
@@ -242,11 +242,11 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, ##ECFFFF 100%);
+    background-image: linear-gradient(to right, #4cbf30 0%, #3CB371 100%);
 }
 
 .text-color {
-    color: ##ECFFFF !important;
+    color: #3CB371 !important;
 }
 
 .white-color {
@@ -258,7 +258,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, ##ECFFFF 100%);
+    background: linear-gradient(to right, #4cbf30 0%, #3CB371 100%);
     opacity: 0.8;
 }
 
@@ -1319,7 +1319,7 @@ thead {
 
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #CAFFFF 0%, ##ECFFFF 100%) !important;    /* 导航栏、底部栏*/
+    background-color: #24292f !important;  /*linear-gradient(to right, #CAFFFF 0%, #FF2A68 100%) !important;*/    /* 导航栏、底部栏*/
 }
 
 .chip .tag-length {
@@ -1395,7 +1395,7 @@ thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: ##ECFFFF;
+    background: #3CB371;
 }
 
 @media only screen and (min-width: 900px) {
@@ -1631,8 +1631,8 @@ thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid ##ECFFFF;
-    background: radial-gradient(#4cbf30, ##ECFFFF);
+    border: 1px solid #3CB371;
+    background: radial-gradient(#4cbf30, #3CB371);
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1776,7 +1776,7 @@ thead {
     border-radius: 35px;
     -moz-border-radius: 35px;
     -webkit-border-radius: 35px;
-}
+} 
 
 .skillbar .skill-bar-percent {
     position: absolute;
@@ -1808,7 +1808,7 @@ thead {
 
 .other-skills .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, ##ECFFFF 100%);   
+    background: linear-gradient(to right, #4cbf30 0%, #3CB371 100%);   
     border: 1px solid #4cbf30;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
