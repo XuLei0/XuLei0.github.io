@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pythonn高级用法, 程序员">
+    <meta name="keywords" content="xl, 程序员">
     <meta name="description" content="llxll的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pythonn高级用法 | llXll</title>
+    <title>xl | llXll</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//libs/awesome/css/all.css">
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pythonn高级用法</h1>
+                    <h1 class="description center-align post-title">xl</h1>
                 </div>
             </div>
         </div>
@@ -378,25 +378,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                Python学习
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -419,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    0
                 </div>
                 
 
@@ -441,126 +428,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python高级用法"><a href="#python高级用法" class="headerlink" title="python高级用法"></a>python高级用法</h1><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>适用对象: list、tuple、str</p>
-<ol>
-<li><code>list[:]</code>返回原样list，:前面表示从哪个数组下标开始，:后表示从哪个数组下标的前一个结束。</li>
-<li><code>list[-1:]</code>从倒数第一个到最后一个。</li>
-<li><code>list[::5]</code> 间隔每隔5取一次。</li>
-</ol>
-<h3 id="all-和-any"><a href="#all-和-any" class="headerlink" title="all() 和 any()"></a>all() 和 any()</h3><ol>
-<li><code>all()</code> 函数表示一个迭代对象里面都是True才返回True,否则返回False。</li>
-<li><code>any()</code> 函数表示迭代对象里面只要有一个为True都返回True,否则返回False。</li>
-</ol>
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>适用对象：list、tuple、dict、set、str等可迭代对象，范围比较广。</p>
-<ol>
-<li><code>for x in list/tuple:</code> 迭代list和tuple对象</li>
-<li><code>for key in dict:</code> 迭代dict对象<br>  <code>for value in dict.values():</code> 迭代dict的值<br>  <code>for k,v in dict.items():</code> 迭代dict的key和value</li>
-<li><code>for ch in str:</code> 迭代字符串对象</li>
-<li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br>  <code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
-<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
- list(enumerate(list1)) == [(0,1),(1,2),(2,3)]
-</code></pre>
-</li>
-</ol>
-<h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><p>写列表生成式时，把要生成的元素放在最前面，后面接for循环，最后可用if语句对循环值进行限制。</p>
-<ol>
-<li><code>[x+x for x in range(1,11)]</code> </li>
-<li><code>[x+y for x in range(1,11) for y in range(1,5)]</code> 这里会生成 10 * 4 = 40 个元素，区别于：<pre><code>[x+y for x,y in zip(range(1,11),range(1,11))]  # 这里是将对应数组下标相同的元素相加
-list1=[1,2,3]
-list2=[4,5,6]
-zip(list1,list2)==[(1,4),(2,5),(3,6)]
-</code></pre>
-</li>
-<li><code>[x for x in range(1,11) if x%2==0]</code> 对循环值进行限制,这里if后面不能再跟elif和else了。</li>
-<li><code>[key+'='+value for key,value in dict.items()]</code></li>
-<li>[2 for i in range(3)] == [2,2,2]</li>
-</ol>
-<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>一边循环一边计算的机制，称为生成器：generator。</p>
-<pre><code>L = [x * x for x in range(10)]
-L
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-g = (x * x for x in range(10))
-g
-&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;
-</code></pre>
-<ol>
-<li>用next(g)来获得generator的下一个返回值，每次循环计算下一个值。</li>
-<li>generator也是一个可迭代对象，可以用for循环。</li>
-<li>对于复杂函数的生成器<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     print(b)
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-</code></pre>
-这是一个普通的斐波那契函数。<br>现在需要将其改为生成器。<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     yield b
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-&gt;&gt;&gt; f = fib(6)
-&gt;&gt;&gt; f
-&lt;generator object fib at 0x104feaaa0&gt;
-</code></pre>
-这时该函数就变成了一个生成器，用来生成斐波那契额数列。</li>
-<li>普通函数和生成器的执行对比</li>
-</ol>
-<ul>
-<li>普通函数是顺序执行的，遇到return语句返回或者执行完最后一条语句。</li>
-<li>生成器是调用next()后才执行，执行到yield中断，并返回yield后的内容。下次再调用next()时，就从该yield处执行。</li>
-</ul>
-<ol start="5">
-<li>杨辉三角<pre><code>def triangles():
- L=[1]
- while True:
-     yield L
-     S=L[:]
-     S.append(0)
-     L=[S[i-1]+S[i] for i in range(len(S))] 
-</code></pre>
-</li>
-</ol>
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>list、tuple、dict、set、str、generator都可以作为迭代器。</p>
-<pre><code>isinstance([],Iterable)
-</code></pre>
-<p>用来判断是否是迭代对象。</p>
-<hr>
-<h3 id="异常、错误与调试"><a href="#异常、错误与调试" class="headerlink" title="异常、错误与调试"></a>异常、错误与调试</h3><ol>
-<li><p>try-except-finally模式</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-finally:
- 语句
-</code></pre>
-<p>finally不管有没有出错都要执行的语句。</p>
-</li>
-<li><p>try-except-else 模式<br>当try捕获到异常时会跳转到except处，出错位置后的代码将不再执行，当try没有捕获到错误时，就会跳转到else进行处理。</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-else:
- 语句
-</code></pre>
-</li>
-<li><p>raise 手动抛出异常</p>
-<pre><code>raise ValueError("This is a Exception")
-</code></pre>
-</li>
-<li><p><strong>pycharm调试</strong></p>
-</li>
-</ol>
-<ul>
-<li>step over 跳过子函数运行，（就是整个函数作为一行运行）。</li>
-<li>step into 遇到子函数，进入子函数。</li>
-<li>step out 当单步执行在子函数内，用step out 可以执行完剩余的子函数，并跳出来。</li>
-<li>resume program 跳到下一个断点处。</li>
-</ul>
+                <p><img src="/20200712091137.png" alt="img"></p>
 
                 
             </div>
@@ -587,7 +455,7 @@ else:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</a>
+                    <a href="http://example.com/2022/03/09/xl/">http://example.com/2022/03/09/xl/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -624,11 +492,7 @@ else:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1059,9 +923,10 @@ else:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/09/xl/">
                     <div class="card-image">
@@ -1079,9 +944,9 @@ else:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1090,6 +955,7 @@ else:
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1100,13 +966,13 @@ else:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/08/pythonn%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/16.jpg" class="responsive-img" alt="pythonn基础">
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/18.jpg" class="responsive-img" alt="pythonn高级用法">
                         
-                        <span class="card-title">pythonn基础</span>
+                        <span class="card-title">pythonn高级用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1117,7 +983,7 @@ else:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
                             </span>
                         <span class="publish-author">
                             
