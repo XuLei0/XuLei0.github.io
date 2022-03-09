@@ -419,7 +419,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    999
+                    1k
                 </div>
                 
 
@@ -454,10 +454,10 @@
 <h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>适用对象：list、tuple、dict、set、str等可迭代对象，范围比较广。</p>
 <ol>
 <li><code>for x in list/tuple:</code> 迭代list和tuple对象</li>
-<li><code>for key in dict:</code> 迭代dict对象<br><code>for value in dict.values():</code> 迭代dict的值<br><code>for k,v in dict.items():</code> 迭代dict的key和value</li>
+<li><code>for key in dict:</code> 迭代dict对象<br>  <code>for value in dict.values():</code> 迭代dict的值<br>  <code>for k,v in dict.items():</code> 迭代dict的key和value</li>
 <li><code>for ch in str:</code> 迭代字符串对象</li>
-<li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br><code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
-<li>对list的下标进行循环<br><code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
+<li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br>  <code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
+<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
  list(enumerate(list1)) == [(0,1),(1,2),(2,3)]
 </code></pre>
 </li>
