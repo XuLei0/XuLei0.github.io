@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pythonn高级用法, 程序员">
+    <meta name="keywords" content="梯度下降, 程序员">
     <meta name="description" content="llxll的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pythonn高级用法 | llXll</title>
+    <title>梯度下降 | llXll</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//libs/awesome/css/all.css">
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pythonn高级用法</h1>
+                    <h1 class="description center-align post-title">梯度下降</h1>
                 </div>
             </div>
         </div>
@@ -380,8 +380,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -392,8 +396,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                Python学习
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -419,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.6k
                 </div>
                 
 
@@ -441,126 +445,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python高级用法"><a href="#python高级用法" class="headerlink" title="python高级用法"></a>python高级用法</h1><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>适用对象: list、tuple、str</p>
+                <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="1-梯度"><a href="#1-梯度" class="headerlink" title="1. 梯度"></a>1. 梯度</h2><p><strong>数学定义：</strong> 在微积分里面，对一个多元函数的各个变量求偏导数，然后把各个变量的偏导数以向量的形式写出来，就是梯度。例如，对于函数 $f\left ( x,y \right )$ ,  它的梯度为$\left (  \frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right)$，可以写为 $\nabla f\left ( x,y \right ) $ , 多个变量也是同理。</p>
+<p><strong>梯度的几何意义：</strong> 对于多元函数来说，某个点的梯度就是该函数在该点变化最快的方向。例如，对于函数 $f\left ( x,y \right )$ ，在点$\left ( x_{0},y_{0} \right )$ , 沿着梯度方向 $\left (  \frac{\partial f}{\partial x_{0}},\frac{\partial f}{\partial y_{0}}\right)$就是函数 f 增长最快的方向，容易获得函数最大值，-$\left (  \frac{\partial f}{\partial x_{0}},\frac{\partial f}{\partial y_{0}}\right)$就是函数 f 减少最快的方向，容易获得函数最小值。</p>
+<p><strong>梯度下降：</strong></p>
+<p>机器学习算法常用梯度下降法来最小化损失函数，通过一步步迭代，可以最小化损失函数以及求出模型的参数。</p>
+<h2 id="2-梯度下降法算法"><a href="#2-梯度下降法算法" class="headerlink" title="2. 梯度下降法算法"></a>2. 梯度下降法算法</h2><p> <strong>2.1 直观解释算法：</strong></p>
+<p>损失函数的图像就好比如一座大山，我们要以怎样的方式走到山底就好比如要以怎样的方式找到损失函数的最小值。梯度下降法的思想是，每走到一个地方，都要计算这个点的坡度（梯度），就是该位置最陡峭的方向，然后往这个方向走，走到下一个位置，再计算这个位置最陡峭的方向，一直这样走下去直到自己觉得走到了一个平坦的位置，也许这个平坦的位置并不是山底，而是一个局部的山峰底处。</p>
+<p>从上面可以看出，梯度下降不一定能够找到全局最优解，但是如果函数是凸函数，梯度下降法就一定能求出全局最优解。</p>
+<p><img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTg2MTcwMA==,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></p>
+<p><strong>2.2 梯度下降法的相关概念：</strong></p>
 <ol>
-<li><code>list[:]</code>返回原样list，:前面表示从哪个数组下标开始，:后表示从哪个数组下标的前一个结束。</li>
-<li><code>list[-1:]</code>从倒数第一个到最后一个。</li>
-<li><code>list[::5]</code> 间隔每隔5取一次。</li>
+<li>步长：步长就是每一次沿负梯度方向走的长度，用上面上山的例子来说，就是沿最陡峭的方向一次走的路程，步长过大不易找到损失函数最小值，步长过小虽然可以找到很近似于损失函数最小值的那个值，但是寻找效率低。</li>
+<li>特征：例如一个样本 $ \left ( x^{(0)},y^{(0)} \right )$，该样本特征为 $x^{(0)}$ ，输出为 $y^{(0)}$。</li>
+<li>假设函数：在监督学习中，为了拟合输入的样本而使用的假设函数。</li>
+<li>损失函数：是用来度量模型的拟合程度，损失函数极小化，说明拟合程度达到最好，所求模型的参数也即最优参数。</li>
 </ol>
-<h3 id="all-和-any"><a href="#all-和-any" class="headerlink" title="all() 和 any()"></a>all() 和 any()</h3><ol>
-<li><code>all()</code> 函数表示一个迭代对象里面都是True才返回True,否则返回False。</li>
-<li><code>any()</code> 函数表示迭代对象里面只要有一个为True都返回True,否则返回False。</li>
-</ol>
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>适用对象：list、tuple、dict、set、str等可迭代对象，范围比较广。</p>
+<p><strong>2.3 梯度下降算法的描述：</strong></p>
+<p>​    首先需要一个待优化模型的假设函数 $f(\theta)$ 和损失函数 $J(\theta)$ ，其中 $\theta = (\theta_{1},\theta_{2}\dots \theta_{n})$ 。</p>
 <ol>
-<li><code>for x in list/tuple:</code> 迭代list和tuple对象</li>
-<li><code>for key in dict:</code> 迭代dict对象<br>  <code>for value in dict.values():</code> 迭代dict的值<br>  <code>for k,v in dict.items():</code> 迭代dict的key和value</li>
-<li><code>for ch in str:</code> 迭代字符串对象</li>
-<li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br>  <code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
-<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
- list(enumerate(list1)) == [(0,1),(1,2),(2,3)]
-</code></pre>
-</li>
+<li>确定当前位置损失函数的梯度，对于 $\theta_{i}$ 其梯度表达式为  $\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</li>
+<li>用步长乘以损失函数的梯度，即得到当前位置的下降距离，即 $\alpha\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</li>
+<li>确定所有 $\theta_{i}$ 梯度下降的距离都小于 $\varepsilon$ ，如果小于它，算法终止，当前的 $\theta$ 即为最终所求结果，否则进入步骤4 。</li>
+<li>更新所有的 $\theta$，公式为 ：$\theta_{i} = \theta_{i} - \alpha\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ ，更新完后继续执行步骤 1 。</li>
 </ol>
-<h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><p>写列表生成式时，把要生成的元素放在最前面，后面接for循环，最后可用if语句对循环值进行限制。</p>
+<p><strong>2.4 梯度下降算法的调优：</strong></p>
 <ol>
-<li><code>[x+x for x in range(1,11)]</code> </li>
-<li><code>[x+y for x in range(1,11) for y in range(1,5)]</code> 这里会生成 10 * 4 = 40 个元素，区别于：<pre><code>[x+y for x,y in zip(range(1,11),range(1,11))]  # 这里是将对应数组下标相同的元素相加
-list1=[1,2,3]
-list2=[4,5,6]
-zip(list1,list2)==[(1,4),(2,5),(3,6)]
-</code></pre>
+<li><p>算法的步长选择：步长的选择取决于数据样本，可以多取一些值，从大大小，用算法进行运行，看迭代的时候损失函数的变化，损失函数在减小说明取值有效，否则要增大步长。但是步长需要在一个适当的区间调整，步长过大可能会导致取不到最优解，步长过小，迭代速度会很慢，效率不高。</p>
 </li>
-<li><code>[x for x in range(1,11) if x%2==0]</code> 对循环值进行限制,这里if后面不能再跟elif和else了。</li>
-<li><code>[key+'='+value for key,value in dict.items()]</code></li>
-<li>[2 for i in range(3)] == [2,2,2]</li>
-</ol>
-<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>一边循环一边计算的机制，称为生成器：generator。</p>
-<pre><code>L = [x * x for x in range(10)]
-L
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-g = (x * x for x in range(10))
-g
-&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;
-</code></pre>
-<ol>
-<li>用next(g)来获得generator的下一个返回值，每次循环计算下一个值。</li>
-<li>generator也是一个可迭代对象，可以用for循环。</li>
-<li>对于复杂函数的生成器<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     print(b)
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-</code></pre>
-这是一个普通的斐波那契函数。<br>现在需要将其改为生成器。<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     yield b
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-&gt;&gt;&gt; f = fib(6)
-&gt;&gt;&gt; f
-&lt;generator object fib at 0x104feaaa0&gt;
-</code></pre>
-这时该函数就变成了一个生成器，用来生成斐波那契额数列。</li>
-<li>普通函数和生成器的执行对比</li>
-</ol>
-<ul>
-<li>普通函数是顺序执行的，遇到return语句返回或者执行完最后一条语句。</li>
-<li>生成器是调用next()后才执行，执行到yield中断，并返回yield后的内容。下次再调用next()时，就从该yield处执行。</li>
-</ul>
-<ol start="5">
-<li>杨辉三角<pre><code>def triangles():
- L=[1]
- while True:
-     yield L
-     S=L[:]
-     S.append(0)
-     L=[S[i-1]+S[i] for i in range(len(S))] 
+<li><p>算法参数的初始值选择：参数初始值的不同，会取到不同的最小值，因为对于非凸函数，梯度下降法只能求到一个局部最优解，所以需要使用不同的初值运行算法，以免求到局部最优解。</p>
+<pre><code>3. 归一化：由于数据中不同特征的取值范围可能相差很大，导致迭代过程缓慢，可以对特征数据归一化，也就是将特征进行如下处理$\frac{x-\bar{x}}{std(x)}$ ，其中 $\bar{x}$ 和 $std(x)$ 分别是该特征的平均值和标准差，这样该特征的期望就为 0 , 方差为 1，迭代速度就会得到加快。
 </code></pre>
 </li>
 </ol>
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>list、tuple、dict、set、str、generator都可以作为迭代器。</p>
-<pre><code>isinstance([],Iterable)
-</code></pre>
-<p>用来判断是否是迭代对象。</p>
-<hr>
-<h3 id="异常、错误与调试"><a href="#异常、错误与调试" class="headerlink" title="异常、错误与调试"></a>异常、错误与调试</h3><ol>
-<li><p>try-except-finally模式</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-finally:
- 语句
-</code></pre>
-<p>finally不管有没有出错都要执行的语句。</p>
-</li>
-<li><p>try-except-else 模式<br>当try捕获到异常时会跳转到except处，出错位置后的代码将不再执行，当try没有捕获到错误时，就会跳转到else进行处理。</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-else:
- 语句
-</code></pre>
-</li>
-<li><p>raise 手动抛出异常</p>
-<pre><code>raise ValueError("This is a Exception")
-</code></pre>
-</li>
-<li><p><strong>pycharm调试</strong></p>
-</li>
-</ol>
-<ul>
-<li>step over 跳过子函数运行，（就是整个函数作为一行运行）。</li>
-<li>step into 遇到子函数，进入子函数。</li>
-<li>step out 当单步执行在子函数内，用step out 可以执行完剩余的子函数，并跳出来。</li>
-<li>resume program 跳到下一个断点处。</li>
-</ul>
+<p>​        <img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192615536.png" alt="image-20220309192615536"><img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192631031.png" alt="image-20220309192631031"></p>
+<p>上图中 $\theta_{1}$ 的范围远大于 $\theta_{2}$ 的范围，所以 $\theta_{2}$ 的变化对损失函数的影响会很大，$\theta_{1}$ 的变化对损失函数影响很小，就会导致迭代过程曲曲折折，迭代缓慢，右图是经过归一化后损失函数的变化，迭代速度明显会快。</p>
+<h2 id="3-梯度下降法分类"><a href="#3-梯度下降法分类" class="headerlink" title="3. 梯度下降法分类"></a>3. 梯度下降法分类</h2><p> <strong>批量梯度下降法（BGD）</strong></p>
+<p>就是所有样本都用于计算损失函数。</p>
+<p><strong>随机梯度下降法（SGD）</strong></p>
+<p>计算损失函数只使用一个随机样本来进行计算。</p>
+<p>两者的比较：随机梯度下降法只用一个样本进行计算，训练速度很快，而批量梯度下降法在数据集很大的时候，训练速度慢，对于准确度而言，随机梯度下降法只使用一个样本计算梯度，可能求得的不是最优解，对于收敛速度来说，随机梯度下降法一次迭代就是用一个样本，导致迭代的方向变化频繁，不能很快收敛到局部最优解。</p>
+<p><strong>小批量梯度下降法（MBGD）</strong></p>
+<p>小批量梯度下降法是以上两种方法的一种折衷，只取一定数量的样本来进行计算损失函数。</p>
 
                 
             </div>
@@ -587,7 +512,7 @@ else:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</a>
+                    <a href="http://example.com/2022/03/09/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">http://example.com/2022/03/09/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,8 +550,12 @@ else:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -1059,9 +988,10 @@ else:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/09/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
                     <div class="card-image">
@@ -1079,9 +1009,9 @@ else:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1094,6 +1024,7 @@ else:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1116,13 +1047,13 @@ else:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/08/pythonn%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/16.jpg" class="responsive-img" alt="pythonn基础">
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/18.jpg" class="responsive-img" alt="pythonn高级用法">
                         
-                        <span class="card-title">pythonn基础</span>
+                        <span class="card-title">pythonn高级用法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1133,7 +1064,7 @@ else:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
                             </span>
                         <span class="publish-author">
                             
