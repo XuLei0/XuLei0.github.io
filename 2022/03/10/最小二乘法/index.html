@@ -414,7 +414,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    355
+                    357
                 </div>
                 
 
@@ -442,7 +442,7 @@
 <h3 id="2-最小二乘法的代数解法"><a href="#2-最小二乘法的代数解法" class="headerlink" title="2. 最小二乘法的代数解法"></a>2. 最小二乘法的代数解法</h3><ol>
 <li><p>假设线性函数的拟合函数表示为 $h_{\theta}(x1,x2,\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n}$ ，其中 $\theta_{i}$ 为模型参数，$x_{i}$  为每个样本的 n 个特征值，这个表示可以简化为 $h_{\theta}(x1,x2,\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n} = \sum_{i=0}^{n}\theta_{i}x_{i}$ 。</p>
 </li>
-<li><p>损失函数表示为：$J(\theta_{0},\theta_{1},\dots,\theta_{n}) = \sum_{j=1}^{m}(h\theta(x_{0}^{(j)},x_{1}^{(j)},\dots,x_{n}^{(j)})) = \sum_{j=1}^{m}(\sum_{i=0}^{n}\theta_{i}x_{i}^{(j)}-y^{(j)})^{2}$ 。</p>
+<li><p>损失函数表示为：$J(\theta_{0},\theta_{1},\dots,\theta_{n}) = \sum_{j=1}^{m}(h\theta(x_{0}^{(j)},x_{1}^{(j)},\dots,x_{n}^{(j)})-y^{(j)}) = \sum_{j=1}^{m}(\sum_{i=0}^{n}\theta_{i}x_{i}^{(j)}-y^{(j)})^{2}$ 。</p>
 </li>
 <li><p>利用损失函数对 各个参数求偏导，并令导数为 0 可得：$\sum_{j=1}^{m}(\sum_{i=0}^{n}\theta_{i}x_{i}^{(j)}-y^{(j)})x_{i}^{(j)} = 0$ 。</p>
 </li>
