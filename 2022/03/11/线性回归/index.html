@@ -436,11 +436,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h3 id="1-线性回归的模型和损失函数"><a href="#1-线性回归的模型和损失函数" class="headerlink" title="1. 线性回归的模型和损失函数"></a>1. 线性回归的模型和损失函数</h3><p><strong>线性回归问题：</strong> 有 m 个样本，每个样本有 n 个特征和一个输出结果，如下：</p>
-<p>$(x_{1}^{(i)},x_{2}^{(i)},\dots x_{n}^{(i)}), 其中 i = 1，2，3\dots m$ , 线性回归要解决的问题是对于一个新的 $(x_{1},x_{2},\dots,x_{n})$，它所对应的 $y$ 是多少，这里 $y$ 是连续的，所以这是一个回归问题，否则是一个分类问题。</p>
-<p>如果这是一个线性模型，我们决定使用线性回归，那么模型是这样的：</p>
-<p>$h_{\theta}(x_{1},x_{2},\dots,x_{n}) = \theta_{0} + \theta_{1}x_{1}+\dots + \theta_{n}x_{n}$， 其中 $\theta_{i} (i=0,1,2,\dots n)$ 为模型参数，$x_{i} (i=1,2,3\dots n)$ 为每个样本的 n 个特征值，这个表示可以简化，我们增加一个特征 $x_{0} = 1$，这样 $h_{\theta}(x_{0},x_{1},\dots x_{n}) = \sum_{i=0}^{n}\theta_{i}x_{i}$ </p>
-<p>进一步用矩阵表示为 $h_{\theta}(X) = X\theta$ , 其中 $h_{\theta}(X)$ 是 mx1 的向量，$\theta$ 是 nx1 的向量，$X$ 是 mxn 维的矩阵，m 代表样本个数，n 代表样本的特征数 。</p>
+                <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h3 id="1-线性回归的模型和损失函数"><a href="#1-线性回归的模型和损失函数" class="headerlink" title="1. 线性回归的模型和损失函数"></a>1. 线性回归的模型和损失函数</h3><p><strong>线性回归问题：</strong> 有 m 个样本，每个样本有 n 个特征和一个输出结果，$(x_{1}^{(i)},x_{2}^{(i)},\dots x_{n}^{(i)}), 其中 i = 1，2，3\dots m$ , 线性回归要解决的问题是对于一个新的 $(x_{1},x_{2},\dots,x_{n})$，它所对应的 $y$ 是多少，这里 $y$ 是连续的，所以这是一个回归问题，否则是一个分类问题。</p>
+<p>如果这是一个线性模型，那么模型是这样的：</p>
+<p>$h_{\theta}(x_{1},x_{2},\dots,x_{n}) = \theta_{0} + \theta_{1}x_{1}+\dots + \theta_{n}x_{n}$， 其中 $\theta_{i} (i=0,1,2,\dots n)$ 为模型参数，$x_{i} (i=1,2,3\dots n)$ 为每个样本的 n 个特征值，这个表示可以简化，我们增加一个特征 $x_{0} = 1$，这样就有 $h_{\theta}(x_{0},x_{1},\dots x_{n}) = \sum_{i=0}^{n}\theta_{i}x_{i}$  ，进一步用矩阵表示为 $h_{\theta}(X) = X\theta$ , 其中 $h_{\theta}(X)$ 是 mx1 的向量，$\theta$ 是 nx1 的向量，$X$ 是 mxn 维的矩阵，m 代表样本个数，n 代表样本的特征数 。</p>
 <p>损失函数为：$J(\theta_{0},\theta_{1},\dots \theta_{n}) = \sum_{i=1}^{m}(h_{\theta}(x_{0}^{(i)},x_{1}^{(i)},\dots x_{n}^{(i)}) - y_{i})^2$ , 进一步用矩阵表示为 $J(\theta) = \frac{1}{2}(X\theta - Y)^T(X\theta - Y)$， 矩阵法表达更加简洁，后面就是用矩阵法来描述。</p>
 <h3 id="2-线性回归算法的求解"><a href="#2-线性回归算法的求解" class="headerlink" title="2. 线性回归算法的求解"></a>2. 线性回归算法的求解</h3><p>​    对于线性回归算法的损失函数 $J(\theta) = \frac{1}{2}(X\theta - Y)^T(X\theta - Y)$，一般要求该损失函数的最小化时的参数 $\theta$ 有两种方法：第一种是<strong>梯度下降法</strong>，第二种是<strong>最小二乘法</strong>，求解方法如下：</p>
 <ol>
@@ -462,7 +460,7 @@
 <p>​    <strong>Lasso回归</strong> </p>
 <p>​    就是带 $L1$ 正则化项的 线性函数，和普通线性函数的区别就是在损失函数上增加了一个 $L1$ 正则化项。</p>
 <p>​    损失函数为：</p>
-<p>​    $J(\theta) = \frac{1}{2}(X\theta-Y)^T(X\theta-Y)+\alpha\left | \theta  \right |<em>{1} $  ，其中的 $\alpha$ 是常熟系数，是超参数，需要进行调优的，$\left | \theta \right |</em>{1}$ 为 $L1$ 范数。</p>
+<p>​    $J(\theta) = \frac{1}{2}(X\theta-Y)^T(X\theta-Y)+\alpha\left | \theta  \right |<em>{1}$ ，其中的 $\alpha$ 是常熟系数，是超参数，需要进行调优的，$\left | \theta \right |</em>{1}$ 为 $L1$ 范数。</p>
 <p>​    Lasso回归可以使得一些特征的系数变小，甚至还会使绝对值靠近 0 的参数变为 0，增强模型的泛化能力，因为参数过多容易过拟合，让某个参数变为 0 后，也就是减少了模型的参数。</p>
 <p>​    <strong>Ridge回归</strong></p>
 <p>​    就是带 $L2$ 正则化项的 线性函数，和普通线性函数的区别就是在损失函数上增加了一个 $L2$ 正则化项。</p>
