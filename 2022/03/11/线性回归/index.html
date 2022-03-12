@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="最小二乘法, 程序员">
+    <meta name="keywords" content="线性回归, 程序员">
     <meta name="description" content="llxll的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>最小二乘法 | llXll</title>
+    <title>线性回归 | llXll</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//libs/awesome/css/all.css">
@@ -250,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">最小二乘法</h1>
+                    <h1 class="description center-align post-title">线性回归</h1>
                 </div>
             </div>
         </div>
@@ -400,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-10
+                    2022-03-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-11
+                    2022-03-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    821
+                    1.2k
                 </div>
                 
 
@@ -436,37 +436,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><h3 id="1-最小二乘法介绍"><a href="#1-最小二乘法介绍" class="headerlink" title="1. 最小二乘法介绍"></a>1. 最小二乘法介绍</h3><p>​    对于线性函数，其损失函数是平方差损失函数，表达式如下：</p>
-<p>​                                                                $J(\theta) = \sum_{i=1}^{m}(y^{(i)}-h_{\theta}(x^{(i)}))^{2}$ </p>
-<p>最小二乘法就是求解 参数 $\theta$ 使得 $J(\theta)$ 最小，不同于梯度下降法，梯度下降法是通过迭代一步步逼近最小值，而最小二乘法是通过求解方程组求得一个确切的值。</p>
-<h3 id="2-最小二乘法的代数解法"><a href="#2-最小二乘法的代数解法" class="headerlink" title="2. 最小二乘法的代数解法"></a>2. 最小二乘法的代数解法</h3><ol>
-<li><p>假设线性函数的拟合函数表示为 $h_{\theta}(x1,x2,\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n}$ ，其中 $\theta_{i}$ 为模型参数，$x_{i}$  为每个样本的 n 个特征值，这个表示可以简化为 $h_{\theta}(x1,x2,\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n} = \sum_{i=0}^{n}\theta_{i}x_{i}$ 。</p>
-</li>
-<li><p>损失函数表示为：$J(\theta_{0},\theta_{1},\dots,\theta_{n}) = \sum_{j=1}^{m}(h\theta(x_{0}^{(j)},x_{1}^{(j)},\dots,x_{n}^{(j)})-y^{(j)}) = \sum_{j=1}^{m}(\sum_{i=0}^{n}\theta_{i}x_{i}^{(j)}-y^{(j)})^{2}$ 。</p>
-</li>
-<li><p>利用损失函数对 各个参数求偏导，并令导数为 0 可得：$\sum_{j=1}^{m}(\sum_{i=0}^{n}\theta_{i}x_{i}^{(j)}-y^{(j)})x_{i}^{(j)} = 0$ 。</p>
-</li>
-<li><p>因为有 n+1 个参数，每个参数求一次偏导就有一个方程，故有 n+1 个方程，求解这个 n+1 元 一次方程，就可以得到所有的参数。</p>
-</li>
+                <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h3 id="1-线性回归的模型和损失函数"><a href="#1-线性回归的模型和损失函数" class="headerlink" title="1. 线性回归的模型和损失函数"></a>1. 线性回归的模型和损失函数</h3><p><strong>线性回归问题：</strong> 有 m 个样本，每个样本有 n 个特征和一个输出结果，如下：</p>
+<p>$(x_{1}^{(i)},x_{2}^{(i)},\dots x_{n}^{(i)}), 其中 i = 1，2，3\dots m$ , 线性回归要解决的问题是对于一个新的 $(x_{1},x_{2},\dots,x_{n})$，它所对应的 $y$ 是多少，这里 $y$ 是连续的，所以这是一个回归问题，否则是一个分类问题。</p>
+<p>如果这是一个线性模型，我们决定使用线性回归，那么模型是这样的：</p>
+<p>$h_{\theta}(x_{1},x_{2},\dots,x_{n}) = \theta_{0} + \theta_{1}x_{1}+\dots + \theta_{n}x_{n}$， 其中 $\theta_{i} (i=0,1,2,\dots n)$ 为模型参数，$x_{i} (i=1,2,3\dots n)$ 为每个样本的 n 个特征值，这个表示可以简化，我们增加一个特征 $x_{0} = 1$，这样 $h_{\theta}(x_{0},x_{1},\dots x_{n}) = \sum_{i=0}^{n}\theta_{i}x_{i}$ </p>
+<p>进一步用矩阵表示为 $h_{\theta}(X) = X\theta$ , 其中 $h_{\theta}(X)$ 是 mx1 的向量，$\theta$ 是 nx1 的向量，$X$ 是 mxn 维的矩阵，m 代表样本个数，n 代表样本的特征数 。</p>
+<p>损失函数为：$J(\theta_{0},\theta_{1},\dots \theta_{n}) = \sum_{i=1}^{m}(h_{\theta}(x_{0}^{(i)},x_{1}^{(i)},\dots x_{n}^{(i)}) - y_{i})^2$ , 进一步用矩阵表示为 $J(\theta) = \frac{1}{2}(X\theta - Y)^T(X\theta - Y)$， 矩阵法表达更加简洁，后面就是用矩阵法来描述。</p>
+<h3 id="2-线性回归算法的求解"><a href="#2-线性回归算法的求解" class="headerlink" title="2. 线性回归算法的求解"></a>2. 线性回归算法的求解</h3><p>​    对于线性回归算法的损失函数 $J(\theta) = \frac{1}{2}(X\theta - Y)^T(X\theta - Y)$，一般要求该损失函数的最小化时的参数 $\theta$ 有两种方法：第一种是<strong>梯度下降法</strong>，第二种是<strong>最小二乘法</strong>，求解方法如下：</p>
+<ol>
+<li>梯度下降法公式：</li>
 </ol>
-<h3 id="3-最小二乘法的矩阵解法"><a href="#3-最小二乘法的矩阵解法" class="headerlink" title="3. 最小二乘法的矩阵解法"></a>3. 最小二乘法的矩阵解法</h3><ol>
-<li><p>假设函数 $h_{\theta}(x_{1},x_{2},\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n}$ 的矩阵表达式为：$h_{\theta}(X) = X\theta$ ，其中假设函数 $h_{\theta}(X)$ 为 mx1 向量，$\theta$ 为 (n+1)x1 的向量，是参数向量，$X$ 为 mx(n+1) 维的矩阵，m 代表样本的个数，n 代表样本的特征数，n+1 多 1 是因为线性函数有一个截距。</p>
-</li>
-<li><p>损失函数定义为 $\frac{1}{2}(X\theta - Y)^T(X\theta - Y)$ ，其中 $Y$ 是样本的输出向量，维度为 mx1，$\frac{1}{2}$ 是为了求导后计算方便。</p>
-</li>
-<li><p>对 $\theta$ 求偏导，公式如下：$\frac{\partial}{\partial\theta}J(\theta) = X^T(X\theta - Y) = 0 $ 。</p>
-</li>
-<li><p>通过整理，$X^TX\theta = X^TY$ ，两边同时左乘 $(X^TX)^{-1}$ 可得：$\theta = (X^TX)^{-1}X^TY$ ，这样就求出了 参数向量 $\theta$ ，不用像代数法一个一个求导，而且还要求一个方程。</p>
-</li>
-</ol>
-<h3 id="4-最小二乘法的局限性"><a href="#4-最小二乘法的局限性" class="headerlink" title="4. 最小二乘法的局限性"></a>4. 最小二乘法的局限性</h3><ol>
-<li><p>最小二乘法需要计算 $X^TX$ 的逆，但是有可能它并不存在逆矩阵，这样就没有办法直接使用最小二乘法了，此时可以使用梯度下降法，当然 样本数据如果有很多冗余项的时候很容易出现 $X^TX$ 的行列式为 0 的情况，所以可以对数据进行预处理，去掉这个冗余特征，因为如果该特征冗余项很多，其实这个特征就不适合作为预测的依据。</p>
-</li>
-<li><p>当样本特征 n 非常大的时候，计算 $X^{T}X$ 的逆矩阵是一个非常耗时的工作，此时梯度下降法仍可以使用。</p>
-</li>
-<li><p>如果拟合的函数不是线性的，那么无法使用最小二乘法，此时梯度下降法仍然可以使用。</p>
-</li>
-</ol>
+<p>​        $\theta = \theta - \alpha X^T(X\theta - Y)$，通过迭代 逐渐逼近最优的 $\theta$ </p>
+<p>​    2. 最小二乘法公式：</p>
+<p>​        $\theta = (X^TX)^{-1}X^TY$ </p>
+<h3 id="3-线性回归之多项式回归"><a href="#3-线性回归之多项式回归" class="headerlink" title="3. 线性回归之多项式回归"></a>3. 线性回归之多项式回归</h3><p>​    前面介绍的线性回归的拟合函数是线性函数，是一次项的，如果这里不是一次项，而是多次的，那么这个模型就变成了多项式回归，例如，假设有一个只有两个特征的二次多项式回归模型：</p>
+<p>​    $h_{\theta}(x_{1},h_{2}) = \theta_{0} + \theta_{1}x_{1}+\theta_{2}x_{2}+\theta_{3}x_{1}^{2}+\theta_{4}x_{2}^{2}+\theta_{5}x_{1}x_{2}$ </p>
+<p>一开始只有 $x_{1},x_{2}$ 两个特征，现在构造特征 $x_{1}^{2},x_{2}^{2},x_{1}x_{2}$ ，令他们分别为特征 $x_{3},x_{4},x_{5}$ ，这样就有了一个线性模型：</p>
+<p>​    $h_{\theta}(x_{1},x_{2}) = \theta_{0} + \theta_{1}x_{1}+\theta_{2}x_{2}+\theta_{3}x_{3}+\theta_{4}x_{4}+\theta_{5}x_{5}$ </p>
+<p>​    通过改进特征，我们重新把不是线性回归的函数变回线性函数。</p>
+<h3 id="4-线性回归之广义线性回归"><a href="#4-线性回归之广义线性回归" class="headerlink" title="4. 线性回归之广义线性回归"></a>4. 线性回归之广义线性回归</h3><p>​    上一节是对特征进行变化推广，这一节对 y 进行推广，如果 我们的 Y 和 X 并不是成线性的关系，但是 $lnY$ 和 $X$ 是线性的关系，模型为：</p>
+<p>​    $ln(Y) = X\theta$</p>
+<p>​    这样我们修改 Y，将其变为 $lnY$ ，从而仍然可以使用线性回归的算法去处理这个问题。</p>
+<p>​    一般化： $g(Y) = X\theta $ 或者 $Y = g^{-1}(X\theta)$ </p>
+<h3 id="5-线性回归的正则化"><a href="#5-线性回归的正则化" class="headerlink" title="5. 线性回归的正则化"></a>5. 线性回归的正则化</h3><p>​    为了防止过拟合，在建立线性回归模型时我们经常需要加入正则化，一般正则化分为 $L1$ 正则化和 $L2$ 正则化。</p>
+<p>​    <strong>Lasso回归</strong> </p>
+<p>​    就是带 $L1$ 正则化项的 线性函数，和普通线性函数的区别就是在损失函数上增加了一个 $L1$ 正则化项。</p>
+<p>​    损失函数为：</p>
+<p>​    $J(\theta) = \frac{1}{2}(X\theta-Y)^T(X\theta-Y)+\alpha\left | \theta  \right |<em>{1} $  ，其中的 $\alpha$ 是常熟系数，是超参数，需要进行调优的，$\left | \theta \right |</em>{1}$ 为 $L1$ 范数。</p>
+<p>​    Lasso回归可以使得一些特征的系数变小，甚至还会使绝对值靠近 0 的参数变为 0，增强模型的泛化能力，因为参数过多容易过拟合，让某个参数变为 0 后，也就是减少了模型的参数。</p>
+<p>​    <strong>Ridge回归</strong></p>
+<p>​    就是带 $L2$ 正则化项的 线性函数，和普通线性函数的区别就是在损失函数上增加了一个 $L2$ 正则化项。</p>
+<p>​    损失函数为：</p>
+<p>​    $J(\theta) = \frac{1}{2}(X\theta-Y)^T(X\theta-Y)+\frac{1}{2}\alpha\left | \theta  \right |_{2}^{2} $ ，Ridge 和 Lasso的区别是 Lasso 可能会使某些特征消失，Ridge则是在保留所有特征的情况下，缩小回归系数，使模型相对而言比较稳定。</p>
+<p>​    使用最小二乘法求解：</p>
+<p>​    令 $J(\theta)$ 的导数为 0 ，得到下式：</p>
+<p>​    $X^T(X\theta - Y) + \alpha\theta = 0$</p>
+<p>​    整理即得 $\theta = (X^TX + \alpha E)^{-1}X^TY$ ，其中 $E$ 为单位矩阵。 </p>
 
                 
             </div>
@@ -493,7 +498,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/10/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">http://example.com/2022/03/10/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/</a>
+                    <a href="http://example.com/2022/03/11/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">http://example.com/2022/03/11/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -969,9 +974,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/11/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
                     <div class="card-image">
@@ -989,9 +995,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1004,6 +1010,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1026,13 +1033,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/09/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+                <a href="/2022/03/10/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/9.jpg" class="responsive-img" alt="梯度下降">
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.2/source//medias/featureimages/6.jpg" class="responsive-img" alt="最小二乘法">
                         
-                        <span class="card-title">梯度下降</span>
+                        <span class="card-title">最小二乘法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,7 +1050,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
                             </span>
                         <span class="publish-author">
                             
