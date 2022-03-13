@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pythonn高级用法, 程序员">
+    <meta name="keywords" content="逻辑回归, 程序员">
     <meta name="description" content="llxll的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pythonn高级用法 | llXll</title>
+    <title>逻辑回归 | llXll</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/awesome/css/all.css">
@@ -250,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pythonn高级用法</h1>
+                    <h1 class="description center-align post-title">逻辑回归</h1>
                 </div>
             </div>
         </div>
@@ -371,8 +371,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -383,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                Python学习
+                            <a href="/categories/true/" class="post-category">
+                                true
                             </a>
                         
                     </div>
@@ -396,21 +400,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2022-03-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2022-03-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.1k
                 </div>
                 
 
@@ -432,126 +436,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python高级用法"><a href="#python高级用法" class="headerlink" title="python高级用法"></a>python高级用法</h1><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>适用对象: list、tuple、str</p>
-<ol>
-<li><code>list[:]</code>返回原样list，:前面表示从哪个数组下标开始，:后表示从哪个数组下标的前一个结束。</li>
-<li><code>list[-1:]</code>从倒数第一个到最后一个。</li>
-<li><code>list[::5]</code> 间隔每隔5取一次。</li>
-</ol>
-<h3 id="all-和-any"><a href="#all-和-any" class="headerlink" title="all() 和 any()"></a>all() 和 any()</h3><ol>
-<li><code>all()</code> 函数表示一个迭代对象里面都是True才返回True,否则返回False。</li>
-<li><code>any()</code> 函数表示迭代对象里面只要有一个为True都返回True,否则返回False。</li>
-</ol>
-<h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>适用对象：list、tuple、dict、set、str等可迭代对象，范围比较广。</p>
-<ol>
-<li><code>for x in list/tuple:</code> 迭代list和tuple对象</li>
-<li><code>for key in dict:</code> 迭代dict对象<br>  <code>for value in dict.values():</code> 迭代dict的值<br>  <code>for k,v in dict.items():</code> 迭代dict的key和value</li>
-<li><code>for ch in str:</code> 迭代字符串对象</li>
-<li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br>  <code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
-<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
- list(enumerate(list1)) == [(0,1),(1,2),(2,3)]
-</code></pre>
-</li>
-</ol>
-<h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><p>写列表生成式时，把要生成的元素放在最前面，后面接for循环，最后可用if语句对循环值进行限制。</p>
-<ol>
-<li><code>[x+x for x in range(1,11)]</code> </li>
-<li><code>[x+y for x in range(1,11) for y in range(1,5)]</code> 这里会生成 10 * 4 = 40 个元素，区别于：<pre><code>[x+y for x,y in zip(range(1,11),range(1,11))]  # 这里是将对应数组下标相同的元素相加
-list1=[1,2,3]
-list2=[4,5,6]
-zip(list1,list2)==[(1,4),(2,5),(3,6)]
-</code></pre>
-</li>
-<li><code>[x for x in range(1,11) if x%2==0]</code> 对循环值进行限制,这里if后面不能再跟elif和else了。</li>
-<li><code>[key+'='+value for key,value in dict.items()]</code></li>
-<li>[2 for i in range(3)] == [2,2,2]</li>
-</ol>
-<h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>一边循环一边计算的机制，称为生成器：generator。</p>
-<pre><code>L = [x * x for x in range(10)]
-L
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-g = (x * x for x in range(10))
-g
-&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;
-</code></pre>
-<ol>
-<li>用next(g)来获得generator的下一个返回值，每次循环计算下一个值。</li>
-<li>generator也是一个可迭代对象，可以用for循环。</li>
-<li>对于复杂函数的生成器<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     print(b)
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-</code></pre>
-这是一个普通的斐波那契函数。<br>现在需要将其改为生成器。<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     yield b
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-&gt;&gt;&gt; f = fib(6)
-&gt;&gt;&gt; f
-&lt;generator object fib at 0x104feaaa0&gt;
-</code></pre>
-这时该函数就变成了一个生成器，用来生成斐波那契额数列。</li>
-<li>普通函数和生成器的执行对比</li>
-</ol>
+                <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="1-从线性回归到逻辑回归"><a href="#1-从线性回归到逻辑回归" class="headerlink" title="1. 从线性回归到逻辑回归"></a>1. 从线性回归到逻辑回归</h2><p>​    线性回归求的是输出特征向量 Y 和输入样本矩阵 X 之间的线性关系 $\theta$ ，满足 $Y = X\theta$ 。此时我们的 Y 是连续的，所以是回归模型，如果我要想要 Y 是离散值，则可以再对 Y 进行一次转换，变为 $g(Y)$，如果  $g(Y)$ 的值在某个区间内是类别 A，在另一个区间内是 B，这样就得到了一个分类模型。如果类别个数为 2，那么就是一个二分类模型。</p>
+<h2 id="2-二元逻辑回归模型"><a href="#2-二元逻辑回归模型" class="headerlink" title="2. 二元逻辑回归模型"></a>2. 二元逻辑回归模型</h2><p>​    逻辑回归模型就是在线性模型的基础之上加一个函数转换为离散值，这个函数在逻辑回归里面是 sigmod 函数：$g(z) = \frac{1}{1+e^{-z}}$ ，为什么是这个函数：</p>
 <ul>
-<li>普通函数是顺序执行的，遇到return语句返回或者执行完最后一条语句。</li>
-<li>生成器是调用next()后才执行，执行到yield中断，并返回yield后的内容。下次再调用next()时，就从该yield处执行。</li>
+<li>当 $z$ 趋近于正无穷时，$g(z)$ 趋于 1 ，而当 z 趋于负无穷时，$g(z)$ 趋于0，这个性质很适合用来进行分类。</li>
+<li>sigmod 函数还有一个很好的导数性质，$g^{‘}(z) = g(z)(1-g(z))$</li>
 </ul>
-<ol start="5">
-<li>杨辉三角<pre><code>def triangles():
- L=[1]
- while True:
-     yield L
-     S=L[:]
-     S.append(0)
-     L=[S[i-1]+S[i] for i in range(len(S))] 
-</code></pre>
-</li>
-</ol>
-<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>list、tuple、dict、set、str、generator都可以作为迭代器。</p>
-<pre><code>isinstance([],Iterable)
-</code></pre>
-<p>用来判断是否是迭代对象。</p>
-<hr>
-<h3 id="异常、错误与调试"><a href="#异常、错误与调试" class="headerlink" title="异常、错误与调试"></a>异常、错误与调试</h3><ol>
-<li><p>try-except-finally模式</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-finally:
- 语句
-</code></pre>
-<p>finally不管有没有出错都要执行的语句。</p>
-</li>
-<li><p>try-except-else 模式<br>当try捕获到异常时会跳转到except处，出错位置后的代码将不再执行，当try没有捕获到错误时，就会跳转到else进行处理。</p>
-<pre><code>try:
- 语句
-except Ex1:
- 语句
-else:
- 语句
-</code></pre>
-</li>
-<li><p>raise 手动抛出异常</p>
-<pre><code>raise ValueError("This is a Exception")
-</code></pre>
-</li>
-<li><p><strong>pycharm调试</strong></p>
-</li>
-</ol>
-<ul>
-<li>step over 跳过子函数运行，（就是整个函数作为一行运行）。</li>
-<li>step into 遇到子函数，进入子函数。</li>
-<li>step out 当单步执行在子函数内，用step out 可以执行完剩余的子函数，并跳出来。</li>
-<li>resume program 跳到下一个断点处。</li>
-</ul>
+<p>逻辑回归模型：</p>
+<p>​    $h_{\theta}(x) = \frac{1}{1+e^{-x\theta}}$ </p>
+<p>$x$ 为样本输入，$h_{\theta}(x)$ 为模型输出，可以理解为某一类别的概率，而 $\theta$ 为模型参数，对于二元分类，如果 $h_{\theta}(x) &gt; 0.5$，即 $x\theta &gt; 0$，那么 y 预测为 1，如果 $h_{\theta}(x) &lt; 0.5$ ，即 $x\theta &lt; 0$，那么 y 预测为 0 。</p>
+<p>逻辑回归的矩阵形式：</p>
+<p>$h_{\theta}(X) = \frac{1}{1+e^{-X\theta}}$，$h_{\theta}(X)$ 是模型输出，是 mx1 的维度，$X$ 是特征矩阵，是 mxn 的维度，$\theta$ 是分类模型的待求系数，是 nx1 的维度。</p>
+<h2 id="3-二元逻辑回归的损失函数"><a href="#3-二元逻辑回归的损失函数" class="headerlink" title="3. 二元逻辑回归的损失函数"></a>3. 二元逻辑回归的损失函数</h2><p>​    线性回归的输出是连续值，所以可以使用平方差来定义损失函数，但是逻辑回归的输出不是连续值，所以平方差损失函数不适合逻辑回归，不过可以使用最大似然法推导出损失函数。</p>
+<p>​    对于二元逻辑回归，假设输出 y 只有 0 和 1两类。</p>
+<p>​    $P(y=1|x,\theta) = h_{\theta}(x)$</p>
+<p>​    $P(y=0|x,\theta) = 1-h(\theta)$</p>
+<p>写成一个函数就是：$P(y|x,\theta) = h_{\theta}(x)^{y}(1-h_{\theta}(x))^{1-y}$ ，y 只能取 0 和 1 。</p>
+<p>通过似然函数最大化来求解参数 $\theta$ ，进行转换，将似然函数取对数并取反作为损失函数，然后最小化损失函数。</p>
+<p>似然函数：$L(\theta) = \prod_{i=1}^{m}(h_{\theta}(x^{(i)}))^{y^{(i)}}(1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}$</p>
+<p>损失函数：$J(\theta) = -lnL(\theta) = -\sum_{i=1}^{m}(y^{(i)}log(h_{\theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\theta}(x^{(i)})))$   </p>
+<p>损失函数的矩阵表式：$J(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^Tlog(E-h_{\theta}(X))$，其中 E 为全 1 向量。</p>
+<h2 id="4-二元逻辑回归损失函数的优化方法"><a href="#4-二元逻辑回归损失函数的优化方法" class="headerlink" title="4. 二元逻辑回归损失函数的优化方法"></a>4. 二元逻辑回归损失函数的优化方法</h2><p>​    这里只介绍梯度下降法</p>
+<p>$\frac{\partial}{\partial\theta} = X^T[\frac{1}{h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(-Y)] + X^T[\frac{1}{E-h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(E-Y)]$ </p>
+<p>简化为：</p>
+<p>$\frac{\partial}{\partial\theta}J(\theta) = X^T(h_{\theta}(X)-Y)$</p>
+<p>迭代公式为：</p>
+<p>$\theta = \theta - \alpha X^{T}(h_{\theta}(X) - Y)$ , $\alpha$ 为步长 。</p>
+<h2 id="5-二元逻辑回归的正则化"><a href="#5-二元逻辑回归的正则化" class="headerlink" title="5. 二元逻辑回归的正则化"></a>5. 二元逻辑回归的正则化</h2><p>​    逻辑回归也会有过拟合的问题，也需要考虑正则化，常见的有 $L1$ 正则化 和 $L2$ 正则化。</p>
+<p>$L1$正则化</p>
+<p>$J(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^Tlog(E-h_{\theta}(X)) + \alpha\left | \theta \right |_{1}$ </p>
+<p>$L2$ 正则化</p>
+<p>$J(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^Tlog(E-h_{\theta}(X)) + \frac{1}{2}\alpha\left | \theta \right |_{2}^{2}$ </p>
+<h2 id="6-多元逻辑回归"><a href="#6-多元逻辑回归" class="headerlink" title="6. 多元逻辑回归"></a>6. 多元逻辑回归</h2><p>对于二元逻辑回归：</p>
+<p>​    $P(y=1|x,\theta) = h_{\theta}(x) = \frac{1}{1+e^{-x\theta}} = \frac{e^{x\theta}}{1+e^{x\theta}}$</p>
+<p>​    $P(y=0|x,\theta) = 1-h(\theta) = \frac{1}{1+e^{x\theta}}$ </p>
+<p>​    两则相除取对数</p>
+<p>​    $ln\frac{P(y=1|x,\theta) }{P(y=0|x,\theta)} = x\theta$<br>​    </p>
+<p>推广到多元，假设 y 的值可以取：$1,2,3\dots K$</p>
+<p>$ln\frac{P(y=1|x,\theta) }{P(y=K|x,\theta)} = x\theta_{1}$</p>
+<p>$ln\frac{P(y=2|x,\theta) }{P(y=K|x,\theta)} = x\theta_{2}$ </p>
+<p>$\dots$</p>
+<p>$ln\frac{P(y=K-1|x,\theta) }{P(y=K|x,\theta)} = x\theta_{K-1}$</p>
+<p>$\sum_{i=1}^{K}P(y=i|x,\theta) = 1$</p>
+<p>上面有 K 个方程，求解该方程得：</p>
+<p>$P(y=k|x,\theta) = \frac{e^{x\theta_{k}}}{1+\sum_{t=1}^{K-1}e^{x\theta_{t}}}, k = 1,2,\dots K-1$</p>
+<p>$P(y=k|x,\theta) = \frac{1}{1+\sum_{t=1}^{K-1}e^{x\theta_{t}}}$ </p>
+<p>多元逻辑回归的损失函数和优化方法和二元逻辑回归类似 。</p>
 
                 
             </div>
@@ -578,7 +508,7 @@ else:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">http://example.com/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/</a>
+                    <a href="http://example.com/2022/03/12/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">http://example.com/2022/03/12/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -616,8 +546,12 @@ else:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -1050,17 +984,18 @@ else:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/03/09/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+                <a href="/2022/03/12/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/9.jpg" class="responsive-img" alt="梯度下降">
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/10.jpg" class="responsive-img" alt="逻辑回归">
                         
-                        <span class="card-title">梯度下降</span>
+                        <span class="card-title">逻辑回归</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1070,21 +1005,22 @@ else:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/true/" class="post-category">
+                                    true
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1107,13 +1043,13 @@ else:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/08/pythonn%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/03/11/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/16.jpg" class="responsive-img" alt="pythonn基础">
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/4.jpg" class="responsive-img" alt="线性回归">
                         
-                        <span class="card-title">pythonn基础</span>
+                        <span class="card-title">线性回归</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1124,14 +1060,14 @@ else:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    Python学习
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -1141,8 +1077,12 @@ else:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
                 </div>
@@ -1273,6 +1213,13 @@ else:
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
