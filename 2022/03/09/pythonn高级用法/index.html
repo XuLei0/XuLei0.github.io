@@ -427,6 +427,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/prism/prism.css">
+        
 
         
 
@@ -448,54 +451,47 @@
 <li><code>for key in dict:</code> 迭代dict对象<br>  <code>for value in dict.values():</code> 迭代dict的值<br>  <code>for k,v in dict.items():</code> 迭代dict的key和value</li>
 <li><code>for ch in str:</code> 迭代字符串对象</li>
 <li>如何判断一个对象是否是可迭代对象<br> 通过collections.abc模块中的Iterable类型来判断：<br>  <code>isinstance(object,Iterable)</code>: 判断object是否可迭代</li>
-<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值<pre><code> list1=[1,2,3]
- list(enumerate(list1)) == [(0,1),(1,2),(2,3)]
-</code></pre>
-</li>
+<li>对list的下标进行循环<br>  <code>for i,v in enumerate(list):</code> 迭代下标和下标对应的值  <pre class="line-numbers language-none"><code class="language-none">list1=[1,2,3]
+list(enumerate(list1)) == [(0,1),(1,2),(2,3)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><p>写列表生成式时，把要生成的元素放在最前面，后面接for循环，最后可用if语句对循环值进行限制。</p>
 <ol>
 <li><code>[x+x for x in range(1,11)]</code> </li>
-<li><code>[x+y for x in range(1,11) for y in range(1,5)]</code> 这里会生成 10 * 4 = 40 个元素，区别于：<pre><code>[x+y for x,y in zip(range(1,11),range(1,11))]  # 这里是将对应数组下标相同的元素相加
+<li><code>[x+y for x in range(1,11) for y in range(1,5)]</code> 这里会生成 10 * 4 = 40 个元素，区别于：<pre class="line-numbers language-none"><code class="language-none">[x+y for x,y in zip(range(1,11),range(1,11))]  # 这里是将对应数组下标相同的元素相加
 list1=[1,2,3]
 list2=[4,5,6]
-zip(list1,list2)==[(1,4),(2,5),(3,6)]
-</code></pre>
-</li>
+zip(list1,list2)==[(1,4),(2,5),(3,6)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><code>[x for x in range(1,11) if x%2==0]</code> 对循环值进行限制,这里if后面不能再跟elif和else了。</li>
 <li><code>[key+'='+value for key,value in dict.items()]</code></li>
 <li>[2 for i in range(3)] == [2,2,2]</li>
 </ol>
 <h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><p>一边循环一边计算的机制，称为生成器：generator。</p>
-<pre><code>L = [x * x for x in range(10)]
+<pre class="line-numbers language-none"><code class="language-none">L = [x * x for x in range(10)]
 L
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 g = (x * x for x in range(10))
 g
-&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;
-</code></pre>
+&lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li>用next(g)来获得generator的下一个返回值，每次循环计算下一个值。</li>
 <li>generator也是一个可迭代对象，可以用for循环。</li>
-<li>对于复杂函数的生成器<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     print(b)
-     a, b = b, a + b
-     n = n + 1
- return 'done'
-</code></pre>
-这是一个普通的斐波那契函数。<br>现在需要将其改为生成器。<pre><code>def fib(max):
- n, a, b = 0, 0, 1
- while n &lt; max:
-     yield b
-     a, b = b, a + b
-     n = n + 1
- return 'done'
+<li>对于复杂函数的生成器<pre class="line-numbers language-none"><code class="language-none">def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+这是一个普通的斐波那契函数。<br>现在需要将其改为生成器。<pre class="line-numbers language-none"><code class="language-none">def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
 &gt;&gt;&gt; f = fib(6)
 &gt;&gt;&gt; f
-&lt;generator object fib at 0x104feaaa0&gt;
-</code></pre>
+&lt;generator object fib at 0x104feaaa0&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 这时该函数就变成了一个生成器，用来生成斐波那契额数列。</li>
 <li>普通函数和生成器的执行对比</li>
 </ol>
@@ -504,44 +500,37 @@ g
 <li>生成器是调用next()后才执行，执行到yield中断，并返回yield后的内容。下次再调用next()时，就从该yield处执行。</li>
 </ul>
 <ol start="5">
-<li>杨辉三角<pre><code>def triangles():
- L=[1]
- while True:
-     yield L
-     S=L[:]
-     S.append(0)
-     L=[S[i-1]+S[i] for i in range(len(S))] 
-</code></pre>
-</li>
+<li>杨辉三角<pre class="line-numbers language-none"><code class="language-none">def triangles():
+    L=[1]
+    while True:
+        yield L
+        S=L[:]
+        S.append(0)
+        L=[S[i-1]+S[i] for i in range(len(S))] <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>list、tuple、dict、set、str、generator都可以作为迭代器。</p>
-<pre><code>isinstance([],Iterable)
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">isinstance([],Iterable)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>用来判断是否是迭代对象。</p>
 <hr>
 <h3 id="异常、错误与调试"><a href="#异常、错误与调试" class="headerlink" title="异常、错误与调试"></a>异常、错误与调试</h3><ol>
 <li><p>try-except-finally模式</p>
-<pre><code>try:
- 语句
+<pre class="line-numbers language-none"><code class="language-none">try:
+	语句
 except Ex1:
- 语句
+	语句
 finally:
- 语句
-</code></pre>
+	语句<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>finally不管有没有出错都要执行的语句。</p>
 </li>
 <li><p>try-except-else 模式<br>当try捕获到异常时会跳转到except处，出错位置后的代码将不再执行，当try没有捕获到错误时，就会跳转到else进行处理。</p>
-<pre><code>try:
- 语句
+<pre class="line-numbers language-none"><code class="language-none">try:
+	语句
 except Ex1:
- 语句
+	语句
 else:
- 语句
-</code></pre>
-</li>
+	语句<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>raise 手动抛出异常</p>
-<pre><code>raise ValueError("This is a Exception")
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">raise ValueError("This is a Exception")<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p><strong>pycharm调试</strong></p>
 </li>
@@ -1088,10 +1077,6 @@ else:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
                     <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">机器学习</span>
                     </a>
@@ -1332,7 +1317,7 @@ else:
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1361,6 +1346,50 @@ else:
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             

@@ -427,6 +427,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/prism/prism.css">
+        
 
         
 
@@ -475,11 +478,9 @@
 </li>
 <li>计算字符串中某字符出现的次数：s.count(‘a’)</li>
 <li>替换字符串中的指定字符或字符串：s.replace(‘abcd’,’efgh’)</li>
-<li>format格式化输出：<pre><code>s = '我叫{}, 今年{}， 性别{}'.format('小五', 25, '女')
+<li>format格式化输出：  <pre class="line-numbers language-none"><code class="language-none">s = '我叫{}, 今年{}， 性别{}'.format('小五', 25, '女')
 s1 = '我叫{0}, 今年{1}， 性别{2}，我依然叫{0}'.format('小五', 25, '女')
-s2 = '我叫{name}, 今年{age}， 性别{sex}，我依然叫{name}'.format(age=25, sex='女',name='小五'）
-</code></pre>
-</li>
+s2 = '我叫{name}, 今年{age}， 性别{sex}，我依然叫{name}'.format(age=25, sex='女',name='小五'）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>首字母变成大写：s.capitalize()</li>
 <li>将字符串居中：s.center(50) 在50的长度里面字符串s居中显示，也可以填充：s.center(50,’*’)</li>
 <li>“-“.join(list)：将list连接成字符串</li>
@@ -565,11 +566,9 @@ s2 = '我叫{name}, 今年{age}， 性别{sex}，我依然叫{name}'.format(age=
 <li>is / not is：判断是否指向的是同一个索引</li>
 <li>in / not in： 判断x是否在给定的容器中，例如List、Set、Tuple等</li>
 <li>逻辑运算符：and / or / not</li>
-<li>位运算： bin(x) 可以将x变为二进制数据，然后可以通过 &amp;、|、^、~、&gt;&gt;、&lt;&lt; 进行位运算，分别表示 与、或、异或、取反、右移、左移运算，<strong>取反运算比较复杂，从结果来说：取反结果为：原数+1再变相反数。</strong><pre><code>x=2
+<li>位运算： bin(x) 可以将x变为二进制数据，然后可以通过 &amp;、|、^、~、&gt;&gt;、&lt;&lt; 进行位运算，分别表示 与、或、异或、取反、右移、左移运算，<strong>取反运算比较复杂，从结果来说：取反结果为：原数+1再变相反数。</strong><pre class="line-numbers language-none"><code class="language-none">x=2
 y=3
-bin(x&amp;y)
-</code></pre>
-</li>
+bin(x&amp;y)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li>pow（2,10），round(2.991)都是内置函数</li>
 <li>math模块的函数和常量：<ul>
 <li>math.sin(x)</li>
@@ -670,26 +669,22 @@ bin(x&amp;y)
 <li><code>tuple.index(obj)</code>：从元组中找出某个值第一个匹配项的索引值</li>
 <li><code>tuple.count(obj)</code>： 统计某个元素在元组中出现的次数</li>
 </ol>
-<h3 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h3><pre><code>if 表达式 :
-    ...
+<h3 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h3><pre class="line-numbers language-none"><code class="language-none">if 表达式 :
+	...
 elif 表达式 :
-    ...
+	...
 else :
-    ...
-</code></pre>
+	...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>Python的循环有两种</p>
 <ol>
 <li><p>一种是for…in循环，依次把list或tuple中的每个元素迭代出来。</p>
-<pre><code>for 元素 in list/tuple :
- ...
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">for 元素 in list/tuple :
+	...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><code>range(i)</code>：可以生成0~i-1的整数序列。<br><code>list()</code>:可以转换为list。</p>
 </li>
 <li><p>第二种循环是while循环，只要条件满足，就不断循环，条件不满足时退出循环。</p>
-<pre><code>while 表达式：
- ...
-</code></pre>
-</li>
+<pre class="line-numbers language-none"><code class="language-none">while 表达式：
+	...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>break语句<br>跳出循环</p>
 </li>
 <li><p>continue语句<br>跳出本次循环</p>
@@ -742,10 +737,8 @@ else :
 </ol>
 <h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><p>在python解释器中的函数，可以直接通过函数名来调用函数。</p>
 <ol>
-<li>查看内置函数的一个帮助文档<pre><code>help(len)
-len?
-</code></pre>
-</li>
+<li>查看内置函数的一个帮助文档<pre class="line-numbers language-none"><code class="language-none">help(len)
+len?<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>常见的内置函数<ul>
 <li>help(): 帮助函数</li>
 <li>type(): 查看类型</li>
@@ -1558,7 +1551,7 @@ len?
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1587,6 +1580,50 @@ len?
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
