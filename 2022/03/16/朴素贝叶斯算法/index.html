@@ -437,8 +437,7 @@
 <li>条件独立公式</li>
 </ol>
 <p>​        $P(X,Y) = P(X)P(Y)$ </p>
-<pre><code>2. 条件概率公式
-</code></pre>
+<p>​     2. 条件概率公式</p>
 <p>​        $P(Y|X) = P(X,Y)/P(X)$</p>
 <p>​        $P(X|Y) = P(X,Y)/P(Y)$ </p>
 <ol start="3">
@@ -479,11 +478,9 @@
 </ol>
 <p>​        $P(Y=c_{k}) = \frac{\sum_{i=1}^{N}I(y_{i}=c_{k})}{N}, k = 1,2,\dots,K$</p>
 <p>​        $P(X^{(j)}=a_{jl}|Y=c_{k}) = \frac{\sum_{i=1}^{N}I(x_{i}^{(j)}=ajl, y_{i}=c_{k})}{\sum_{i=1}^{N}I(y_{i}=c_{k})}, j=1,2,\dots,n;$ </p>
-<pre><code>2. 对于给定的实例计算：
-</code></pre>
+<p>​     2. 对于给定的实例计算：</p>
 <p>​        $P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k}), k=1,2,\dots,K$ </p>
-<pre><code> 3. 确定实例 $x$ 的类
-</code></pre>
+<p>​      3. 确定实例 $x$ 的类</p>
 <p>​        $y = f(x) = arg\max_{c_{k}}P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k})$</p>
 <h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><p>用极大似然估计可能会出现所要估计的概率值为 0 的情况，这时会影响到后验概率的计算结果，使分类误差产生偏差，解决这一问题是采用贝叶斯估计，具体的，</p>
 <p>条件概率的贝叶斯估计是：</p>
