@@ -403,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-16
+                    2022-03-17
                 </div>
                 
 
@@ -433,13 +433,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="朴素贝叶斯算法"><a href="#朴素贝叶斯算法" class="headerlink" title="朴素贝叶斯算法"></a>朴素贝叶斯算法</h1><p>​        朴素贝叶斯算法是基于贝叶斯定理和特征条件独立假设的分类算法。对于给定的训练数据集，首先基于特征条件独立假设学习输入/输出的联合概率分布，然后基于此模型，对给定的输入 $x$ , 利用贝叶斯定理求出后验概率最大的类别作为输出，朴素贝叶斯算法实现简单，学习与预测效率都很高，是一种常用的方法。</p>
-<h2 id="相关统计学知识"><a href="#相关统计学知识" class="headerlink" title="相关统计学知识"></a>相关统计学知识</h2><ol>
-<li>条件独立公式</li>
+<h2 id="相关统计学知识"><a href="#相关统计学知识" class="headerlink" title="相关统计学知识"></a>相关统计学知识</h2><pre><code>1. 条件独立公式
+</code></pre>
+<p>​            $P(X,Y) = P(X)P(Y)$ </p>
+<ol start="2">
+<li>条件概率公式</li>
 </ol>
-<p>​        $P(X,Y) = P(X)P(Y)$ </p>
-<p>​     2. 条件概率公式</p>
-<p>​        $P(Y|X) = P(X,Y)/P(X)$</p>
-<p>​        $P(X|Y) = P(X,Y)/P(Y)$ </p>
+<p>​            $P(Y|X) = P(X,Y)/P(X)$</p>
+<p>​            $P(X|Y) = P(X,Y)/P(Y)$ </p>
 <ol start="3">
 <li><p>全概率公式</p>
 <p>$P(X) = \sum_{k}P(X|Y=Y_{k})$，其中 $\sum_{k}P(Y_{k})=1$</p>
@@ -470,7 +471,6 @@
 <p>第 $j$ 个特征 $x^{(j)}$ 可能的取值的集合为 ${a_{j1},a_{j2},\dots,a_{js}}$，条件概率 $P(X^{(j)}=a_{jl}|Y=c_{k})$ 的极大似然估计为：</p>
 <p>$P(X^{(j)}=a_{jl}|Y=c_{k}) = \frac{\sum_{i=1}^{N}I(x_{i}^{(j)}=ajl, y_{i}=c_{k})}{\sum_{i=1}^{N}I(y_{i}=c_{k})}, j=1,2,\dots,n;$    $l=1,2,\dots,S_{j};$     $k=1,2,\dots,K$  </p>
 <p>上面的 $I$ 是 $0-1$ 损失函数：</p>
-<p>$I(Y, f(X))=\left{\begin{array}{ll}<br>1, &amp; Y \neq f(X) \<br>0, &amp; Y=f(X)<br>\end{array}\right.$  </p>
 <h2 id="朴素贝叶斯算法的流程"><a href="#朴素贝叶斯算法的流程" class="headerlink" title="朴素贝叶斯算法的流程"></a>朴素贝叶斯算法的流程</h2><p>输入：训练数据 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{n},y_{n})}$，$a_{jl}$ 是第 $j$ 个特征可能取的第 $l$ 个值，$j=1,2,\dots,n$，$l=1,2,\dots,S_{j}$ </p>
 <p>输出：实例 $x$ 的分类</p>
 <ol>
