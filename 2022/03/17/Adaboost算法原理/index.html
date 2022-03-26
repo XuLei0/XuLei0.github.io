@@ -403,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-25
+                    2022-03-26
                 </div>
                 
 
@@ -525,7 +525,7 @@
 <p>​                        $w_{k+1,i} = \frac{w_{ki}}{Z_{k}}\alpha_{k}^{1-e_{ki}}$    </p>
 <p>​                        其中 $Z_{k} = \sum_{i=1}^{m}w_{ki}\alpha_{k}^{1-e_{ki}}$，为规范化因子</p>
 <p>（3）构建最终强学习器</p>
-<p>​            $f(x) = G_{k^{<em>}}(x)$ ，其中 $G_{k^{</em>}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2,\dots,K$ 的 中位数值乘以对应序号 $k^{*}$ 对应的弱学习器。</p>
+<p>​            $f(x) = G_{k^{<em>}}(x)$，其中 $G_{k^{</em>}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2\dots K$  的 中位数值乘以对应 $k^{*}$ 对应的弱学习器。</p>
 <h2 id="4-Adaboost算法的正则化"><a href="#4-Adaboost算法的正则化" class="headerlink" title="4. Adaboost算法的正则化"></a>4. Adaboost算法的正则化</h2><p>Adaboost算法也会产生过拟合，我们也可以在算法中加入正则化项，这个正则化通常叫做步长，定义为 $\nu$ ，之前弱学习器的迭代公式为：</p>
 <p>​        $f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
 <p> 加上正则化，就有：</p>
@@ -902,11 +902,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            XuLei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
                 </div>
                 
             </div>

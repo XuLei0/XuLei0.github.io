@@ -369,12 +369,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -390,14 +403,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-25
+                    2022-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    515
                 </div>
                 
 
@@ -419,7 +432,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="梯度提升树（GBDT）算法"><a href="#梯度提升树（GBDT）算法" class="headerlink" title="梯度提升树（GBDT）算法"></a>梯度提升树（GBDT）算法</h1><h2 id="1-GBDT概述"><a href="#1-GBDT概述" class="headerlink" title="1. GBDT概述"></a>1. GBDT概述</h2><p>​            Adaboost 是利用前一轮弱学习器的误差率来更新训练集的权重，这样一轮轮迭代下去。GBDT也是如此，也是用前向分步算法，但是弱学习器限定为 CART 树，同时迭代的方式也和 Adaboost 算法不同。</p>
+<p>​            GBDT 对于前一轮得到的强学习器 $f_{t-1}(x)$，下一轮旨在要学习到一个弱学习器 $h_{t}(x)$ ，让本轮的损失函数 $L(y,f_{t}(x)) = L(y,f_{t-1}(x)+h_{t}(x))$ 最小，也就是说本轮迭代产生的 弱学习器，要让样本的损失函数尽可能的小。</p>
+<p>​            <strong>问题：</strong> 损失函数各种各样，损失函数的拟合不好度量。</p>
+<h2 id="2-GBDT-的负梯度拟合"><a href="#2-GBDT-的负梯度拟合" class="headerlink" title="2. GBDT 的负梯度拟合"></a>2. GBDT 的负梯度拟合</h2><p>第 $t$ 轮，第 $i$ 个样本的损失函数的负梯度表示为：</p>
+<p>$r_{ti} = -[\frac{\partial L(y_{i},f(x_{i}))}{\partial f(x_{i})}]<em>{f(x)=f</em>{t-1}(x)}$ </p>
+<p>$y_{i}$ 是样本的输出值，$f(x)$ 为 $t-1$ 轮学到的强学习器 </p>
+<p>然后利用 $(x_{i},r_{ti}),i=1,2\dots m$ 我们可以拟合一棵 CART 回归树，得到第 $t$ 棵回归树，其对应的叶子节点区域为 $R_{tj},j=1,2\dots J$ , $J$ 为</p>
+<p>叶子结点的个数  </p>
+<p>对每一个叶子结点里的样本，我们求出使损失函数最小，也就是拟合叶子节点最好的输出值 $c_{tj}$ 如下：</p>
+<p>$c_{tj} = argmin_{c}\sum_{x_{i}\in R_{tj}}L(y_{i},f_{t-1}(x)+c)$</p>
+<p>之前在求回归问题时，使损失函数最小的那个值 $c_{tj}$ 是叶子结点里所有样本的平均值（平方差损失函数），现在损失函数普遍化，不一定是</p>
+<p>平方差损失函数</p>
+<p>所以得到本轮的决策树拟合函数为：</p>
+<p>$h_{t}(x) = \sum_{j=1}^{J}c_{tj}I(x\in R_{tj})$</p>
+<p>所以本轮最终得到的强学习器表示为：</p>
+<p>$f_{t}(x) = f_{t-1}(x) + \sum_{j=1}^{J}c_{tj}I(x \in R_{tj})$</p>
+<h2 id="3-GBDT-回归算法"><a href="#3-GBDT-回归算法" class="headerlink" title="3. GBDT 回归算法"></a>3. GBDT 回归算法</h2>
                 
             </div>
             <hr/>
@@ -432,7 +461,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -763,13 +796,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            XuLei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -946,6 +991,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
