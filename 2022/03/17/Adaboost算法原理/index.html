@@ -525,7 +525,7 @@
 <p>​                        $w_{k+1,i} = \frac{w_{ki}}{Z_{k}}\alpha_{k}^{1-e_{ki}}$    </p>
 <p>​                        其中 $Z_{k} = \sum_{i=1}^{m}w_{ki}\alpha_{k}^{1-e_{ki}}$，为规范化因子</p>
 <p>（3）构建最终强学习器</p>
-<p>​            $f(x) = G_{k^{<em>}}(x)$，其中 $G_{k^{</em>}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2\dots K$  的 中位数值乘以对应 $k^{*}$ 对应的弱学习器。</p>
+<p>​            $f(x) = G_{k^{\ast}}(x)$，其中 $G_{k^{\ast}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2\dots K$  的 中位数值乘以对应 $k^{\ast}$ 对应的弱学习器。</p>
 <h2 id="4-Adaboost算法的正则化"><a href="#4-Adaboost算法的正则化" class="headerlink" title="4. Adaboost算法的正则化"></a>4. Adaboost算法的正则化</h2><p>Adaboost算法也会产生过拟合，我们也可以在算法中加入正则化项，这个正则化通常叫做步长，定义为 $\nu$ ，之前弱学习器的迭代公式为：</p>
 <p>​        $f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
 <p> 加上正则化，就有：</p>
