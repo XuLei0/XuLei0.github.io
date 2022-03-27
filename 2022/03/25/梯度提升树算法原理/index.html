@@ -471,7 +471,7 @@
 <h3 id="4-1-二元-GBDT-分类算法"><a href="#4-1-二元-GBDT-分类算法" class="headerlink" title="4.1 二元 GBDT 分类算法"></a>4.1 二元 GBDT 分类算法</h3><p>​        损失函数为：</p>
 <p>​        $L(y,f(x)) = log(1+exp(-yf(x)))$</p>
 <p>​        其中 $y\in{-1,+1}$，则此时负梯度误差为：</p>
-<p>​        $r_{ti} = -\left [\frac{\partial L\left (y,f(x_{i})\right )}{\partial f(x_{i})}\right ]<em>{f(x)=f</em>{t-1}(x)} = y_{i}\setminus \left (1+exp(y_{i}f(x_{i}))\right)$  </p>
+<p>​        $r_{ti} = -\left[ \frac{\partial L(y,f(x_{i}))}{\partial f(x_{i})} \right ]<em>{f(x)=f</em>{t-1}(x)}=y_{i}/(1+exp(y_{i}f(x_{i})))$  </p>
 <p>​        对于生成的决策树，我们各个叶子节点的最佳负梯度拟合值为：</p>
 <p>​        $c_{tj} = argmin_{c}\sum_{x_{i}\in R_{tj}}log(1+exp(-y_{i}(f_{t-1}(x_{i})+c)))$    </p>
 <p>​        上面的式子优化比较难，所以取近似值：</p>
@@ -481,7 +481,7 @@
 <p>​        样本输出类别为 k，那么 $y_{k}=1$，其余类别 $y_{k}=0$，类别 $k$ 的概率 $p_{k}(x)$ 的表达式为：</p>
 <p>​        $p_{k}(x) = exp(f_{k}(x))/\sum_{l=1}^{K}exp(f_{l}(x))$ </p>
 <p>​        根据以上两式求得负梯度误差为：</p>
-<p>​        $r_{til} = -\left [\frac{\partial L\left(y_{i},f(x_{i})\right)}{\partial f(x_{i})}\right]<em>{f</em>{k}(x)=f_{l,t-1}(x)}=y_{il}-p_{l,t-1}(x_{i})$ </p>
+<p>​        $r_{til} = -\left[ \frac{\partial L(y,f(x_{i}))}{\partial f(x_{i})} \right]<em>{f(x)=f</em>{l,t-1}(x)}=y_{il}-p_{l,t-1}(x_{i})$  </p>
 <p>​        误差其实就是样本 $i$ 对应类别 $l$ 的真是概率和 $t-1$ 轮预测值的差值</p>
 <p>​        对于生成决策树的叶子结点，最佳的负梯度拟合值为：</p>
 <p>​        $c_{tjl} = argmin_{c_{jl}}\sum_{i=0}^{m}\sum_{k=1}^{K}L(y_{k},f_{t-1,l}(x)+\sum_{j=0}^{J}c_{jl}I(x_{i}\in R_{tjl}))$ </p>
