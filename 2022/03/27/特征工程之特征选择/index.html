@@ -433,8 +433,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="特征工程之特征选择"><a href="#特征工程之特征选择" class="headerlink" title="特征工程之特征选择"></a>特征工程之特征选择</h1><p>在选择特征时，一般特征有两种来源，一是已经整理好的各种特征，这类特征我们要去找适合我们问题的特征，另一类是从这些整理好的特征中去寻找高级特征。</p>
-<p>##1. 选择合适的特征</p>
-<ol>
+<h2 id="1-选择合适的特征"><a href="#1-选择合适的特征" class="headerlink" title="1. 选择合适的特征"></a>1. 选择合适的特征</h2><ol>
 <li>寻找专家，向他咨询哪些特征会对预测结果产生影响，不论影响的大小都要选择。</li>
 <li>在降维之前，可以使用特征工程的方法去选择出比较重要的特征，例如，方差选择法。</li>
 </ol>
@@ -457,8 +456,7 @@
 <p>使用 feature_selection 库中的 SelectKBest 结合最大信息系数来选择特征。</p>
 </li>
 </ol>
-<p>###1.2 包装法选择特征</p>
-<ol>
+<h3 id="1-2-包装法选择特征"><a href="#1-2-包装法选择特征" class="headerlink" title="1.2 包装法选择特征"></a>1.2 包装法选择特征</h3><ol>
 <li><p>递归特征消除法</p>
 <p>递归特征消除法使用一个基模型来进行多轮训练，每轮训练后，消除若干权值系数的特征，再基于新的特征集进行下一轮训练。对特征含有权重的预测模型(例如，线性模型对应参数coefficients)，RFE通过<strong>递归减少考察的特征集规模来选择特征</strong>。首先，预测模型在原始特征上训练，每个特征指定一个权重。之后，那些拥有最小绝对值权重的特征被踢出特征集。如此往复递归，直至剩余的特征数量达到所需的特征数量。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> RFE
@@ -471,8 +469,7 @@ RFE<span class="token punctuation">(</span>estimator<span class="token operator"
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
-<p>###1.3 嵌入法选择特征</p>
-<p>嵌入法也是用机器学习的方法来选择特征，但是它和RFE的区别是它不是通过不停的筛掉特征来进行训练，而是使用的都是特征全集。在sklearn中，使用SelectFromModel函数来选择特征。</p>
+<h3 id="1-3-嵌入法选择特征"><a href="#1-3-嵌入法选择特征" class="headerlink" title="1.3 嵌入法选择特征"></a>1.3 嵌入法选择特征</h3><p>嵌入法也是用机器学习的方法来选择特征，但是它和RFE的区别是它不是通过不停的筛掉特征来进行训练，而是使用的都是特征全集。在sklearn中，使用SelectFromModel函数来选择特征。</p>
 <ol>
 <li>基于惩罚项的特征选择法</li>
 </ol>
