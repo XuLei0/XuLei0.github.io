@@ -403,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-14
+                    2022-03-30
                 </div>
                 
 
@@ -453,18 +453,18 @@
 <p><strong>2.3 梯度下降算法的描述：</strong></p>
 <p>​    首先需要一个待优化模型的假设函数 $f(\theta)$ 和损失函数 $J(\theta)$ ，其中 $\theta = (\theta_{1},\theta_{2}\dots \theta_{n})$ 。</p>
 <ol>
-<li><p>确定当前位置损失函数的梯度，对于 $\theta_{i}$ 其梯度表达式为  $\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</p>
+<li><p>确定当前位置损失函数的梯度，对于 $\theta_{i}$ 其梯度表达式为  $\frac{\partial}{\partial\theta_{i}}J(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</p>
 </li>
-<li><p>用步长乘以损失函数的梯度，即得到当前位置的下降距离，即 $\alpha\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</p>
+<li><p>用步长乘以损失函数的梯度，即得到当前位置的下降距离，即 $\alpha\frac{\partial}{\partial\theta_{i}}J(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</p>
 </li>
 <li><p>确定所有 $\theta_{i}$ 梯度下降的距离都小于 $\varepsilon$ ，如果小于它，算法终止，当前的 $\theta$ 即为最终所求结果，否则进入步骤4 。</p>
 </li>
-<li><p>更新所有的 $\theta$，公式为 ：$\theta_{i} = \theta_{i} - \alpha\frac{\partial}{\partial\theta_{i}}(\theta_{0},\theta_{1}\dots\theta_{n})$ ，更新完后继续执行步骤 1 。</p>
+<li><p>更新所有的 $\theta$，公式为 ：$\theta_{i} = \theta_{i} - \alpha\frac{\partial}{\partial\theta_{i}}J(\theta_{0},\theta_{1}\dots\theta_{n})$ ，更新完后继续执行步骤 1 。</p>
 </li>
 </ol>
 <p><strong>2.4 梯度下降算法的调优：</strong></p>
 <ol>
-<li><p>算法的步长选择：步长的选择取决于数据样本，可以多取一些值，从大大小，用算法进行运行，看迭代的时候损失函数的变化，损失函数在减小说明取值有效，否则要增大步长。但是步长需要在一个适当的区间调整，步长过大可能会导致取不到最优解，步长过小，迭代速度会很慢，效率不高。</p>
+<li><p>算法的步长选择：步长的选择取决于数据样本，可以多取一些值，从大到小，用算法进行运行，看迭代的时候损失函数的变化，损失函数在减小说明取值有效，否则要增大步长。但是步长需要在一个适当的区间调整，步长过大可能会导致取不到最优解，步长过小，迭代速度会很慢，效率不高。</p>
 </li>
 <li><p>算法参数的初始值选择：参数初始值的不同，会取到不同的最小值，因为对于非凸函数，梯度下降法只能求到一个局部最优解，所以需要使用不同的初值运行算法，以免求到局部最优解。</p>
 </li>
@@ -473,7 +473,7 @@
 </ol>
 <p>​        <img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192615536.png" alt="没有进行归一化损失函数的变化"><img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192631031.png" alt="归一化后损失函数的变化"></p>
 <p>上图中 $\theta_{1}$ 的范围远大于 $\theta_{2}$ 的范围，所以 $\theta_{2}$ 的变化对损失函数的影响会很大，$\theta_{1}$ 的变化对损失函数影响很小，就会导致迭代过程曲曲折折，迭代缓慢，右图是经过归一化后损失函数的变化，迭代速度明显会快。</p>
-<h2 id="3-梯度下降法分类"><a href="#3-梯度下降法分类" class="headerlink" title="3. 梯度下降法分类"></a>3. 梯度下降法分类</h2><p> <strong>批量梯度下降法（BGD）</strong></p>
+<h2 id="3-梯度下降法分类"><a href="#3-梯度下降法分类" class="headerlink" title="3. 梯度下降法分类"></a>3. 梯度下降法分类</h2><p><strong>批量梯度下降法（BGD）</strong></p>
 <p>就是所有样本都用于计算损失函数。</p>
 <p><strong>随机梯度下降法（SGD）</strong></p>
 <p>计算损失函数只使用一个随机样本来进行计算。</p>
