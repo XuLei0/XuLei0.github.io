@@ -403,14 +403,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-14
+                    2022-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    821
+                    822
                 </div>
                 
 
@@ -446,13 +446,13 @@
 </li>
 </ol>
 <h3 id="3-最小二乘法的矩阵解法"><a href="#3-最小二乘法的矩阵解法" class="headerlink" title="3. 最小二乘法的矩阵解法"></a>3. 最小二乘法的矩阵解法</h3><ol>
-<li><p>假设函数 $h_{\theta}(x_{1},x_{2},\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n}$ 的矩阵表达式为：$h_{\theta}(X) = X\theta$ ，其中假设函数 $h_{\theta}(X)$ 为 mx1 向量，$\theta$ 为 (n+1)x1 的向量，是参数向量，$X$ 为 mx(n+1) 维的矩阵，m 代表样本的个数，n 代表样本的特征数，n+1 多 1 是因为线性函数有一个截距。</p>
+<li><p>假设函数 $h_{\theta}(x_{1},x_{2},\dots x_{n}) = \theta_{0} + \theta_{1}x_{1} + \dots + \theta_{n}x_{n}$ 的矩阵表达式为：$h_{\theta}(X) = X\theta$ ，其中假设函数 $h_{\theta}(X)$ 为 mx1 向量，$\theta$ 为 (n+1)x1的向量，是参数向量，$X$ 为 mx(n+1) 维的矩阵，m 代表样本的个数，n 代表样本的特征数，n+1 多 1 是因为线性函数有一个截距。</p>
 </li>
 <li><p>损失函数定义为 $\frac{1}{2}(X\theta - Y)^T(X\theta - Y)$ ，其中 $Y$ 是样本的输出向量，维度为 mx1，$\frac{1}{2}$ 是为了求导后计算方便。</p>
 </li>
 <li><p>对 $\theta$ 求偏导，公式如下：$\frac{\partial}{\partial\theta}J(\theta) = X^T(X\theta - Y) = 0 $ 。</p>
 </li>
-<li><p>通过整理，$X^TX\theta = X^TY$ ，两边同时左乘 $(X^TX)^{-1}$ 可得：$\theta = (X^TX)^{-1}X^TY$ ，这样就求出了 参数向量 $\theta$ ，不用像代数法一个一个求导，而且还要求一个方程。</p>
+<li><p>通过整理，$X^TX\theta = X^TY$ ，两边同时左乘 $(X^TX)^{-1}$ 可得：$\theta = (X^TX)^{-1}X^TY$ ，这样就求出了 参数向量 $\theta$ ，不用像代数法一个一个求导，而且还要求一个方程组。</p>
 </li>
 </ol>
 <h3 id="4-最小二乘法的局限性"><a href="#4-最小二乘法的局限性" class="headerlink" title="4. 最小二乘法的局限性"></a>4. 最小二乘法的局限性</h3><ol>
