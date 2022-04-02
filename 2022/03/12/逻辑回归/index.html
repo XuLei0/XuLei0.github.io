@@ -403,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-04-02
                 </div>
                 
 
@@ -442,7 +442,7 @@
 <p>​    $h_{\theta}(x) = \frac{1}{1+e^{-x\theta}}$ </p>
 <p>$x$ 为样本输入，$h_{\theta}(x)$ 为模型输出，可以理解为某一类别的概率，而 $\theta$ 为模型参数，对于二元分类，如果 $h_{\theta}(x) &gt; 0.5$，即 $x\theta &gt; 0$，那么 y 预测为 1，如果 $h_{\theta}(x) &lt; 0.5$ ，即 $x\theta &lt; 0$，那么 y 预测为 0 。</p>
 <p>逻辑回归的矩阵形式：</p>
-<p>$h_{\theta}(X) = \frac{1}{1+e^{-X\theta}}$，$h_{\theta}(X)$ 是模型输出，是 mx1 的维度，$X$ 是特征矩阵，是 mxn 的维度，$\theta$ 是分类模型的待求系数，是 nx1 的维度。</p>
+<p>$h_{\theta}(X) = \frac{1}{1+e^{-X\theta}}$ , $h_{\theta}(X)$ 是模型输出，是 mx1 的维度，$X$ 是特征矩阵，是 mxn 的维度，$\theta$ 是分类模型的待求系数，是 nx1 的维度。</p>
 <h2 id="3-二元逻辑回归的损失函数"><a href="#3-二元逻辑回归的损失函数" class="headerlink" title="3. 二元逻辑回归的损失函数"></a>3. 二元逻辑回归的损失函数</h2><p>​    线性回归的输出是连续值，所以可以使用平方差来定义损失函数，但是逻辑回归的输出不是连续值，所以平方差损失函数不适合逻辑回归，不过可以使用最大似然法推导出损失函数。</p>
 <p>​    对于二元逻辑回归，假设输出 y 只有 0 和 1两类。</p>
 <p>​    $P(y=1|x,\theta) = h_{\theta}(x)$</p>
@@ -453,7 +453,7 @@
 <p>损失函数：$J(\theta) = -lnL(\theta) = -\sum_{i=1}^{m}(y^{(i)}log(h_{\theta}(x^{(i)}))+(1-y^{(i)})log(1-h_{\theta}(x^{(i)})))$   </p>
 <p>损失函数的矩阵表式：$J(\theta) = -Y^Tlogh_{\theta}(X) - (E-Y)^Tlog(E-h_{\theta}(X))$，其中 E 为全 1 向量。</p>
 <h2 id="4-二元逻辑回归损失函数的优化方法"><a href="#4-二元逻辑回归损失函数的优化方法" class="headerlink" title="4. 二元逻辑回归损失函数的优化方法"></a>4. 二元逻辑回归损失函数的优化方法</h2><p>​    这里只介绍梯度下降法</p>
-<p>$\frac{\partial}{\partial\theta} = X^T[\frac{1}{h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(-Y)] + X^T[\frac{1}{E-h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(E-Y)]$ </p>
+<p>$\frac{\partial}{\partial\theta}J(\theta) = X^T[\frac{1}{h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(-Y)] + X^T[\frac{1}{E-h_{\theta}(X)}\odot h_{\theta}(X)\odot(E-h_{\theta}(X))\odot(E-Y)]$ </p>
 <p>简化为：</p>
 <p>$\frac{\partial}{\partial\theta}J(\theta) = X^T(h_{\theta}(X)-Y)$</p>
 <p>迭代公式为：</p>
