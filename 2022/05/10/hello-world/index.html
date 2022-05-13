@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="特征工程之特征选择, 程序员">
+    <meta name="keywords" content="Hello World, 程序员">
     <meta name="description" content="llxll的博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>特征工程之特征选择 | llXll</title>
+    <title>Hello World | llXll</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/awesome/css/all.css">
@@ -250,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">特征工程之特征选择</h1>
+                    <h1 class="description center-align post-title">Hello World</h1>
                 </div>
             </div>
         </div>
@@ -369,25 +369,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">机器学习</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                机器学习
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -396,21 +383,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-05-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-05-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    73
                 </div>
                 
 
@@ -432,73 +419,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="特征工程之特征选择"><a href="#特征工程之特征选择" class="headerlink" title="特征工程之特征选择"></a>特征工程之特征选择</h1><p>在选择特征时，一般特征有两种来源，一是已经整理好的各种特征，这类特征我们要去找适合我们问题的特征，另一类是从这些整理好的特征中去寻找高级特征。</p>
-<h2 id="1-选择合适的特征"><a href="#1-选择合适的特征" class="headerlink" title="1. 选择合适的特征"></a>1. 选择合适的特征</h2><ol>
-<li>寻找专家，向他咨询哪些特征会对预测结果产生影响，不论影响的大小都要选择。</li>
-<li>在降维之前，可以使用特征工程的方法去选择出比较重要的特征，例如，方差选择法。</li>
-</ol>
-<p>​	选择特征一般有以下三种方法：</p>
-<ol>
-<li>过滤法：按照特征的发散性或者相关指标对各个特征进行评分，设定评分阈值，选择合适的特征，方差法就是过滤法的一种。</li>
-<li>包装法：根据目标函数，通常是预测效果评分，每次选择部分特征，或者排除部分特征。</li>
-<li>嵌入法：先使用某些机器学习的算法和模型进行训练，得到各个特征的权值系数，根据权值的大小来选择特征。</li>
-</ol>
-<h3 id="1-1-过滤法选择特征"><a href="#1-1-过滤法选择特征" class="headerlink" title="1.1 过滤法选择特征"></a>1.1 过滤法选择特征</h3><ol>
-<li><p>方差选择法：计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征，使用 feature_selection 库中的 VarianceThreshold 类</p>
-<p>来选择特征。</p>
-</li>
-<li><p>相关系数法：计算各个特征对目标值的相关系数以及相关系数的 P 值，主要用于输出连续值的监督学习算法中，使用 </p>
-<p>feature_selection 库中的 SelectKBest 结合相关系数来选择特征。</p>
-</li>
-<li><p>卡方检验：可以检验某个特征分步和输出值之间的相关性，使用 feature_selection 库中的 SelectKBest 类结合卡方检验来选择特征。</p>
-</li>
-<li><p>互信息：从信息熵的角度分析各个特征和输出值之间的评分关系，互信息越大，说明该特征和输出值之间的相关性越大，越需要保留，</p>
-<p>使用 feature_selection 库中的 SelectKBest 结合最大信息系数来选择特征。</p>
-</li>
-</ol>
-<h3 id="1-2-包装法选择特征"><a href="#1-2-包装法选择特征" class="headerlink" title="1.2 包装法选择特征"></a>1.2 包装法选择特征</h3><ol>
-<li><p>递归特征消除法</p>
-<p>递归特征消除法使用一个基模型来进行多轮训练，每轮训练后，消除若干权值系数的特征，再基于新的特征集进行下一轮训练。对特征含有权重的预测模型(例如，线性模型对应参数coefficients)，RFE通过<strong>递归减少考察的特征集规模来选择特征</strong>。首先，预测模型在原始特征上训练，每个特征指定一个权重。之后，那些拥有最小绝对值权重的特征被踢出特征集。如此往复递归，直至剩余的特征数量达到所需的特征数量。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> RFE
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
-
-<span class="token comment" spellcheck="true">#递归特征消除法，返回特征选择后的数据</span>
-<span class="token comment" spellcheck="true">#参数estimator为基模型</span>
-<span class="token comment" spellcheck="true">#参数n_features_to_select为选择的特征个数</span>
-RFE<span class="token punctuation">(</span>estimator<span class="token operator">=</span>LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n_features_to_select<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h3 id="1-3-嵌入法选择特征"><a href="#1-3-嵌入法选择特征" class="headerlink" title="1.3 嵌入法选择特征"></a>1.3 嵌入法选择特征</h3><p>嵌入法也是用机器学习的方法来选择特征，但是它和RFE的区别是它不是通过不停的筛掉特征来进行训练，而是使用的都是特征全集。在sklearn中，使用SelectFromModel函数来选择特征。</p>
-<ol>
-<li>基于惩罚项的特征选择法</li>
-</ol>
-<p>​		最常用的是使用L1正则化和L2正则化来选择特征。当正则化系数大到一定程度时，部分特征系数会变成 0 ，当再增大，那么所有特征的系数都会趋于 0 ，但是我们会发现有些特征会先趋于 0 ，把这类特征筛选掉。基模型是逻辑回归模型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
- 
-<span class="token comment" spellcheck="true">#带L1和L2惩罚项的逻辑回归作为基模型的特征选择</span>
-<span class="token comment" spellcheck="true">#参数threshold为权值系数之差的阈值</span>
-SelectFromModel<span class="token punctuation">(</span>LR<span class="token punctuation">(</span>threshold<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> C<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>基于树模型的特征选择法</li>
-</ol>
-<p>​		树模型中GBDT也可用来作为基模型进行特征选择，使用feature_selection库的SelectFromModel类结合GBDT模型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> GradientBoostingClassifier
-
-<span class="token comment" spellcheck="true">#GBDT作为基模型的特征选择</span>
-SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-寻找高级特征"><a href="#2-寻找高级特征" class="headerlink" title="2 寻找高级特征"></a>2 寻找高级特征</h2><p>可以根据上面选择的初级特征来获得一些二级特征，例如已有 距离 和 时间 两个特征，可以得出 速度这个特征，还可以有三级、四级特征。</p>
-<p>寻找高级特征的方法：</p>
-<ul>
-<li>若干项特征加和： 我们假设你希望根据每日销售额得到一周销售额的特征。你可以将最近的7天的销售额相加得到。</li>
-<li>若干项特征之差： 假设你已经拥有每周销售额以及每月销售额两项特征，可以求一周前一月内的销售额。</li>
-<li>若干项特征乘积： 假设你有商品价格和商品销量的特征，那么就可以得到销售额的特征。</li>
-<li>若干项特征除商： 假设你有每个用户的销售额和购买的商品件数，那么就是得到该用户平均每件商品的销售额。</li>
-</ul>
-<p>当模型的效率得不到进一步提高时，可以考虑寻找高级特征。</p>
+                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
                 
             </div>
@@ -512,11 +445,7 @@ SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifie
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">机器学习</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -821,9 +750,48 @@ SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifie
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/05/10/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            XuLei
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/03/28/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E8%A1%A8%E8%BE%BE/">
                     <div class="card-image">
@@ -841,57 +809,8 @@ SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifie
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/26/Bagging%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/20.jpg" class="responsive-img" alt="Bagging与随机森林算法原理">
-                        
-                        <span class="card-title">Bagging与随机森林算法原理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
                             </span>
                         <span class="publish-author">
                             
@@ -1040,13 +959,6 @@ SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifie
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

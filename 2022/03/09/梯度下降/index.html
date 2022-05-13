@@ -451,7 +451,7 @@
 </li>
 </ol>
 <p><strong>2.3 梯度下降算法的描述：</strong></p>
-<p>​    首先需要一个待优化模型的假设函数 $f(\theta)$ 和损失函数 $J(\theta)$ ，其中 $\theta = (\theta_{1},\theta_{2}\dots \theta_{n})$ 。</p>
+<p>​	首先需要一个待优化模型的假设函数 $f(\theta)$ 和损失函数 $J(\theta)$ ，其中 $\theta = (\theta_{1},\theta_{2}\dots \theta_{n})$ 。</p>
 <ol>
 <li><p>确定当前位置损失函数的梯度，对于 $\theta_{i}$ 其梯度表达式为  $\frac{\partial}{\partial\theta_{i}}J(\theta_{0},\theta_{1}\dots\theta_{n})$ 。</p>
 </li>
@@ -471,7 +471,7 @@
 <li><p>归一化：由于数据中不同特征的取值范围可能相差很大，导致迭代过程缓慢，可以对特征数据归一化，也就是将特征进行如下处理$\frac{x-\bar{x}}{std(x)}$ ，其中 $\bar{x}$ 和 $std(x)$ 分别是该特征的平均值和标准差，这样该特征的期望就为 0 , 方差为 1，迭代速度就会得到加快。</p>
 </li>
 </ol>
-<p>​        <img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192615536.png" alt="没有进行归一化损失函数的变化"><img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192631031.png" alt="归一化后损失函数的变化"></p>
+<p>​		<img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192615536.png" alt="没有进行归一化损失函数的变化"><img src="/images/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/image-20220309192631031.png" alt="归一化后损失函数的变化"></p>
 <p>上图中 $\theta_{1}$ 的范围远大于 $\theta_{2}$ 的范围，所以 $\theta_{2}$ 的变化对损失函数的影响会很大，$\theta_{1}$ 的变化对损失函数影响很小，就会导致迭代过程曲曲折折，迭代缓慢，右图是经过归一化后损失函数的变化，迭代速度明显会快。</p>
 <h2 id="3-梯度下降法分类"><a href="#3-梯度下降法分类" class="headerlink" title="3. 梯度下降法分类"></a>3. 梯度下降法分类</h2><p><strong>批量梯度下降法（BGD）</strong></p>
 <p>就是所有样本都用于计算损失函数。</p>
