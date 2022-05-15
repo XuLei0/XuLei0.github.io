@@ -1,1252 +1,722 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********  Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  
-
-  
   <title>llXll</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="llxll的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="llXll">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="llXll">
-<meta property="og:description" content="llxll的博客">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="XuLei">
-<meta property="article:tag" content="程序员">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="llXll" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="llXll">
+    <meta name="author" content="XuLei">
+    <meta name="description" content="欢迎来到llxll的博客" />
+    <meta name="keywords" content="程序员" />
 
-<meta name="generator" content="Hexo 5.4.1">
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="llXll" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">llXll</a>
-      </h1>
-      
+<!--
+<body class="home-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Python学习/" class="animsition-link">Python学习<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/机器学习/" class="animsition-link">机器学习<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(3)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">llXll</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- // .col-md-12 -->
+        </div>
+        <div class="herofade beige-dk"></div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-滑动窗口" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/15/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="article-date">
-  <time datetime="2022-05-15T12:19:55.000Z" itemprop="datePublished">2022-05-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/15/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><h3 id="代码框架"><a href="#代码框架" class="headerlink" title="代码框架"></a>代码框架</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">slidingWindow</span><span class="token punctuation">(</span>string s<span class="token punctuation">,</span> string t<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    HashMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span> need <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span><span class="token punctuation">;</span>
-    HashMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span> window <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 先将 need 填完，need是固定的</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token operator">:</span>t<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        need<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>need<span class="token punctuation">.</span><span class="token function">getOrDefault</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> valid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>right <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">char</span> c <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        right<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 对窗口window进行更新</span>
-        
-        <span class="token keyword">while</span><span class="token punctuation">(</span>windows need shrink<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">char</span> d <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            left<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">// 对窗口进行更新</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ol>
-<li>最小覆盖子串（76）</li>
-</ol>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-window-substring/">https://leetcode.cn/problems/minimum-window-substring/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> String <span class="token function">minWindow</span><span class="token punctuation">(</span>String s<span class="token punctuation">,</span> String t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        HashMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span> need <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        HashMap<span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span> window <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span>Character<span class="token punctuation">,</span>Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token operator">:</span>t<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            need<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>need<span class="token punctuation">.</span><span class="token function">getOrDefault</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> start <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">=</span> Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span>
-        <span class="token keyword">int</span> valid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>right <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">char</span> c <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            right<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                window<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>window<span class="token punctuation">.</span><span class="token function">getOrDefault</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 加入到窗口中</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>       <span class="token comment" spellcheck="true">// 如果满足need，valid++</span>
-                    valid<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>valid<span class="token operator">==</span>need<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>         <span class="token comment" spellcheck="true">// 收缩</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token operator">&lt;</span>len<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    start <span class="token operator">=</span> left<span class="token punctuation">;</span>
-                    len <span class="token operator">=</span> right <span class="token operator">-</span> left<span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">char</span> d <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                left<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        valid<span class="token operator">--</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    window<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span>window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> len<span class="token operator">==</span>Integer<span class="token punctuation">.</span>MAX_VALUE<span class="token operator">?</span><span class="token string">""</span><span class="token operator">:</span>s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span>start<span class="token operator">+</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/15/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" data-id="cl37bprzs0017t0v08kendvhb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-差分数组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/15/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/" class="article-date">
-  <time datetime="2022-05-15T11:18:42.000Z" itemprop="datePublished">2022-05-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/15/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/">差分数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="差分数组"><a href="#差分数组" class="headerlink" title="差分数组"></a>差分数组</h1><h3 id="适用问题"><a href="#适用问题" class="headerlink" title="适用问题"></a>适用问题</h3><p>​	频繁地对原始数组的某个区间的元素进行增减。</p>
-<h3 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 构造差分数组</span>
-<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> diff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
-diff<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 通过差分数组修改原始数组</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">increment</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span><span class="token keyword">int</span> j<span class="token punctuation">,</span><span class="token keyword">int</span> val<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> val<span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        diff<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-=</span> val<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 返回修改后的原始数组</span>
-<span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">result</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> diff<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> res<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ol>
-<li><p>区间加法（370）</p>
-<p>假设有一个长度为 n 的数组，初始情况下所有的数字均为0，你将会被给出 k 个更新的操作。其中，每个操作会被表示为一个三元组[startindex, endindex, inc]，目的是修改原始数组的 [startindex，endindex] 的值。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getModifiedArray</span><span class="token punctuation">(</span><span class="token keyword">int</span> length<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> updatesets<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> diff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> update<span class="token operator">:</span>updates<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> left <span class="token operator">=</span> update<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> right <span class="token operator">=</span> update<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> val <span class="token operator">=</span> update<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        diff<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">+=</span> val<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            diff<span class="token punctuation">[</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-=</span>val<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> diff<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>航班预定统计（1109）</p>
-</li>
-</ol>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/corporate-flight-bookings/">https://leetcode.cn/problems/corporate-flight-bookings/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">corpFlightBookings</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bookings<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> diff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> book<span class="token operator">:</span>bookings<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> start <span class="token operator">=</span> book<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> end <span class="token operator">=</span> book<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> val <span class="token operator">=</span> book<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            diff<span class="token punctuation">[</span>start<span class="token punctuation">]</span> <span class="token operator">+=</span> val<span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>end<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                diff<span class="token punctuation">[</span>end<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-=</span>val<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span> 
-        res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> diff<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​	3. 拼车（1094）</p>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/car-pooling/">https://leetcode.cn/problems/car-pooling/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">carPooling</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> trips<span class="token punctuation">,</span> <span class="token keyword">int</span> capacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> diff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> trip<span class="token operator">:</span>trips<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> start <span class="token operator">=</span> trip<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> end <span class="token operator">=</span> trip<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 因为trip[2]人已经下车了</span>
-            <span class="token keyword">int</span> val <span class="token operator">=</span> trip<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            diff<span class="token punctuation">[</span>start<span class="token punctuation">]</span> <span class="token operator">+=</span> val<span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>end<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                diff<span class="token punctuation">[</span>end<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-=</span> val<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> diff<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> m <span class="token operator">=</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>diff<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>m<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                m <span class="token operator">=</span> res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> m<span class="token operator">></span>capacity<span class="token operator">?</span><span class="token boolean">false</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/15/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/" data-id="cl37bprzl000mt0v006dw972e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前缀和数组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/15/%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
-  <time datetime="2022-05-15T10:32:45.000Z" itemprop="datePublished">2022-05-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/15/%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/">前缀和数组</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="前缀和数组"><a href="#前缀和数组" class="headerlink" title="前缀和数组"></a>前缀和数组</h1><h3 id="适用问题"><a href="#适用问题" class="headerlink" title="适用问题"></a>适用问题</h3><p>原始数组不会被修改的情况下，频繁的查询某个区间的累加和。</p>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ol>
-<li>区域和检索 - 数组不可变（303）</li>
-</ol>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-immutable/">https://leetcode.cn/problems/range-sum-query-immutable/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">NumArray</span><span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> preSum<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token function">NumArray</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        preSum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>nums<span class="token punctuation">.</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>preSum<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            preSum<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> preSum<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> num<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">/* 查询闭区间[left,right]的累加和 */</span>
-    Public <span class="token keyword">int</span> <span class="token function">sumRange</span><span class="token punctuation">(</span><span class="token keyword">int</span> left<span class="token punctuation">,</span><span class="token keyword">int</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> preSum<span class="token punctuation">[</span>right<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> preSum<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>二维区域和检索 - 矩阵不变性（304）</li>
-</ol>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">https://leetcode.cn/problems/range-sum-query-2d-immutable/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">NumMatrix</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> perfix<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token function">NumMatrix</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        perfix <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>matrix<span class="token punctuation">.</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>matrix<span class="token punctuation">.</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                perfix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> perfix<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span> perfix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> perfix<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> matrix<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sumRegion</span><span class="token punctuation">(</span><span class="token keyword">int</span> row1<span class="token punctuation">,</span> <span class="token keyword">int</span> col1<span class="token punctuation">,</span> <span class="token keyword">int</span> row2<span class="token punctuation">,</span> <span class="token keyword">int</span> col2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> perfix<span class="token punctuation">[</span>row2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>col2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> perfix<span class="token punctuation">[</span>row1<span class="token punctuation">]</span><span class="token punctuation">[</span>col2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> perfix<span class="token punctuation">[</span>row2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>col1<span class="token punctuation">]</span> <span class="token operator">+</span> perfix<span class="token punctuation">[</span>row1<span class="token punctuation">]</span><span class="token punctuation">[</span>col1<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="3">
-<li>和为 k 的子数组（560）</li>
-</ol>
-<p>​	<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subarray-sum-equals-k/">https://leetcode.cn/problems/subarray-sum-equals-k/</a></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">subarraySum</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span><span class="token keyword">int</span> k<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        HashMap<span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>Integer<span class="token operator">></span> perSum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        perSum<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> res<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>sum_i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            sum_i <span class="token operator">+=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> sum_j <span class="token operator">=</span> sum_i<span class="token operator">-</span>k<span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>perSum<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>sum_j<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                res <span class="token operator">+=</span> perSum<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>sum_j<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            perSum<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>sum_i<span class="token punctuation">,</span>perSum<span class="token punctuation">.</span><span class="token function">getOrDefault</span><span class="token punctuation">(</span>sum_i<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/15/%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/" data-id="cl37bprzk000ht0v08eoregkj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-特征工程之特征表达" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/28/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E8%A1%A8%E8%BE%BE/" class="article-date">
-  <time datetime="2022-03-28T10:47:00.000Z" itemprop="datePublished">2022-03-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/28/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E8%A1%A8%E8%BE%BE/">特征工程之特征表达</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="特征工程之特征表达"><a href="#特征工程之特征表达" class="headerlink" title="特征工程之特征表达"></a>特征工程之特征表达</h1><h2 id="1-缺失值处理"><a href="#1-缺失值处理" class="headerlink" title="1. 缺失值处理"></a>1. 缺失值处理</h2><p>数据有缺失值是很常见的，但是在训练模型时，数据要求不能有缺失值，处理方法如下：</p>
-<ol>
-<li>针对连续值，可以取所有样本的平均值来填充，或者取所有样本的中位数来填充</li>
-<li>如果是离散值，可以取样本中出现最频繁的特征值来填充</li>
-</ol>
-<h2 id="2-特殊的特征处理"><a href="#2-特殊的特征处理" class="headerlink" title="2. 特殊的特征处理"></a>2. 特殊的特征处理</h2><p>有些特征的取值比较特殊，例如日期时间，该如何表达呢？</p>
-<ol>
-<li>时间差值法，计算所有样本时间到未来某一个时间的数值差距，这个差距是 UTC 的时间差，从而将时间特征转化为连续值</li>
-<li>根据时间所在的年、月、日、星期几，将一个时间特征转化为多个离散的特征，这种方法在分析具有明显时间趋势的问题上比较好用</li>
-<li>根据时间的新旧得到一个权重值，例如，三个月前是某个权重，最近一个月是一个权重，最近一周又是另一个权重</li>
-</ol>
-<p>对地理特征的处理</p>
-<ol>
-<li>离散值，可以将一个位置处理成多个特征，比如，城市特征，区县特征，接到特征等</li>
-<li>连续值，但如果我们需要判断用户分布的区域，则一般处理成连续值会比较好，可以转化为地里的经度和纬度</li>
-</ol>
-<h2 id="3-离散特征连续化处理"><a href="#3-离散特征连续化处理" class="headerlink" title="3. 离散特征连续化处理"></a>3. 离散特征连续化处理</h2><p>有很多机器学习算法只能处理连续特征，不能处理离散特征，比如线性回归，逻辑回归等。</p>
-<ol>
-<li>独热编码：这是最常见的处理方法，比如某特征的取值是高、中、低，那么我们就可以创建三个取值为 0 或者 1 的特征，将高编码为 1, 0, 0 这样三个特征，中编码为 0，1，0 这三个特征，低编码为 0，0，1 这三个特征，也就是说之前的一个特征被我们转化为三个特征，sklearn 中的 OneHotEncoder 可以进行独热编码。</li>
-<li>特征嵌入 embedding ，这个方法一般用于深度学习中，比如对于用户 ID 这个特征，如果使用独热编码，则维度会爆炸，如果使用特征嵌入维度就会低很多，对于每个要嵌入的特征，我们会有一个嵌入矩阵，这个矩阵的行很大，对应该特征的数目，比如用户 ID，如果有 100 万个，那么嵌入的特征矩阵的行就是100万个，但是列一般比较小，比如取 20，这样这个用户 ID 特征就转化为 20 维，进而参与深度学习模型，在 tensorflow 中，我们可以先随机初始化一个特征嵌入矩阵，对于每个用户，可以用 tf.nn.embedding_lookup找到该用户的特征嵌入向量，特征嵌入矩阵会在反向传播的迭代中优化。</li>
-<li>在自然语言处理中，也可以用 word2vec 将词转换为词向量，进而可以进行一些连续值的处理。</li>
-</ol>
-<h2 id="4-离散特征的离散化处理"><a href="#4-离散特征的离散化处理" class="headerlink" title="4. 离散特征的离散化处理"></a>4. 离散特征的离散化处理</h2><p>离散特征有时候也不能直接使用，需要进行转化</p>
-<ol>
-<li><p>上一节介绍的是独热编码，这一节的方法是 虚拟编码 dummy coding，它和独热编码类似，但是它的特点是，如果该特征有 N 个取值，只需要 N-1 个新的 0 和 1 的特征来代替，而独热编码则会用 N 个新特征来代替，例如 高、中、低，只需要两个特征来代替，00 代表高，10 代表中，01 代表低，一般还是使用独热编码。</p>
-</li>
-<li><p>有的时候可以修改特征，例如 原始特征有 春夏秋冬，可以将其修改为 旺季和淡季这样的二值特征。也可以变成三值特征或四值特征。</p>
-</li>
-<li><p>对于分类问题的输出，一般需要用 sklearn 的 LabelEncoder 将其转化为 $0,1,2\dots$ 这样的类别标签值。</p>
-</li>
-</ol>
-<h2 id="5-连续特征离散化处理"><a href="#5-连续特征离散化处理" class="headerlink" title="5. 连续特征离散化处理"></a>5. 连续特征离散化处理</h2><ol>
-<li>根据阈值进行分组，例如年龄，0-20 分一类，20-40分一类，后面依次类推。</li>
-<li>使用 GBDT 方法，GBDT先将连续值转化为离散值，那么如何转化呢，例如，如果使用样本集中所有的连续值和标签来训练 GBDT，训练出的GBDT有两棵决策树，第一棵决策树有 三个 叶子节点，第二棵决策树有四个叶子节点，一个样本落在第一棵决策树的第二个叶子节点，落在第二棵决策树的第四个叶子节点，那么这个样本的连续值编码为离散值则为 （0，1，0，0，0，0，1）一共七个离散的特征，可以使用 sklearn 中的 GradientBoostingClassifier 的 apply 方法很方便的得到样本的离散化后的特征，然后使用独热编码即可。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/28/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E8%A1%A8%E8%BE%BE/" data-id="cl37bprzt001at0v012hi47ka" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-特征工程之特征选择" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/27/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/" class="article-date">
-  <time datetime="2022-03-27T08:30:49.000Z" itemprop="datePublished">2022-03-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/27/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/">特征工程之特征选择</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="特征工程之特征选择"><a href="#特征工程之特征选择" class="headerlink" title="特征工程之特征选择"></a>特征工程之特征选择</h1><p>在选择特征时，一般特征有两种来源，一是已经整理好的各种特征，这类特征我们要去找适合我们问题的特征，另一类是从这些整理好的特征中去寻找高级特征。</p>
-<h2 id="1-选择合适的特征"><a href="#1-选择合适的特征" class="headerlink" title="1. 选择合适的特征"></a>1. 选择合适的特征</h2><ol>
-<li>寻找专家，向他咨询哪些特征会对预测结果产生影响，不论影响的大小都要选择。</li>
-<li>在降维之前，可以使用特征工程的方法去选择出比较重要的特征，例如，方差选择法。</li>
-</ol>
-<p>​	选择特征一般有以下三种方法：</p>
-<ol>
-<li>过滤法：按照特征的发散性或者相关指标对各个特征进行评分，设定评分阈值，选择合适的特征，方差法就是过滤法的一种。</li>
-<li>包装法：根据目标函数，通常是预测效果评分，每次选择部分特征，或者排除部分特征。</li>
-<li>嵌入法：先使用某些机器学习的算法和模型进行训练，得到各个特征的权值系数，根据权值的大小来选择特征。</li>
-</ol>
-<h3 id="1-1-过滤法选择特征"><a href="#1-1-过滤法选择特征" class="headerlink" title="1.1 过滤法选择特征"></a>1.1 过滤法选择特征</h3><ol>
-<li><p>方差选择法：计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征，使用 feature_selection 库中的 VarianceThreshold 类</p>
-<p>来选择特征。</p>
-</li>
-<li><p>相关系数法：计算各个特征对目标值的相关系数以及相关系数的 P 值，主要用于输出连续值的监督学习算法中，使用 </p>
-<p>feature_selection 库中的 SelectKBest 结合相关系数来选择特征。</p>
-</li>
-<li><p>卡方检验：可以检验某个特征分步和输出值之间的相关性，使用 feature_selection 库中的 SelectKBest 类结合卡方检验来选择特征。</p>
-</li>
-<li><p>互信息：从信息熵的角度分析各个特征和输出值之间的评分关系，互信息越大，说明该特征和输出值之间的相关性越大，越需要保留，</p>
-<p>使用 feature_selection 库中的 SelectKBest 结合最大信息系数来选择特征。</p>
-</li>
-</ol>
-<h3 id="1-2-包装法选择特征"><a href="#1-2-包装法选择特征" class="headerlink" title="1.2 包装法选择特征"></a>1.2 包装法选择特征</h3><ol>
-<li><p>递归特征消除法</p>
-<p>递归特征消除法使用一个基模型来进行多轮训练，每轮训练后，消除若干权值系数的特征，再基于新的特征集进行下一轮训练。对特征含有权重的预测模型(例如，线性模型对应参数coefficients)，RFE通过<strong>递归减少考察的特征集规模来选择特征</strong>。首先，预测模型在原始特征上训练，每个特征指定一个权重。之后，那些拥有最小绝对值权重的特征被踢出特征集。如此往复递归，直至剩余的特征数量达到所需的特征数量。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> RFE
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
-
-<span class="token comment" spellcheck="true">#递归特征消除法，返回特征选择后的数据</span>
-<span class="token comment" spellcheck="true">#参数estimator为基模型</span>
-<span class="token comment" spellcheck="true">#参数n_features_to_select为选择的特征个数</span>
-RFE<span class="token punctuation">(</span>estimator<span class="token operator">=</span>LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n_features_to_select<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h3 id="1-3-嵌入法选择特征"><a href="#1-3-嵌入法选择特征" class="headerlink" title="1.3 嵌入法选择特征"></a>1.3 嵌入法选择特征</h3><p>嵌入法也是用机器学习的方法来选择特征，但是它和RFE的区别是它不是通过不停的筛掉特征来进行训练，而是使用的都是特征全集。在sklearn中，使用SelectFromModel函数来选择特征。</p>
-<ol>
-<li>基于惩罚项的特征选择法</li>
-</ol>
-<p>​		最常用的是使用L1正则化和L2正则化来选择特征。当正则化系数大到一定程度时，部分特征系数会变成 0 ，当再增大，那么所有特征的系数都会趋于 0 ，但是我们会发现有些特征会先趋于 0 ，把这类特征筛选掉。基模型是逻辑回归模型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
- 
-<span class="token comment" spellcheck="true">#带L1和L2惩罚项的逻辑回归作为基模型的特征选择</span>
-<span class="token comment" spellcheck="true">#参数threshold为权值系数之差的阈值</span>
-SelectFromModel<span class="token punctuation">(</span>LR<span class="token punctuation">(</span>threshold<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> C<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
-<li>基于树模型的特征选择法</li>
-</ol>
-<p>​		树模型中GBDT也可用来作为基模型进行特征选择，使用feature_selection库的SelectFromModel类结合GBDT模型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> GradientBoostingClassifier
-
-<span class="token comment" spellcheck="true">#GBDT作为基模型的特征选择</span>
-SelectFromModel<span class="token punctuation">(</span>GradientBoostingClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-寻找高级特征"><a href="#2-寻找高级特征" class="headerlink" title="2 寻找高级特征"></a>2 寻找高级特征</h2><p>可以根据上面选择的初级特征来获得一些二级特征，例如已有 距离 和 时间 两个特征，可以得出 速度这个特征，还可以有三级、四级特征。</p>
-<p>寻找高级特征的方法：</p>
-<ul>
-<li>若干项特征加和： 我们假设你希望根据每日销售额得到一周销售额的特征。你可以将最近的7天的销售额相加得到。</li>
-<li>若干项特征之差： 假设你已经拥有每周销售额以及每月销售额两项特征，可以求一周前一月内的销售额。</li>
-<li>若干项特征乘积： 假设你有商品价格和商品销量的特征，那么就可以得到销售额的特征。</li>
-<li>若干项特征除商： 假设你有每个用户的销售额和购买的商品件数，那么就是得到该用户平均每件商品的销售额。</li>
-</ul>
-<p>当模型的效率得不到进一步提高时，可以考虑寻找高级特征。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/" data-id="cl37bprzu001ft0v0a3622z2y" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Bagging与随机森林算法原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/26/Bagging%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" class="article-date">
-  <time datetime="2022-03-26T12:08:30.000Z" itemprop="datePublished">2022-03-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/26/Bagging%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/">Bagging与随机森林算法原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Bagging与随机森林算法原理"><a href="#Bagging与随机森林算法原理" class="headerlink" title="Bagging与随机森林算法原理"></a>Bagging与随机森林算法原理</h1><p>随机采样：从训练集里面采集固定个数的样本，但是每采集一个样本后，都将样本放回。就是说，之前采集的样本仍有可能继续被采集到，</p>
-<p>Bagging算法一般会随机采集和训练样本数一样的个数的样本。这样得到的采样集和训练集样本的个数相同，但是样本内容不同。</p>
-<p>对于某一个样本，在m个样本里，每次被采集的概率是 $\frac{1}{m}$，不被采集的概率是 $1-\frac{1}{m}$，如果 m 次采样都没有被采集中的概率为$(1-m)^{m}$ </p>
-<p>，当 $m\longrightarrow \infty$ 时，$(1-\frac{1}{m})^{m}\longrightarrow\frac{1}{e}\simeq 0.368$ ，也就是说，在 bagging 每次采样中，训练集中大约有 36.8% 的数据没有被采样集采集。</p>
-<p>bagging 对弱学习器没有限制，这和 Adaboost 一样，但是最常用的一般也是决策树和神经网络。</p>
-<p>bagging 的结合策略也比较简单，对于分类问题，通常使用投票法，得到最多票数的类别或者类别之一为最终的模型输出。对于回归问</p>
-<p>题，通常使用简单平均法，对 $T$ 个弱学习器得到的回归结果进行算术平均得到最终的模型输出。</p>
-<h2 id="1-bagging算法流程"><a href="#1-bagging算法流程" class="headerlink" title="1. bagging算法流程"></a>1. bagging算法流程</h2><p>输入：样本集 $D = {(x_{1},y_{1}),(x_{2},y_2),\dots(x_{m},y_{m})}$，弱学习器算法，弱学习器迭代次数 $T$ </p>
-<p>输出：最终的强分类器 $f(x)$</p>
-<p>（1）对于 $t=1,2\dots,T$</p>
-<p>a）对训练集进行第 $t$ 次采样，共采集 $m$ 次，得到包含 $m$ 个样本的采样集 $D_{t}$</p>
-<p>b）用采样集 $D_{t}$ 训练第 $t$ 个弱学习器 $G_{t}(x)$</p>
-<p>（2）如果是分类算法预测，则 $T$ 个弱学习器投出最多的票数的类别或者类别之一为最终的类别。如果是回归算法，$T$ 个弱学习器得到的回归结果进行算术平均得到的值为最终的模型输出</p>
-<h2 id="2-随机森林算法（RF）"><a href="#2-随机森林算法（RF）" class="headerlink" title="2. 随机森林算法（RF）"></a>2. 随机森林算法（RF）</h2><p>​	RF思想仍是Bagging算法，只不过多加了些限制		</p>
-<ul>
-<li>RF 使用了 CART 决策树作为弱学习器。</li>
-<li>在决策树的建立上做了改进，对于<strong>普通的决策树</strong>来说，会在所有 n 个样本特征中去选择一个最优的特征来做决策树的左右子树的划分，RF 则是随机选择一部分特征，特征数假设为 $n_{sub}$ ，然后在随机选择的 $n_{sub}$ 个样本特征中，选择一个最优子树来做决策树的左右子树的划分，进一步增强了模型的泛化能力。$n_{sub}$ 越小，模型越健壮，当然此时对于训练集的拟合程度会变差，也就是说 $n_{sub}$ 越小，模型的方差（测试集的误差）会减小，但是偏差（训练集的误差）会增大，我们需要通过交叉验证法调参获取一个合适的 $n_{sub}$ 的值。</li>
-</ul>
-<p>​	<strong>RF算法：</strong></p>
-<p>​	输入：样本集 $D={(x_{1},y_{1}),(x_{2},y_{2})\dots(x_{m},y_{m})}$，弱分类器的迭代次数 $T$</p>
-<p>​	输出：最终的强分类器 $f(x)$ </p>
-<p>​	（1）对于 $t=1,2\dots,T$</p>
-<p>​	a）对训练集进行第 $t$ 次随机采样，共采集 $m$ 次，得到包含 $m$ 个样本的采样集 $D_{t}$</p>
-<p>​	b）用采样集去训练第 $t$ 个决策树模型 $G_{t}(x)$，在训练决策树模型的结点的时候，从样本特征中随机选择一部分样本特征，然后再选择一个最优特征做决策树的左右子树的划分</p>
-<p>​	（2）如果是分类预测，则 $T$ 个弱学习器投出最多的票数或最多的票数之一的类别为最终类别，如果是回归算法，则将 $T$ 个弱学习器进行算术平均求得的值作为最终的输出</p>
-<h2 id="3-随机森林小结"><a href="#3-随机森林小结" class="headerlink" title="3. 随机森林小结"></a>3. 随机森林小结</h2><p>对于数据量比较大的情况，RF算法很有用</p>
-<p><strong>RF优点：</strong></p>
-<p>（1）训练可以高度并行化，对于大数据时代的大样本训练速度有优势</p>
-<p>（2）由于可以随机选择决策树结点划分特征，这样在样本特征维度很高的时候，仍可以高效的训练模型</p>
-<p>（3）在训练后，可以给出各个特征对于输出的重要性</p>
-<p>（4）由于是随机采样，训练出的模型方差小，泛化能力强</p>
-<p>（5）相对于 Boosting 系列的 Adaboost 和 GBDT，RF实现比较简单</p>
-<p>（6）对部分特征缺失不敏感</p>
-<p><strong>RF缺点：</strong></p>
-<p>（1）在某些噪音比较大的样本集上，RF 模型容易陷入过拟合</p>
-<p>（2）取值划分比较多的特征容易对 RF 的决策产生更大的影响，从而影响拟合模型的效果</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/Bagging%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" data-id="cl37bprzd0003t0v0fdso5grk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-梯度提升树算法原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/25/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%A0%91%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" class="article-date">
-  <time datetime="2022-03-25T03:18:15.000Z" itemprop="datePublished">2022-03-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%A0%91%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/">梯度提升树算法原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="梯度提升树（GBDT）算法"><a href="#梯度提升树（GBDT）算法" class="headerlink" title="梯度提升树（GBDT）算法"></a>梯度提升树（GBDT）算法</h1><h2 id="1-GBDT概述"><a href="#1-GBDT概述" class="headerlink" title="1. GBDT概述"></a>1. GBDT概述</h2><p>​			Adaboost 是利用前一轮弱学习器的误差率来更新训练集的权重，这样一轮轮迭代下去。GBDT也是如此，也是用前向分步算法，但是弱学习器限定为 CART 树，同时迭代的方式也和 Adaboost 算法不同。</p>
-<p>​			GBDT 对于前一轮得到的强学习器 $f_{t-1}(x)$，下一轮旨在要学习到一个弱学习器 $h_{t}(x)$ ，让本轮的损失函数 $L(y,f_{t}(x)) = L(y,f_{t-1}(x)+h_{t}(x))$ 最小，也就是说本轮迭代产生的 弱学习器，要让样本的损失函数尽可能的小。</p>
-<p>​			<strong>问题：</strong> 损失函数各种各样，残差不好计算，损失函数的拟合不好度量。</p>
-<h2 id="2-GBDT-的负梯度拟合"><a href="#2-GBDT-的负梯度拟合" class="headerlink" title="2. GBDT 的负梯度拟合"></a>2. GBDT 的负梯度拟合</h2><p>第 $t$ 轮，第 $i$ 个样本的损失函数的负梯度表示为：</p>
-<p>$r_{ti} = -[\frac{\partial L(y_{i},f(x_{i}))}{\partial f(x_{i})}]<em>{f(x)=f</em>{t-1}(x)}$ </p>
-<p>$y_{i}$ 是样本的输出值，$f(x)$ 为 $t-1$ 轮学到的强学习器 </p>
-<p>然后利用 $(x_{i},r_{ti}),i=1,2\dots m$ 我们可以拟合一棵 CART 回归树，得到第 $t$ 棵回归树，其对应的叶子节点区域为 $R_{tj},j=1,2\dots J$ , $J$ 为</p>
-<p>叶子结点的个数  </p>
-<p>对每一个叶子结点里的样本，我们求出使损失函数最小，也就是拟合叶子节点最好的输出值 $c_{tj}$ 如下：</p>
-<p>$c_{tj} = argmin_{c}\sum_{x_{i}\in R_{tj}}L(y_{i},f_{t-1}(x)+c)$</p>
-<p>之前在求回归问题时，使损失函数最小的那个值 $c_{tj}$ 是叶子结点里所有样本的平均值（平方差损失函数），现在损失函数普遍化，不一定是</p>
-<p>平方差损失函数</p>
-<p>所以得到本轮的决策树拟合函数为：</p>
-<p>$h_{t}(x) = \sum_{j=1}^{J}c_{tj}I(x\in R_{tj})$</p>
-<p>所以本轮最终得到的强学习器表示为：</p>
-<p>$f_{t}(x) = f_{t-1}(x) + \sum_{j=1}^{J}c_{tj}I(x \in R_{tj})$</p>
-<h2 id="3-GBDT-回归算法"><a href="#3-GBDT-回归算法" class="headerlink" title="3. GBDT 回归算法"></a>3. GBDT 回归算法</h2><p>输入：训练集样本，$T((x_{1},y_{1}),(x_{2},y_{2}),\dots(x_{m},y_{m}))$ ，最大迭代次数 $T$ , 损失函数 $L$ </p>
-<p>输出：强学习器 $f(x)$</p>
-<p>（1）初始化弱学习器</p>
-<p>​			$f_{0}(x) = argmin_{c}\sum_{i=1}^{m}L(y_{i},c)$</p>
-<p>（2）迭代轮数 $t=1,2\dots T$，有</p>
-<p>​			a) 对样本 $i=1,2,\dots m$ ，计算负梯度</p>
-<p>​				$r_{ti} = -[\frac{\partial L(y_{i},f(x_{i}))}{\partial f(x_{i})}]$</p>
-<p>​			b) 利用 $(x_{i},r_{ti}), i=1,2\dots m$ ，拟合一棵 CART 回归树，其对应的叶子区域 为 $R_{tj},j=1,2\dots,J$ ，其中 $J$ 为叶子结点个数</p>
-<p>​			c) 计算每个叶子结点区域的最佳拟合值</p>
-<p>​				$c_{tj} = argmin_{c}\sum_{x_{i}\in R_{tj}}L(y_{i},f_{t-1}(x_{i})+c)$ </p>
-<p>​			d) 更新强学习器 </p>
-<p>​				$f_{t}(x) = f_{t-1}(x) + \sum_{j=1}^{J}c_{tj}I(x\in R_{tj})$</p>
-<p>​	 （3）得到强学习器 $f(x)$ 的表达式</p>
-<p>​				$f(x) = f_{T}(x) = f_{0}(x) + \sum_{t=1}^{T}\sum_{j=1}^{J}c_{tj}I(x\in R_{tj})$ </p>
-<h2 id="4-GBDT分类算法"><a href="#4-GBDT分类算法" class="headerlink" title="4. GBDT分类算法"></a>4. GBDT分类算法</h2><p>​			GBDT 的分类算法思想上和GBDT回归算法一样，但是分类问题的样本输出是离散值，无法去拟合类别输出的误差。</p>
-<p>解决这个问题，主要有两个方法：</p>
-<ul>
-<li>使用指数损失函数，此时的 GBDT 就是 Adaboost 算法</li>
-<li>利用对数似然函数，使用类别预测的概率值和真实概率值的差来拟合损失，分为 二元分类和多元分类</li>
-</ul>
-<h3 id="4-1-二元-GBDT-分类算法"><a href="#4-1-二元-GBDT-分类算法" class="headerlink" title="4.1 二元 GBDT 分类算法"></a>4.1 二元 GBDT 分类算法</h3><p>​		损失函数为：</p>
-<p>​		$L(y,f(x)) = log(1+exp(-yf(x)))$</p>
-<p>​		其中 $y\in{-1,+1}$，则此时负梯度误差为：</p>
-<p>​		$r_{ti} = -\left[ \frac{\partial L(y,f(x_{i}))}{\partial f(x_{i})} \right ]<em>{f(x)=f</em>{t-1}(x)}=y_{i}/(1+exp(y_{i}f(x_{i})))$  </p>
-<p>​		对于生成的决策树，我们各个叶子节点的最佳负梯度拟合值为：</p>
-<p>​		$c_{tj} = argmin_{c}\sum_{x_{i}\in R_{tj}}log(1+exp(-y_{i}(f_{t-1}(x_{i})+c)))$	</p>
-<p>​		上面的式子优化比较难，所以取近似值：</p>
-<p>​		$c_{tj} = \sum_{x_{i}\in R_{tj}}r_{ti}/\sum_{x_{i}\in R_{tj}}|r_{ti}|(1-|r_{ti}|)$ </p>
-<h3 id="4-2-多元-GBDT-分类算法"><a href="#4-2-多元-GBDT-分类算法" class="headerlink" title="4.2 多元 GBDT 分类算法"></a>4.2 多元 GBDT 分类算法</h3><p>​		损失函数为：</p>
-<p>​		$L(y,f(x)) = -\sum_{k=1}^{K}y_{k}log(p_{k}(x))$ </p>
-<p>​		样本输出类别为 k，那么 $y_{k}=1$，其余类别 $y_{k}=0$，类别 $k$ 的概率 $p_{k}(x)$ 的表达式为：</p>
-<p>​		$p_{k}(x) = exp(f_{k}(x))/\sum_{l=1}^{K}exp(f_{l}(x))$ </p>
-<p>​		根据以上两式求得负梯度误差为：</p>
-<p>​		$r_{til} = -\left [\frac{\partial L\left(y_{i},f(x_{i})\right)}{\partial f(x_{i})}\right]<em>{f</em>{k}(x)=f_{l,t-1}(x)}=y_{il}-p_{l,t-1}(x_{i})$ </p>
-<p>​		误差其实就是样本 $i$ 对应类别 $l$ 的真是概率和 $t-1$ 轮预测值的差值</p>
-<p>​		对于生成决策树的叶子结点，最佳的负梯度拟合值为：</p>
-<p>​		$c_{tjl} = argmin_{c_{jl}}\sum_{i=0}^{m}\sum_{k=1}^{K}L(y_{k},f_{t-1,l}(x)+\sum_{j=0}^{J}c_{jl}I(x_{i}\in R_{tjl}))$ </p>
-<p>​		可用下式近似替代：</p>
-<p>​		$c_{tjl} = \frac{K-1}{K}\frac{\sum_{x_{i}\in R_{tjl}}r_{til}}{\sum_{x_{i}\in R_{til}}|r_{til}|(1-|r_{til}|)}$</p>
-<p>​				</p>
-<p>​				 </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%A0%91%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" data-id="cl37bprzq0012t0v02hqjb4in" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Adaboost算法原理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/17/Adaboost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" class="article-date">
-  <time datetime="2022-03-17T10:56:19.000Z" itemprop="datePublished">2022-03-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/17/Adaboost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/">Adaboost算法原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Adaboost-算法原理"><a href="#Adaboost-算法原理" class="headerlink" title="Adaboost 算法原理"></a>Adaboost 算法原理</h1><p>​	$Bboosting$ 算法的代表算法是 $Adaboost$ 算法，它即可用于分类，也可用作回归。</p>
-<p>​	$Boosting$ 算法需要解决的问题：</p>
-<ol>
-<li>如何计算误差率</li>
-<li>如何学习弱学习器的权重系数</li>
-<li>如何更新样本权重</li>
-<li>使用何种结合策略</li>
-</ol>
-<h2 id="1-Adaboost-算法步骤"><a href="#1-Adaboost-算法步骤" class="headerlink" title="1. Adaboost 算法步骤"></a>1. Adaboost 算法步骤</h2><p>输入：训练数据集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{n},y_{n})}$，$y_{i}\in Y={-1,1}$，弱学习算法</p>
-<p>输出：最终分类器 $G(x)$</p>
-<p>（1）初始化训练数据的权值分布 $D_{1} = (w_{11},\dots,w_{1i},\dots,w_{1n})$，$w_{1i} = \frac{1}{N}$，$i=1,2,\dots,N$</p>
-<p>​		  	<strong>说明：</strong>初始时训练数据集是均匀分布的，每个训练样本在基本分类器的学习中作用相同，在原始样本上学习基本分类器$G_{1}(x)$ </p>
-<p>（2）对 $m=1,2\dots,M$</p>
-<p>​			（a）使用具有权值分布 $D_{m}$ 的训练数据集学习，得到基本分类器 $G_{m}(x)$</p>
-<p>​			（b）计算 $G_{m}(x)$ 在训练数据集上的分类误差率</p>
-<p>​					$e_{m} = P(G_{m}(x)\ne y_{i})=\sum_{i=1}^{N}w_{mi}I(G_{m}(x_{i})\ne y_{i})$</p>
-<p>​					<strong>说明：</strong>$G_{m}(x)$ 在加权的训练数据集上的分类误差率是被$G_{m}(x)$误分类样本的权值之和		</p>
-<p>​			（c）计算$G_{m}(x)$ 的系数</p>
-<p>​					$a_{m} = \frac{1}{2}log\frac{1-e_{m}}{e_{m}}$ ，这里对数是自然对数</p>
-<p>​					<strong>说明：</strong> $\alpha_{m}$表示$G_{m}(x)$在最终分类器的重要性，当$e_{m}\le\frac{1}{2}$ 时，$\alpha_{m}\ge 0$，并且$\alpha_{m}$随着$e_{m}$的减小而增大，所以分类误差率越小的基本分类器在最终分类器中的作用越大</p>
-<p>​			（d）更新训练数据集的权值分布</p>
-<p>​					$D_{m+1} = (w_{m+1,1},\dots,w_{m+1,i}\dots,w_{m+1,N})$</p>
-<p>​					$w_{m+1,i} = \frac{w_{mi}}{Z_{m}}exp(-\alpha_{m}y_{i}G_{m}(x_{i})),i=1,2\dots,N$</p>
-<p>​					这里，$Z_{m}$ 是规范化因子：</p>
-<p>​					$Z_{m} = \sum_{i=1}^{N}w_{mi}exp(-\alpha_{m}y_{i}G_{m}(x_{i}))$ </p>
-<p>​					<strong>说明：</strong> 当 $G_{m}(x_{i})=y_{i}$，$w_{m+1,i} = \frac{w_{mi}}{Z_{m}}e^{-\alpha_{m}}$，当 $G_{m}(x_{i})\ne y_{i}$ ，$w_{m+1,i}=\frac{w_{mi}}{Z_{m}}e^{\alpha_{m}}$ ，由此可以看出被误分类的样本权值增大，被正确分类的样本权值减小，两相比较，误分类样本的权值被放大 $e^{2\alpha_{m}} = \frac{e_{m}}{1-e_{m}}$ </p>
-<p>（3）构建基本分类器的线性组合</p>
-<p>​				$f(x) = \sum_{m=1}^{M}\alpha_{m}G_{m}(x)$</p>
-<p>​			   得到最终分类器 </p>
-<p>​				$G(x) = sign(f(x)) =sign\left( \sum_{m=1}^{M}\alpha_{m}G_{m}(x)\right)$ </p>
-<h2 id="2-Adaboost算法的解释"><a href="#2-Adaboost算法的解释" class="headerlink" title="2. Adaboost算法的解释"></a>2. Adaboost算法的解释</h2><p>​		Adaboost算法可以被认为是模型为加法模型、损失函数为指数函数、学习算法为前向分步算法的二类分类学习算法。</p>
-<h3 id="2-1-前向分步算法"><a href="#2-1-前向分步算法" class="headerlink" title="2.1 前向分步算法"></a>2.1 前向分步算法</h3><p>加法模型为：</p>
-<p>$f(x) = \sum_{m=1}^{M}\beta_{m}b(x;\gamma_{m})$ </p>
-<p>其中 $b(x;\gamma_{m})$为基函数，$\gamma_{m}$ 为基函数的参数，$\beta_{m}$为基函数的系数</p>
-<p>在给定训练数据及损失函数  $L(y,f(x))$ 的条件下，学习加法模型 $f(x)$ 就是最小化损失函数：</p>
-<p>$min_{\beta_{m},\gamma_{m}}\sum_{i=1}^{N}L(y_{i},\sum_{m=1}^{M}\beta_{m}b(x_{i};\gamma_{m}))$</p>
-<p>这是一个很复杂的优化问题，前向分步算法求解这一优化问题的想法是：因为学习的是加法模型，如果能从前往后，每一步只学习一个</p>
-<p>基函数及其系数，逐步逼近优化目标函数，那么就可以简化优化的复杂度，具体来说，就是每步只需要优化如下损失函数：</p>
-<p>$min_{\beta,\gamma}\sum_{i=1}^{N}L(y_{i},\beta b(x_{i};\gamma))$ </p>
-<p>前向分步算法的步骤：</p>
-<p>输入：训练数据集$T={(x_{i},y_{i}),(x_{2},y_{2},\dots,(x_{N},y_{N}))}$，损失函数为$L(y,f(x))$，基函数集${b(x;\gamma)}$ </p>
-<p>输出：加法模型</p>
-<p>（1）初始化 $f_{0}(x)=0$</p>
-<p>（2）对 $m=1,2,\dots,M$</p>
-<p>​			（a）极小化损失函数</p>
-<p>​						$(\beta_{m},\gamma_{m}) = argmin_{\beta,\gamma}\sum_{i=1}^{N}L(y_{i},f_{m-1}(x_{i})+\beta b(x_{i};\gamma))$ , 得到参数 $\beta_{m}$，$\gamma_{m}$</p>
-<p>​			（b）更新 </p>
-<p>​						$f_{m}(x) = f_{m-1}(x)+\beta_{m}b(x;\gamma_{m})$ </p>
-<p>（3）得到加法模型</p>
-<p>​						$f(x) = f_{M}(x) = \sum_{m=1}^{M}\beta_{m}b(x;\gamma_{m})$ </p>
-<h3 id="2-2-前向分步算法与Adaboost"><a href="#2-2-前向分步算法与Adaboost" class="headerlink" title="2.2 前向分步算法与Adaboost"></a>2.2 前向分步算法与Adaboost</h3><p>Adaboost算法是加法模型，学习算法为前向分步算法，损失函数为指数函数的分类问题。</p>
-<p>模型为：		</p>
-<p>$f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
-<p>损失函数为：	</p>
-<p>$argmin_{\alpha,G}\sum_{i=1}^{m}exp(-y_{i}f_{k}(x))$</p>
-<p>$argmin_{\alpha,G}\sum_{i=1}^{m}exp[(-y_{i})(f_{k-1}(x)+\alpha G(x))]$</p>
-<p>令 $w_{ki} = exp(-y_{i}f_{k-1}(x))$ ，它的值不依赖 $\alpha,G$，因此与最小化无关，代入得到：</p>
-<p>$argmin_{\alpha,G}\sum_{i=1}^{m}w_{ki}exp[-y_{i}\alpha G(x)]$ </p>
-<p>第一步先求 $G_{k}(x)$</p>
-<p>$\sum_{i=1}^{m}w_{ki}exp(-y_{i}\alpha G(x_{i})) =$</p>
-<p> $\sum_{y_{i}=G_{k}(x_{i})}w_{ki}e^{-\alpha} + \sum_{y_{i}\ne G_{k}(x_{i})}w_{ki}e^{\alpha} =$ </p>
-<p>$ (e^{\alpha}-e^{-\alpha})\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G_{k}(x_{i})) + e^{-\alpha}\sum_{i=1}^{m}w_{ki}$ </p>
-<p>因为 $w_{ki}$ 和 $\alpha$ 和 $G$ 无关，所以 $G_{k}(x) = argmin_{G}\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))$ </p>
-<p>将 $G_{k}(x)$ 代入损失函数，并对 $\alpha$ 求导并令其为 0，可得：</p>
-<p>$\alpha_{k} = \frac{1}{2}log\frac{1-e_{k}}{e_{k}}$ </p>
-<p>其中，$e_{k}$ 即为分类误差率：</p>
-<p>$e_{k} = \frac{\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))}{\sum_{i=1}^{m}w_{ki}} = \sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))$ </p>
-<p>样本权重更新：</p>
-<p>利用 $f_{k}(x) = f_{k-1}(x) + \alpha_{k}G_{k}(x)$ 和 $w_{ki} = exp(-y_{i}f_{k-1}(x))$ </p>
-<p>$w_{k+1,i} = exp(-y_{i}f_{k}(x))$ </p>
-<p>$w_{k+1,i} = w_{ki}exp[-y_{i}\alpha_{k}G_{k}(x)]$</p>
-<p>这样就得到了样本的权重更新公式</p>
-<h2 id="3-Adaboost回归问题的算法流程"><a href="#3-Adaboost回归问题的算法流程" class="headerlink" title="3. Adaboost回归问题的算法流程"></a>3. Adaboost回归问题的算法流程</h2><p>Adaboost回归算法的变种有很多，这里介绍 Adaboost R2 回归算法过程。</p>
-<p>输入：样本集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{m},y_{m})}$，弱学习器算法，弱学习器迭代次数 $K$ </p>
-<p>输出：最终的强学习器 $f(x)$ </p>
-<p>（1）初始化样本集权重为</p>
-<p>​				$D(1) = (w_{11},w_{12},\dots,w_{1m}); w_{1i}=\frac{1}{m}; i=1,2,\dots,m$</p>
-<p>（2）对于 $k=1,2,\dots,K$</p>
-<p>​			（a）使用具有权重 $D_{k}$ 的样本集来训练数据，得到弱学习器 $G_{k}(x)$</p>
-<p>​			（b）计算训练集上的最大误差</p>
-<p>​					 $E_{k} = max|y_{i}-G_{k}(x_{i})|$，  $i=1,2,\dots,m$ </p>
-<p>​			（c）计算每个样本的相对误差：</p>
-<p>​					  线性误差：$e_{ki} = \frac{|y_{i}-G_{k}(x_{i})|}{E_{k}}$ </p>
-<p>​					  平方误差：$e_{ki} = \frac{(y_{i}-G_{k}(x_{i}))^{2}}{E_{k}^{2}}$</p>
-<p>​					  指数误差：$e_{ki} = 1-exp(\frac{-|y_{i}-G_{k}(x_{i})|}{E_{k}})$</p>
-<p>​			（d）计算回归误差率</p>
-<p>​						$e_{k} = \sum_{i=1}^{m}w_{ki}e_{ki}$</p>
-<p>​			（e）计算弱学习的系数</p>
-<p>​						$\alpha_{k} = \frac{e_{k}}{1-e_{k}}$</p>
-<p>​			（f）更新样本集的权重分布 </p>
-<p>​						$w_{k+1,i} = \frac{w_{ki}}{Z_{k}}\alpha_{k}^{1-e_{ki}}$	</p>
-<p>​						其中 $Z_{k} = \sum_{i=1}^{m}w_{ki}\alpha_{k}^{1-e_{ki}}$，为规范化因子</p>
-<p>（3）构建最终强学习器</p>
-<p>​			$f(x) = G_{k^{\ast}}(x)$，其中 $G_{k^{\ast}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2\dots K$  的 中位数值乘以对应 $k^{\ast}$ 对应的弱学习器。</p>
-<h2 id="4-Adaboost算法的正则化"><a href="#4-Adaboost算法的正则化" class="headerlink" title="4. Adaboost算法的正则化"></a>4. Adaboost算法的正则化</h2><p>Adaboost算法也会产生过拟合，我们也可以在算法中加入正则化项，这个正则化通常叫做步长，定义为 $\nu$ ，之前弱学习器的迭代公式为：</p>
-<p>​		$f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
-<p> 加上正则化，就有：</p>
-<p>​		$f_{k}(x) = f_{k-1}(x)+\nu\alpha_{k}G_{k}(x)$ </p>
-<p>$\nu$ 的取值范围为 $0&lt;\nu\le1$，对于同样的训练集，较小的 $\nu$ 意味着需要更多的弱学习器进行迭代。	</p>
-<h2 id="5-提升树"><a href="#5-提升树" class="headerlink" title="5. 提升树"></a>5. 提升树</h2><p>对于 Adaboost 算法，如果弱学习器是分类树或者回归树，那么就是提升树。</p>
-<p>提升树模型实际上采用的是加法模型与前向分步算法，对分类问题采用的是二叉分类树，对回归问题采用的是二叉回归树。提升树模型</p>
-<p>可以表示为决策树的加法模型：</p>
-<p>$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$</p>
-<p>其中，$T(x;\theta_{m})$ 表示决策树，$\theta_{m}$ 为决策树的参数，$M$ 为树的个数</p>
-<p>对于二类分类问题，提升树算法只需将 $Adaboost$ 算法中的基本分类器换成二类分类树即可，其他一样。</p>
-<p>主要介绍回归问题中的提升树算法</p>
-<p>$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$ </p>
-<p>在前向分步的第 $m$ 步，给定当前模型 $f_{m-1}(x)$，需求解</p>
-<p>$\theta_{m} = argmax_{\theta_{m}}\sum_{i=1}^{N}L(y_{i},f_{m-1}(x_{i})+T(x_{i};\theta_{m}))$ </p>
-<p>如果损失函数是平方差损失函数：</p>
-<p>$L(y,f_{m-1}(x)+T(x;\theta_{m}))=[y-f_{m-1}(x)-T(x;\theta_{m})]^{2}=[r-T(x;\theta_{m})]^{2}$</p>
-<p>$r = y - f_{m-1}(x)$，我们称 $r$ 为当前模型拟合数据的残差，所以后面的决策树只需模拟当前模型的残差，就能得到最终的模型</p>
-<p>回归问题的提升树算法：</p>
-<p>输入：训练数据集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{N},y_{N})}$</p>
-<p>输出：提升树 $f_{M}(x)$ </p>
-<p>（1）初始化 $f_{0}(x) = 0$</p>
-<p>（2）对 $m = 1,2,\dots,M$</p>
-<p>​	  		（a）计算残差</p>
-<p>​					 $r_{mi} = y_{i}-f_{m-1}(x_{i}),i=1,2,\dots,N$</p>
-<p>​			  （b）拟合残差 $r_{mi}$ 学习一个回归树，得到 $T(x;\theta_{m})$</p>
-<p>​		  	（c）更新 $f_{m}(x) = f_{m-1}(x) + T(x;\theta_{m})$</p>
-<p>（3）得到回归问题的提升树</p>
-<p>​				$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$ </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/Adaboost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" data-id="cl37bprzb0001t0v0g8798x3t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-集成学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/17/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2022-03-17T02:26:59.000Z" itemprop="datePublished">2022-03-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/17/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/">集成学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="集成学习原理"><a href="#集成学习原理" class="headerlink" title="集成学习原理"></a>集成学习原理</h1><p>​		集成学习是目前非常流行的机器学习方法，它本身不是一个单独的机器学习方法，而是通过构建并结合多个机器学习器来完成学习任务，可用于分类问题集成，回归问题集成，特征选取集成，异常点检测集成等。</p>
-<p>集成学习通过训练出若干个体学习器，通过一定的结合策略，就可以最终形成一个强学习器，集成学习主要需要解决两个问题：</p>
-<ul>
-<li>如何得到若干个个体学习器</li>
-<li>如何选择结合策略</li>
-</ul>
-<h2 id="1-集成学习的个体学习器"><a href="#1-集成学习的个体学习器" class="headerlink" title="1. 集成学习的个体学习器"></a>1. 集成学习的个体学习器</h2><p>如何得到若干个个体学习器？主要有两个方法：</p>
-<ul>
-<li>所有个体学习器都是一个种类的，或称为同质的，比如都是决策树或者都是神经网络</li>
-<li>所有个体学习器不都是一个种类的，或称为异质的，比如说可以同时学习出支持向量机学习器，逻辑回归学习器和朴素贝叶斯学习器</li>
-</ul>
-<p>使用的最多的是同质学习器，而同质学习器中，个体学习器使用的最多的是 $CART$ 决策树和神经网络。</p>
-<p>又可以按个体学习器之间是否存在依赖关系进行分类：</p>
-<ul>
-<li>个体学习器之间存在强依赖关系，学习器之间需要串行生成，代表算法是 $boosting$ 系列算法</li>
-<li>个体学习器之间不存在强依赖关系，学习器之间可以并行生成，代表算法是 $bagging$ 和随机森林系列算法</li>
-</ul>
-<h2 id="2-集成学习之boosting"><a href="#2-集成学习之boosting" class="headerlink" title="2. 集成学习之boosting"></a>2. 集成学习之boosting</h2><p><img src="/images/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/image-20220317105033109.png" alt="Boosting算法"></p>
-<p>​		$Boosting$ 算法的工作机制首先是按照初始化的训练样本权重（一般是平均权重）学习出一个弱学习器，然后根据弱学习器的学习误差率来更新训练样本的权重，使得弱学习器 1 分类错误的样本权重变高，在后面的学习器中便会重视这些样本，然后通过更新后的权重来训练弱学习器 2，依次进行，直到弱学习器达到事先指定的数目 $T$ ，最终将这 $T$ 个弱学习器通过结合策略进行整合，得到最终的强学习器。</p>
-<p>​		$Boosting$ 系列算法里最著名的算法主要有 $AdaBoost$ 算法和 提升树系列算法，提升树算法里面使用的最多的是梯度提升树。</p>
-<h2 id="3-集成学习之-bagging"><a href="#3-集成学习之-bagging" class="headerlink" title="3. 集成学习之 bagging"></a>3. 集成学习之 bagging</h2><p>Bagging算法中，弱学习器之间没有依赖关系，学习器可以并行生成</p>
-<p><img src="/images/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/image-20220317111004796.png" alt="Bagging算法"></p>
-<p>Bagging中个体学习器的训练集是通过采样得到的，采样出 $T$ 个样本集，就能训练出 $T$ 个弱学习器，再通过结合策略得到强学习器。</p>
-<p>这里的采样法一般使用自主采样法，即对 m 个样本的数据集，每次采取一个样本，然后放回后重新采样，这样采集 m 次，就能得到一个 m </p>
-<p>个样本的采样集，且一个样本集中可以包含多个一样的样本，也就是可以重复。</p>
-<h2 id="4-集成学习之结合策略"><a href="#4-集成学习之结合策略" class="headerlink" title="4. 集成学习之结合策略"></a>4. 集成学习之结合策略</h2><p>​	<strong>平均法</strong></p>
-<p>​	对于回归预测问题，通常使用的结合策略是平均法，对弱学习器的输出进行平均得到最终的输出。</p>
-<p>求平均时可以给每个弱学习器加权重</p>
-<p>​	算术平均：</p>
-<p>​	$H(x) = \frac{1}{T}\sum_{1}^{T}h_{i}(x)$</p>
-<p>​	若每个学习器有个权重 $w$ ，则</p>
-<p>​	$H(x) = \sum_{i=1}^{T}w_{i}h_{i}(x)$</p>
-<p>​	所有弱学习器的权重相加等于 1</p>
-<p>​	<strong>投票法</strong></p>
-<p>​	对于分类问题，通常使用的是投票法</p>
-<ul>
-<li>相对多数投票法，即选最多的类别作为输出</li>
-<li>绝对多数投票法，即不仅要最多，而且票数还要过半，没有过半拒绝预测</li>
-<li>加权投票法，即每一个分类器都有个权重，最终输出各个分类器加权票数最高的类别</li>
-</ul>
-<p>​	<strong>学习法</strong></p>
-<p>​	代表方法是 $stacking$ ，不是对弱分类器结果进行简单的逻辑处理，而是加一个学习器，将弱学习器的所有输出当作输入，将样本输出作为输出，也就是说每个弱学习器就是一个特征，最终得到一个学习器来得到最终结果</p>
-<p><img src="/images/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/image-20220513165044590.png" alt="image-20220513165044590"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" data-id="cl37bprzy001yt0v0buzoeswp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-朴素贝叶斯算法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/16/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95/" class="article-date">
-  <time datetime="2022-03-16T07:53:13.000Z" itemprop="datePublished">2022-03-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/16/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95/">朴素贝叶斯算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="朴素贝叶斯算法"><a href="#朴素贝叶斯算法" class="headerlink" title="朴素贝叶斯算法"></a>朴素贝叶斯算法</h1><p>​		朴素贝叶斯算法是基于贝叶斯定理和特征条件独立假设的分类算法。对于给定的训练数据集，首先基于特征条件独立假设学习输入/输出的联合概率分布，然后基于此模型，对给定的输入 $x$ , 利用贝叶斯定理求出后验概率最大的类别作为输出，朴素贝叶斯算法实现简单，学习与预测效率都很高，是一种常用的方法。</p>
-<h2 id="相关统计学知识"><a href="#相关统计学知识" class="headerlink" title="相关统计学知识"></a>相关统计学知识</h2><p>​	1. 条件独立公式</p>
-<p>​			$P(X,Y) = P(X)P(Y)$ </p>
-<ol start="2">
-<li>条件概率公式</li>
-</ol>
-<p>​			$P(Y|X) = P(X,Y)/P(X)$</p>
-<p>​			$P(X|Y) = P(X,Y)/P(Y)$ </p>
-<ol start="3">
-<li><p>全概率公式</p>
-<p>$P(X) = \sum_{k}P(X|Y=Y_{k})$，其中 $\sum_{k}P(Y_{k})=1$</p>
-</li>
-<li><p>贝叶斯公式</p>
-<p>$P(Y_{k}|X) = \frac{P(X|Y_{k})P(Y_{k})}{\sum_{k}P(X|Y=Y_{k})P(Y_{k})}$</p>
-</li>
-</ol>
-<h2 id="朴素贝叶斯的模型"><a href="#朴素贝叶斯的模型" class="headerlink" title="朴素贝叶斯的模型"></a>朴素贝叶斯的模型</h2><p>朴素贝叶斯通过训练数据集学习联合概率分布 $P(X,Y)$，具体的学习：</p>
-<p><strong>先验概率：</strong> $P(Y=c_{k}), k = 1,2,\dots,K$</p>
-<p><strong>条件概率：</strong> $P(X=x|Y=c_{k}) = P(X^{(1)}=x^{(1)},\dots,X^{(n)}=x^{(n)}|Y=c_{k}), k=1,2,\dots,K$ </p>
-<p>根据以上概率分布就能够学习到联合概率分布 $P(X,Y)$ ，但是有个问题</p>
-<p>条件概率 $P(X=x|Y=c_{k})$ 有指数级数量的参数，假设 $x^{(j)}$ 有 $S_{j}$ 个取值，$Y$ 可取值有 $K$ 个，那么参数的个数为 $K\prod_{j=1}^{n}S_{j}$ </p>
-<p>但是朴素贝叶斯法对条件概率分布作了条件独立性的假设，即：</p>
-<p>$P(X=x|Y=c_{k}) = P(X^{(1)},\dots,X^{(n)}=x^{(n)}|Y=c_{k}) = \prod_{j=1}^{n}P(X^{(j)}=x^{(j)}|Y=c_{k})$</p>
-<p>朴素贝叶斯在分类时，对给定的输入 $x$ ，通过学习到的模型计算后验概率分布 $P(Y=c_{k}|X=x)$，将后验概率最大的类作为 $x$ 的类输出。</p>
-<p>后验概率公式为：</p>
-<p>$P(Y=c_{k}|X=x) = \frac{P(X=x|Y=c_{k})P(Y=c_{k})}{\sum_{k}P(X=x|Y=c_{k})P(Y=c_{k})}$ </p>
-<p>根据条件独立性假设又可得：</p>
-<p>$P(Y=c_{k}|X=x) = \frac{P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k})}{\sum_{k}(P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k}))}$ </p>
-<p>于是朴素贝叶斯分类器表示为：</p>
-<p>$y = f(x) = arg\max_{c_{k}}\frac{P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k})}{\sum_{k}(P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k}))}$ </p>
-<p>由于分母都是相同的，所以有：</p>
-<p>$y = f(x) = arg\max_{c_{k}}P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k})$ </p>
-<h2 id="朴素贝叶斯法的参数估计"><a href="#朴素贝叶斯法的参数估计" class="headerlink" title="朴素贝叶斯法的参数估计"></a>朴素贝叶斯法的参数估计</h2><p>朴素贝叶斯法中的学习意味着要估计 $P(Y=c_{k})$ 和 $P(X^{(j)}=x^{(j)}|Y=c_{k})$ ，可以应用极大似然估计法估计相应的概率。</p>
-<p>$P(Y=c_{k})$ 的极大似然估计为：</p>
-<p>$P(Y=c_{k}) = \frac{\sum_{i=1}^{N}I(y_{i}=c_{k})}{N}, k = 1,2,\dots,K$</p>
-<p>第 $j$ 个特征 $x^{(j)}$ 可能的取值的集合为 ${a_{j1},a_{j2},\dots,a_{js}}$，条件概率 $P(X^{(j)}=a_{jl}|Y=c_{k})$ 的极大似然估计为：</p>
-<p>$P(X^{(j)}=a_{jl}|Y=c_{k}) = \frac{\sum_{i=1}^{N}I(x_{i}^{(j)}=ajl, y_{i}=c_{k})}{\sum_{i=1}^{N}I(y_{i}=c_{k})}, j=1,2,\dots,n;$    $l=1,2,\dots,S_{j};$     $k=1,2,\dots,K$  </p>
-<p>上面的 $I$ 是 $0-1$ 损失函数：</p>
-<h2 id="朴素贝叶斯算法的流程"><a href="#朴素贝叶斯算法的流程" class="headerlink" title="朴素贝叶斯算法的流程"></a>朴素贝叶斯算法的流程</h2><p>输入：训练数据 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{n},y_{n})}$，$a_{jl}$ 是第 $j$ 个特征可能取的第 $l$ 个值，$j=1,2,\dots,n$，$l=1,2,\dots,S_{j}$ </p>
-<p>输出：实例 $x$ 的分类</p>
-<ol>
-<li>计算先验概率以及条件概率：</li>
-</ol>
-<p>​		$P(Y=c_{k}) = \frac{\sum_{i=1}^{N}I(y_{i}=c_{k})}{N}, k = 1,2,\dots,K$</p>
-<p>​		$P(X^{(j)}=a_{jl}|Y=c_{k}) = \frac{\sum_{i=1}^{N}I(x_{i}^{(j)}=ajl, y_{i}=c_{k})}{\sum_{i=1}^{N}I(y_{i}=c_{k})}, j=1,2,\dots,n;$ </p>
-<p>​	 2. 对于给定的实例计算：</p>
-<p>​		$P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k}), k=1,2,\dots,K$ </p>
-<p>​	  3. 确定实例 $x$ 的类</p>
-<p>​		$y = f(x) = arg\max_{c_{k}}P(Y=c_{k})\prod_{j}P(X^{(j)}=x^{(j)}|Y=c_{k})$</p>
-<h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><p>用极大似然估计可能会出现所要估计的概率值为 0 的情况，这时会影响到后验概率的计算结果，使分类误差产生偏差，解决这一问题是采用贝叶斯估计，具体的，</p>
-<p>条件概率的贝叶斯估计是：</p>
-<p>$P_{\lambda}(X^{(j)}=a_{jl}|Y=c_{k}) = \frac{\sum_{i=1}^{N}I(x_{i}^{(j)}=ajl, y_{i}=c_{k})+\lambda}{\sum_{i=1}^{N}I(y_{i}=c_{k})+S_{j}\lambda}$ </p>
-<p>先验概率的贝叶斯估计是：</p>
-<p>$P_{\lambda}(Y=c_{k}) = \frac{\sum_{i=1}^{N}I(y_{i}=c_{k})+\lambda}{N+\lambda}$  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/16/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95/" data-id="cl37bprzn000st0v04g13clo5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
-  </nav>
-
 </section>
+
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+<!-- ============================ Content =========================== -->
+
+<section id="intro">
+    <div class="container">
         
-          <aside id="sidebar">
-  
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/05/15/滑动窗口/">滑动窗口</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-05-15T12:19:55.000Z" itemprop="datePublished">
+          2022-05-15
+      </time>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python%E5%AD%A6%E4%B9%A0/">Python学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
-    </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-    </div>
-  </div>
-
-
-  
+    | 
+    <a href='/tags/算法/'>算法</a>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">机器学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a>
-    </div>
-  </div>
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        滑动窗口代码框架public void slidingWindow(string s, string t){
+    HashMap&lt;Character,Integer> need = new HashMap&lt;Character,Integer>;
+    HashMap&lt;Character,Integer> window = new HashMap&lt;Character,Integer>;
+    // 先将 n
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/05/15/滑动窗口/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/05/15/差分数组/">差分数组</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-05-15T11:18:42.000Z" itemprop="datePublished">
+          2022-05-15
+      </time>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
+    
+    | 
+    <a href='/tags/算法/'>算法</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        差分数组适用问题​	频繁地对原始数组的某个区间的元素进行增减。
+算法框架// 构造差分数组
+int[] diff = new int[nums.length];
+diff[0] = nums[0];
+for(int i=1;i&lt;nums.length;i++){
+    diff[i] = nums[i] - nums[i-1];
+}
+// 通过差分数组修改原始数组
+public void increment(int i,int 
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/05/15/差分数组/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-          <li>
-            <a href="/2022/05/15/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/">差分数组</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/">前缀和数组</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/28/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E8%A1%A8%E8%BE%BE/">特征工程之特征表达</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/27/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/">特征工程之特征选择</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/05/15/前缀和数组/">前缀和数组</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-05-15T10:32:45.000Z" itemprop="datePublished">
+          2022-05-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/算法/'>算法</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        前缀和数组适用问题原始数组不会被修改的情况下，频繁的查询某个区间的累加和。
+题目
+区域和检索 - 数组不可变（303）
 
-  
-</aside>
+​	https://leetcode.cn/problems/range-sum-query-immutable/
+class NumArray{
+    private int[] preSum;
+    public NumArray(int[] nums){
+        preSum = new int[n
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/05/15/前缀和数组/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 XuLei<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/28/特征工程之特征表达/">特征工程之特征表达</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-28T10:47:00.000Z" itemprop="datePublished">
+          2022-03-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        特征工程之特征表达1. 缺失值处理数据有缺失值是很常见的，但是在训练模型时，数据要求不能有缺失值，处理方法如下：
+
+针对连续值，可以取所有样本的平均值来填充，或者取所有样本的中位数来填充
+如果是离散值，可以取样本中出现最频繁的特征值来填充
+
+2. 特殊的特征处理有些特征的取值比较特殊，例如日期时间，该如何表达呢？
+
+时间差值法，计算所有样本时间到未来某一个时间的数值差距，这个差距是 UTC 的时间差，从而将时间特征转化为连续值
+根据时间
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/28/特征工程之特征表达/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/27/特征工程之特征选择/">特征工程之特征选择</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-27T08:30:49.000Z" itemprop="datePublished">
+          2022-03-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        特征工程之特征选择在选择特征时，一般特征有两种来源，一是已经整理好的各种特征，这类特征我们要去找适合我们问题的特征，另一类是从这些整理好的特征中去寻找高级特征。
+1. 选择合适的特征
+寻找专家，向他咨询哪些特征会对预测结果产生影响，不论影响的大小都要选择。
+在降维之前，可以使用特征工程的方法去选择出比较重要的特征，例如，方差选择法。
+
+​	选择特征一般有以下三种方法：
+
+过滤法：按照特征的发散性或者相关指标对各个特征进行评分，设定评分阈
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/27/特征工程之特征选择/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/26/Bagging与随机森林算法原理/">Bagging与随机森林算法原理</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-26T12:08:30.000Z" itemprop="datePublished">
+          2022-03-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Bagging与随机森林算法原理随机采样：从训练集里面采集固定个数的样本，但是每采集一个样本后，都将样本放回。就是说，之前采集的样本仍有可能继续被采集到，
+Bagging算法一般会随机采集和训练样本数一样的个数的样本。这样得到的采样集和训练集样本的个数相同，但是样本内容不同。
+对于某一个样本，在m个样本里，每次被采集的概率是 $\frac{1}{m}$，不被采集的概率是 $1-\frac{1}{m}$，如果 m 次采样都没有被采集中的概
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/26/Bagging与随机森林算法原理/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/25/梯度提升树算法原理/">梯度提升树算法原理</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-25T03:18:15.000Z" itemprop="datePublished">
+          2022-03-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        梯度提升树（GBDT）算法1. GBDT概述​			Adaboost 是利用前一轮弱学习器的误差率来更新训练集的权重，这样一轮轮迭代下去。GBDT也是如此，也是用前向分步算法，但是弱学习器限定为 CART 树，同时迭代的方式也和 Adaboost 算法不同。
+​			GBDT 对于前一轮得到的强学习器 $f_{t-1}(x)$，下一轮旨在要学习到一个弱学习器 $h_{t}(x)$ ，让本轮的损失函数 $L(y,f_{t}(x)) = L
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/25/梯度提升树算法原理/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/17/Adaboost算法原理/">Adaboost算法原理</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-17T10:56:19.000Z" itemprop="datePublished">
+          2022-03-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Adaboost 算法原理​	$Bboosting$ 算法的代表算法是 $Adaboost$ 算法，它即可用于分类，也可用作回归。
+​	$Boosting$ 算法需要解决的问题：
+
+如何计算误差率
+如何学习弱学习器的权重系数
+如何更新样本权重
+使用何种结合策略
+
+1. Adaboost 算法步骤输入：训练数据集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{n},y_{n})}$，$y_{i}\in
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/17/Adaboost算法原理/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/17/集成学习/">集成学习</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-17T02:26:59.000Z" itemprop="datePublished">
+          2022-03-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        集成学习原理​		集成学习是目前非常流行的机器学习方法，它本身不是一个单独的机器学习方法，而是通过构建并结合多个机器学习器来完成学习任务，可用于分类问题集成，回归问题集成，特征选取集成，异常点检测集成等。
+集成学习通过训练出若干个体学习器，通过一定的结合策略，就可以最终形成一个强学习器，集成学习主要需要解决两个问题：
+
+如何得到若干个个体学习器
+如何选择结合策略
+
+1. 集成学习的个体学习器如何得到若干个个体学习器？主要有两个方法：
+
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/17/集成学习/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/16/朴素贝叶斯算法/">朴素贝叶斯算法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-16T07:53:13.000Z" itemprop="datePublished">
+          2022-03-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/机器学习/'>机器学习</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        朴素贝叶斯算法​		朴素贝叶斯算法是基于贝叶斯定理和特征条件独立假设的分类算法。对于给定的训练数据集，首先基于特征条件独立假设学习输入/输出的联合概率分布，然后基于此模型，对给定的输入 $x$ , 利用贝叶斯定理求出后验概率最大的类别作为输出，朴素贝叶斯算法实现简单，学习与预测效率都很高，是一种常用的方法。
+相关统计学知识​	1. 条件独立公式
+​			$P(X,Y) = P(X)P(Y)$ 
+
+条件概率公式
+
+​			$P(Y|X) 
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/16/朴素贝叶斯算法/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <nav class="pagination" role="pagination">
+          
+          <a class="pull-right" href="/page/2/">Older Posts →</a>
+        </nav>
     </div>
-  </div>
+</section>
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ END Content =========================== -->
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By XuLei. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
+      
 </body>
 </html>
