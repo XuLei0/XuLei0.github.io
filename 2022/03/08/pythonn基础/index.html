@@ -1,0 +1,1543 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="pythonn基础, 程序员">
+    <meta name="description" content="llxll的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>pythonn基础 | llXll</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">llXll</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">llXll</div>
+        <div class="logo-desc">
+            
+            llxll的博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">pythonn基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                Python学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-03-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>python采用缩进的方式来区分代码块，采用 # 来标记注释，python程序还是大小写敏感的。</p>
+<h3 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h3><p>计算机程序理所当然地可以处理各种数值。但是，计算机能处理的远不止数值，还可以处理文本、图形、音频、视频、网页等各种各样的数据，不同的数据，需要定义不同的数据类型。在Python中，能够直接处理的数据类型有以下几种：</p>
+<ol>
+<li><p>整型：十六进制数前面需要加上<strong>Ox</strong></p>
+<ul>
+<li>进制转换：<ul>
+<li>二进制转为十进制：<code>int('10',2) == 2</code></li>
+<li>八进制转为十进制：<code>int('04',8) == 4</code></li>
+<li>十六进制转十进制：<code>int('0x4',16) == 4</code></li>
+<li>转为二进制：<code>bin(int)</code></li>
+<li>转为八进制：<code>oct(int)</code></li>
+<li>转十六进制：<code>hex(int)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浮点数：可以用科学计数法表示，1.23x109就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5,整数运算永远都是正确的，例如，print(5/2)得到2.5，而浮点数运算需要考虑四舍五入的误差。</p>
+</li>
+<li><p>字符串：</p>
+<ul>
+<li>转义字符，转义字符\可以转义很多字符，比如\n表示换行，\t表示制表符，字符\本身也要转义，所以\\表示的字符就是\。</li>
+<li>为了简化，Python还允许用 r’ ‘ 表示’’内部的字符串默认不转义，原样输出。</li>
+<li>如果字符串内部有很多换行，用\n写在一行里不好阅读，为了简化，Python允许用’’’的格式表示多行内容。</li>
+<li>字符串合并：<code>'-'.join(['c','l'])=='c-l'</code> ,用-将列表连接起来形成字符串。</li>
+<li>大小写： 大写upper()、小写lower()。</li>
+<li>去除字符串左右的空白字符，<code>" 123 ".strip()</code></li>
+<li>字符串排序：strlist.sort(), 按字符串长度排序：<br> <code>strlist.sort(key=lambda x:len(list(x)))</code></li>
+<li>字符串也可以切割，和列表一样</li>
+<li>大小写 s.upper() 和 s.lower() </li>
+<li>判断是否以XX开头或结尾 s.startswith(‘a’)、s.endswith(‘a’)</li>
+<li>分割字符串 s.split(sep=) 默认sep为空格</li>
+<li>is系列：<ul>
+<li>isalnum()：所有字符都是数字或者字母</li>
+<li>isalpha()：所有字符都是字母</li>
+<li>isdigit()：所有字符都是数字</li>
+<li>islower()：所有字符都是小写</li>
+<li>isupper()：所有字符都是大写</li>
+<li>istitle()：首字母为大写，其余都为小写</li>
+<li>isspace()：所有字符都是空白符</li>
+</ul>
+</li>
+<li>计算字符串中某字符出现的次数：s.count(‘a’)</li>
+<li>替换字符串中的指定字符或字符串：s.replace(‘abcd’,’efgh’)</li>
+<li>format格式化输出：<pre><code>s = '我叫{}, 今年{}， 性别{}'.format('小五', 25, '女')
+s1 = '我叫{0}, 今年{1}， 性别{2}，我依然叫{0}'.format('小五', 25, '女')
+s2 = '我叫{name}, 今年{age}， 性别{sex}，我依然叫{name}'.format(age=25, sex='女',name='小五'）
+</code></pre>
+</li>
+<li>首字母变成大写：s.capitalize()</li>
+<li>将字符串居中：s.center(50) 在50的长度里面字符串s居中显示，也可以填充：s.center(50,’*’)</li>
+<li>“-“.join(list)：将list连接成字符串</li>
+<li>字符串倒置：str[::-1]</li>
+</ul>
+</li>
+<li><p>布尔类型：</p>
+<ul>
+<li>布尔值和布尔代数的表示完全一致，一个布尔值只有True、False两种值，要么是True，要么是False，在Python中，可以直接用True、False表示布尔值（请注意大小写）。</li>
+<li>布尔类型可以用and、or和not运算。</li>
+</ul>
+</li>
+<li><p>空值：空值是Python里一个特殊的值，用<strong>None</strong>表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。</p>
+</li>
+</ol>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>可以为变量赋不同类型的值。这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言。</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>所谓常量就是不能变的变量，比如常用的数学常数π就是一个常量。</p>
+<ol>
+<li>10/3 是精确的，浮点数，这里的精确不是说得到的值是精确的，而是不会像c语言那样只取得整数部分，其实浮点数都是不准确的，你不能用两个浮点数去做相等判断。</li>
+<li>9/3 得到的也是浮点数3.0。</li>
+<li>10//3=3 只取整数部分的除法。</li>
+<li>10%3=1 求余运算。</li>
+</ol>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><ol>
+<li>链式赋值语句: i=j=1</li>
+<li>复合赋值语句: k+=20 </li>
+<li>序列的拆包式赋值: a,b,c = 1,2,3</li>
+<li>两个变量调换: a,b = b,a</li>
+</ol>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ol>
+<li>和C语言Java语言不一样，python使用 <strong>#</strong> 来进行注释，而且没有多行注释。</li>
+<li>在jupyter notebook中，代码行与注释行的相互切换使用 Ctrl+/ </li>
+<li>docstring，文档信息，在iPython中可以用？来显示文档信息，这个文档信息就是目标程序中用三个双引号括起来的多行说明性文字。</li>
+</ol>
+<h3 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h3><ol>
+<li><p>由于计算机是美国人发明的，因此，最早只有127个字符被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为ASCII编码，比如大写字母A的编码是65，小写字母z的编码是122。</p>
+</li>
+<li><p>但是要处理中文显然一个字节是不够的，至少需要两个字节，而且还不能和ASCII编码冲突，所以，中国制定了GB2312编码，用来把中文编进去。</p>
+</li>
+<li><p>你可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc-kr里，各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。</p>
+</li>
+<li><p>对于单个字符的编码，Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：</p>
+</li>
+</ol>
+<ul>
+<li><blockquote>
+<p>ord(‘A’)<br>65</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>ord(‘中’)<br>20013</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>chr(66)<br>‘B’</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>chr(25991)<br>‘文’</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>‘\u4e2d\u6587’<br>‘中文’</p>
+</blockquote>
+</li>
+</ul>
+<ol start="5">
+<li>%运算符就是用来格式化字符串的。在字符串内部，%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。</li>
+</ol>
+<ul>
+<li><blockquote>
+<p>‘Hello, %s’ % ‘world’<br>‘Hello, world’</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>‘Hi, %s, you have $%d.’ % (‘Michael’, 1000000)<br>‘Hi, Michael, you have $1000000.’</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ol>
+<li>除法：y/x 运算结果为浮点数, // 代表取除数结果的整数部分</li>
+<li>幂次：x**y x的y次幂</li>
+<li>is / not is：判断是否指向的是同一个索引</li>
+<li>in / not in： 判断x是否在给定的容器中，例如List、Set、Tuple等</li>
+<li>逻辑运算符：and / or / not</li>
+<li>位运算： bin(x) 可以将x变为二进制数据，然后可以通过 &amp;、|、^、~、&gt;&gt;、&lt;&lt; 进行位运算，分别表示 与、或、异或、取反、右移、左移运算，<strong>取反运算比较复杂，从结果来说：取反结果为：原数+1再变相反数。</strong><pre><code>x=2
+y=3
+bin(x&amp;y)
+</code></pre>
+</li>
+<li>pow（2,10），round(2.991)都是内置函数</li>
+<li>math模块的函数和常量：<ul>
+<li>math.sin(x)</li>
+<li>math.pi</li>
+<li>math.sqrt(x) 求平方根，x为负数则报错</li>
+</ul>
+</li>
+</ol>
+<h3 id="list列表"><a href="#list列表" class="headerlink" title="list列表"></a>list列表</h3><ol>
+<li><p>list是一种有序的集合，可以随时添加和删除其中的元素，用中括号括住。</p>
+</li>
+<li><p>用len()可以获得其大小</p>
+</li>
+<li><p>用索引访问list中的每一个元素</p>
+<blockquote>
+<p>classmates[0]<br> ‘Michael’</p>
+</blockquote>
+</li>
+<li><p>获取最后一个元素-1，倒数第二个元素-2。</p>
+<blockquote>
+<p>classmates[-1]<br> ‘Tracy’</p>
+</blockquote>
+</li>
+<li><p>list追加元素</p>
+<blockquote>
+<p>classmates.append(‘Adam’)</p>
+</blockquote>
+</li>
+<li><p>list插入元素</p>
+<blockquote>
+<p>classmates.insert(1, ‘Jack’) 插入索引为1的位置。</p>
+</blockquote>
+</li>
+<li><p>list删除末尾元素</p>
+<blockquote>
+<p>classmates.pop()</p>
+</blockquote>
+</li>
+<li><p>删除指定元素</p>
+<blockquote>
+<p>classmates.pop(i) 删除索引为i的元素。<br> 或者classmates.remove(‘Adam’)</p>
+</blockquote>
+</li>
+<li><p>修改索引位置元素</p>
+<blockquote>
+<p>classmates[1] = ‘Sarah’</p>
+</blockquote>
+</li>
+<li><p>清空列表</p>
+<blockquote>
+<p>list.clear()</p>
+</blockquote>
+</li>
+<li><p>取元素对应的索引</p>
+<blockquote>
+<p>list.index(‘Adam’)</p>
+</blockquote>
+</li>
+<li><p>对数组排序</p>
+<blockquote>
+<p>list.sort()<br> 或者 sorted(list)<br><code>sort()</code>对原数组进行排序<br><code>sorted()</code>会返回一个新迭代对象<br>以上两个函数都可以通过key来进行自定义排序</p>
+</blockquote>
+</li>
+<li><p>数组元素反转</p>
+<ul>
+<li>list.reverse()</li>
+<li>reversed(list) 内置函数</li>
+<li>list[::-1]</li>
+</ul>
+</li>
+<li><p>list中的加法和乘法</p>
+<ul>
+<li>[1,2]+[3,4]=[1,2,3,4]</li>
+<li>[1] x 3 = [1,1,1]</li>
+</ul>
+</li>
+<li><p>list进行强制转换<br>list(“xulei”)</p>
+<blockquote>
+<p>[‘x’,’u’,’l’,’e’,’i’]</p>
+</blockquote>
+</li>
+<li><p>list1.extend(list2)方法类似于 list1+list2<br>list1.append(list2) 就是将list2作为一个元素追加到list1中去</p>
+</li>
+<li><p>list之间赋值<br>lis[:3] = list[2::-1]   在原数组上倒置前三个元素</p>
+</li>
+</ol>
+<p>【注】list中的元素可以是任何类型，包括list，可以组成二维数组，三维数组…</p>
+<h3 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h3><p>tuple和list的区别：tuple定义之后就不能修改了，没有append()和insert()函数，用大括号括起。</p>
+<ol>
+<li>定义一个空的tuple<blockquote>
+<p>t=()</p>
+</blockquote>
+</li>
+<li>定义只有一个元素的tuple<blockquote>
+<p>t=(1,)<br> 不能 t=(1)</p>
+</blockquote>
+</li>
+<li><code>tuple.index(obj)</code>：从元组中找出某个值第一个匹配项的索引值</li>
+<li><code>tuple.count(obj)</code>： 统计某个元素在元组中出现的次数</li>
+</ol>
+<h3 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h3><pre><code>if 表达式 :
+    ...
+elif 表达式 :
+    ...
+else :
+    ...
+</code></pre>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>Python的循环有两种</p>
+<ol>
+<li><p>一种是for…in循环，依次把list或tuple中的每个元素迭代出来。</p>
+<pre><code>for 元素 in list/tuple :
+ ...
+</code></pre>
+<p><code>range(i)</code>：可以生成0~i-1的整数序列。<br><code>list()</code>:可以转换为list。</p>
+</li>
+<li><p>第二种循环是while循环，只要条件满足，就不断循环，条件不满足时退出循环。</p>
+<pre><code>while 表达式：
+ ...
+</code></pre>
+</li>
+<li><p>break语句<br>跳出循环</p>
+</li>
+<li><p>continue语句<br>跳出本次循环</p>
+</li>
+</ol>
+<h3 id="dict-字典"><a href="#dict-字典" class="headerlink" title="dict(字典)"></a>dict(字典)</h3><p>类似于其它语言中的Map</p>
+<blockquote>
+<p>d = {‘Michael’: 95, ‘Bob’: 75, ‘Tracy’: 85}<br>d[‘Michael’]<br>95</p>
+</blockquote>
+<p>把数据放入dict</p>
+<blockquote>
+<p>d[‘Adam’] = 67<br>d[‘Adam’]</p>
+</blockquote>
+<p><strong>dict是无序的</strong></p>
+<ol>
+<li>多次将一个相同的key值插入字典，后面的会覆盖前面的。</li>
+<li>查看某个key值是否在字典中<br>key in dict<br>会返回布尔类型</li>
+<li>dict的get方法<br> <code>d.get(key，default)</code><br>会返回该key值对应的value，若key值不存在，返回default。</li>
+<li>删除一个键值对</li>
+<li>dict是不可变的<br>这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。<br>要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key<br> <code>d.pop(key)</code></li>
+</ol>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>和字典类似，不过这里只有key没有value，且key不能重复，也没有顺序。set的创建需要一个list作为输入。对于list中重复的数据，set会过滤只保留一个。</p>
+<ol>
+<li>add(key) :可以往set中加元素，可以重复但不会有效。</li>
+<li>remove(key) :可以删除set中的key。</li>
+<li>set可以看成是数学上的无序无重复的集合，故可以做交集并集操作。<br>交集：s1 &amp; s2<br>并集：s1 | s2<br>子集：{ 1，5 } &lt; { 1,3,5 }<br>差集：{ 1，3，5 }-{ 1，3 }=={ 5 }</li>
+<li>set和dict的唯一区别仅在于没有存储对应的value，但是，set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。</li>
+<li>确定性：<code>2 in myset</code> 返回true。</li>
+<li>无序性：不能通过下标访问集合的某个元素。</li>
+<li>互异性：{1，2，3} 和 {1，2，3，1，2}是两个相同的集合。</li>
+<li>支持集合运算 </li>
+<li>属于可变对象</li>
+</ol>
+<p>list、tuple、dict和set的区别：<br><strong>一句话来概括四种数据类型的区别是：tuple是一个不可改变的list，set是一个没有Value的dict，list和set的数据是可变的，tuple和dict的数据是不可变的！</strong></p>
+<p>list和set的数据可变的，tuple和dict的数据是不可变的。list是最自由的，可以使用索引、切片，可以进行计算和修改；tuple是不自由的，数据不能更改，但是和list一样具有序列，可以用索引和切片；dict是半自由的，自由体现在键值对的无序，可以通过key去索引value的值，不自由体现在数据操作只能通过key来实现，键值对是不可变类型；set是半自由的，自由体现在它通过list传值给它，数据类型是可变的，还可以改变list中的值，数据集是无序的，不重复的，可以进行计算，不自由体现在无法使用索引和切片准确定位。</p>
+<ul>
+<li>不可变对象：当改变某个变量时候，由于其所指的值不能被改变，相当于把原来的值复制一份后再改变，这会开辟一个新的地址，变量再指向这个新的地址。</li>
+<li>可变对象：变量（准确的说是引用）改变后，实际上是其所指的值直接发生改变，并没有发生复制行为，也没有开辟新的出地址，通俗点说就是<strong>原地改变</strong>。</li>
+</ul>
+<h3 id="模块函数"><a href="#模块函数" class="headerlink" title="模块函数"></a>模块函数</h3><p>需要先导入后才能使用<br>模块就是一个py文件，多个模块 + <strong>init</strong>.py文件这就是一个包</p>
+<ol>
+<li>导入模块的三种方式：<ul>
+<li>import 模块名</li>
+<li>import 模块名 as 别名</li>
+<li>from 模块名 import 函数名</li>
+<li>from 包名.文件名 import 类名/函数</li>
+</ul>
+</li>
+<li>模块就是一个.py文件，如果多个人创建了同名的.py文件，又引入了包的概念，包下一定要有__init__.py才能叫做包。</li>
+</ol>
+<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><p>在python解释器中的函数，可以直接通过函数名来调用函数。</p>
+<ol>
+<li>查看内置函数的一个帮助文档<pre><code>help(len)
+len?
+</code></pre>
+</li>
+<li>常见的内置函数<ul>
+<li>help(): 帮助函数</li>
+<li>type(): 查看类型</li>
+<li>id(): 查看id</li>
+<li>len(): 计算长度</li>
+<li>isinstance(): 判断是否属于特定的数据类型</li>
+</ul>
+</li>
+<li>类型函数<ul>
+<li>int()</li>
+<li>bool()</li>
+<li>float()</li>
+<li>str()</li>
+<li>list()</li>
+<li>set()</li>
+<li>tuple()</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>type() 查看数据类型</li>
+<li>isinstance() 判断数据类型</li>
+<li>dir() 查看某个对象所支持的方法/属性清单</li>
+<li>callable() 判断是否可以调用</li>
+<li>help() 查看帮助</li>
+<li>bin() 十进制转为二进制</li>
+<li>hex() 十进制转为十六进制</li>
+</ul>
+</li>
+<li>包<ul>
+<li>查看已安装包的列表   pip list </li>
+<li>更新某已安装的包		pip install –upgradeo 包名</li>
+<li>移除某已安装包		 pip uninstall	包名</li>
+<li>下载/安装指定的包  	pip install 包名</li>
+</ul>
+</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'EdXGmMLIf5cgKdOmRM4if8H8-gzGzoHsz',
+        appKey: 'cWEcQ9uc38B1OjmE3t29dtOP',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '请畅所欲言'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/09/pythonn%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/18.jpg" class="responsive-img" alt="pythonn高级用法">
+                        
+                        <span class="card-title">pythonn高级用法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    Python学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/08/python%E4%BB%8B%E7%BB%8D/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/6.jpg" class="responsive-img" alt="python介绍">
+                        
+                        <span class="card-title">python介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    Python学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">XuLei</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/XuLei0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1432923755@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1432923755" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1432923755" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

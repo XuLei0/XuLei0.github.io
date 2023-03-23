@@ -1,0 +1,1323 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Adaboost算法原理, 程序员">
+    <meta name="description" content="llxll的博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Adaboost算法原理 | llXll</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">llXll</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">llXll</div>
+        <div class="logo-desc">
+            
+            llxll的博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Adaboost算法原理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-03-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Adaboost-算法原理"><a href="#Adaboost-算法原理" class="headerlink" title="Adaboost 算法原理"></a>Adaboost 算法原理</h1><p>​	$Bboosting$ 算法的代表算法是 $Adaboost$ 算法，它即可用于分类，也可用作回归。</p>
+<p>​	$Boosting$ 算法需要解决的问题：</p>
+<ol>
+<li>如何计算误差率</li>
+<li>如何学习弱学习器的权重系数</li>
+<li>如何更新样本权重</li>
+<li>使用何种结合策略</li>
+</ol>
+<h2 id="1-Adaboost-算法步骤"><a href="#1-Adaboost-算法步骤" class="headerlink" title="1. Adaboost 算法步骤"></a>1. Adaboost 算法步骤</h2><p>输入：训练数据集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{n},y_{n})}$，$y_{i}\in Y={-1,1}$，弱学习算法</p>
+<p>输出：最终分类器 $G(x)$</p>
+<p>（1）初始化训练数据的权值分布 $D_{1} = (w_{11},\dots,w_{1i},\dots,w_{1n})$，$w_{1i} = \frac{1}{N}$，$i=1,2,\dots,N$</p>
+<p>​		  	<strong>说明：</strong>初始时训练数据集是均匀分布的，每个训练样本在基本分类器的学习中作用相同，在原始样本上学习基本分类器$G_{1}(x)$ </p>
+<p>（2）对 $m=1,2\dots,M$</p>
+<p>​			（a）使用具有权值分布 $D_{m}$ 的训练数据集学习，得到基本分类器 $G_{m}(x)$</p>
+<p>​			（b）计算 $G_{m}(x)$ 在训练数据集上的分类误差率</p>
+<p>​					$e_{m} = P(G_{m}(x)\ne y_{i})=\sum_{i=1}^{N}w_{mi}I(G_{m}(x_{i})\ne y_{i})$</p>
+<p>​					<strong>说明：</strong>$G_{m}(x)$ 在加权的训练数据集上的分类误差率是被$G_{m}(x)$误分类样本的权值之和		</p>
+<p>​			（c）计算$G_{m}(x)$ 的系数</p>
+<p>​					$a_{m} = \frac{1}{2}log\frac{1-e_{m}}{e_{m}}$ ，这里对数是自然对数</p>
+<p>​					<strong>说明：</strong> $\alpha_{m}$表示$G_{m}(x)$在最终分类器的重要性，当$e_{m}\le\frac{1}{2}$ 时，$\alpha_{m}\ge 0$，并且$\alpha_{m}$随着$e_{m}$的减小而增大，所以分类误差率越小的基本分类器在最终分类器中的作用越大</p>
+<p>​			（d）更新训练数据集的权值分布</p>
+<p>​					$D_{m+1} = (w_{m+1,1},\dots,w_{m+1,i}\dots,w_{m+1,N})$</p>
+<p>​					$w_{m+1,i} = \frac{w_{mi}}{Z_{m}}exp(-\alpha_{m}y_{i}G_{m}(x_{i})),i=1,2\dots,N$</p>
+<p>​					这里，$Z_{m}$ 是规范化因子：</p>
+<p>​					$Z_{m} = \sum_{i=1}^{N}w_{mi}exp(-\alpha_{m}y_{i}G_{m}(x_{i}))$ </p>
+<p>​					<strong>说明：</strong> 当 $G_{m}(x_{i})=y_{i}$，$w_{m+1,i} = \frac{w_{mi}}{Z_{m}}e^{-\alpha_{m}}$，当 $G_{m}(x_{i})\ne y_{i}$ ，$w_{m+1,i}=\frac{w_{mi}}{Z_{m}}e^{\alpha_{m}}$ ，由此可以看出被误分类的样本权值增大，被正确分类的样本权值减小，两相比较，误分类样本的权值被放大 $e^{2\alpha_{m}} = \frac{e_{m}}{1-e_{m}}$ </p>
+<p>（3）构建基本分类器的线性组合</p>
+<p>​				$f(x) = \sum_{m=1}^{M}\alpha_{m}G_{m}(x)$</p>
+<p>​			   得到最终分类器 </p>
+<p>​				$G(x) = sign(f(x)) =sign\left( \sum_{m=1}^{M}\alpha_{m}G_{m}(x)\right)$ </p>
+<h2 id="2-Adaboost算法的解释"><a href="#2-Adaboost算法的解释" class="headerlink" title="2. Adaboost算法的解释"></a>2. Adaboost算法的解释</h2><p>​		Adaboost算法可以被认为是模型为加法模型、损失函数为指数函数、学习算法为前向分步算法的二类分类学习算法。</p>
+<h3 id="2-1-前向分步算法"><a href="#2-1-前向分步算法" class="headerlink" title="2.1 前向分步算法"></a>2.1 前向分步算法</h3><p>加法模型为：</p>
+<p>$f(x) = \sum_{m=1}^{M}\beta_{m}b(x;\gamma_{m})$ </p>
+<p>其中 $b(x;\gamma_{m})$为基函数，$\gamma_{m}$ 为基函数的参数，$\beta_{m}$为基函数的系数</p>
+<p>在给定训练数据及损失函数  $L(y,f(x))$ 的条件下，学习加法模型 $f(x)$ 就是最小化损失函数：</p>
+<p>$min_{\beta_{m},\gamma_{m}}\sum_{i=1}^{N}L(y_{i},\sum_{m=1}^{M}\beta_{m}b(x_{i};\gamma_{m}))$</p>
+<p>这是一个很复杂的优化问题，前向分步算法求解这一优化问题的想法是：因为学习的是加法模型，如果能从前往后，每一步只学习一个</p>
+<p>基函数及其系数，逐步逼近优化目标函数，那么就可以简化优化的复杂度，具体来说，就是每步只需要优化如下损失函数：</p>
+<p>$min_{\beta,\gamma}\sum_{i=1}^{N}L(y_{i},\beta b(x_{i};\gamma))$ </p>
+<p>前向分步算法的步骤：</p>
+<p>输入：训练数据集$T={(x_{i},y_{i}),(x_{2},y_{2},\dots,(x_{N},y_{N}))}$，损失函数为$L(y,f(x))$，基函数集${b(x;\gamma)}$ </p>
+<p>输出：加法模型</p>
+<p>（1）初始化 $f_{0}(x)=0$</p>
+<p>（2）对 $m=1,2,\dots,M$</p>
+<p>​			（a）极小化损失函数</p>
+<p>​						$(\beta_{m},\gamma_{m}) = argmin_{\beta,\gamma}\sum_{i=1}^{N}L(y_{i},f_{m-1}(x_{i})+\beta b(x_{i};\gamma))$ , 得到参数 $\beta_{m}$，$\gamma_{m}$</p>
+<p>​			（b）更新 </p>
+<p>​						$f_{m}(x) = f_{m-1}(x)+\beta_{m}b(x;\gamma_{m})$ </p>
+<p>（3）得到加法模型</p>
+<p>​						$f(x) = f_{M}(x) = \sum_{m=1}^{M}\beta_{m}b(x;\gamma_{m})$ </p>
+<h3 id="2-2-前向分步算法与Adaboost"><a href="#2-2-前向分步算法与Adaboost" class="headerlink" title="2.2 前向分步算法与Adaboost"></a>2.2 前向分步算法与Adaboost</h3><p>Adaboost算法是加法模型，学习算法为前向分步算法，损失函数为指数函数的分类问题。</p>
+<p>模型为：		</p>
+<p>$f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
+<p>损失函数为：	</p>
+<p>$argmin_{\alpha,G}\sum_{i=1}^{m}exp(-y_{i}f_{k}(x))$</p>
+<p>$argmin_{\alpha,G}\sum_{i=1}^{m}exp[(-y_{i})(f_{k-1}(x)+\alpha G(x))]$</p>
+<p>令 $w_{ki} = exp(-y_{i}f_{k-1}(x))$ ，它的值不依赖 $\alpha,G$，因此与最小化无关，代入得到：</p>
+<p>$argmin_{\alpha,G}\sum_{i=1}^{m}w_{ki}exp[-y_{i}\alpha G(x)]$ </p>
+<p>第一步先求 $G_{k}(x)$</p>
+<p>$\sum_{i=1}^{m}w_{ki}exp(-y_{i}\alpha G(x_{i})) =$</p>
+<p> $\sum_{y_{i}=G_{k}(x_{i})}w_{ki}e^{-\alpha} + \sum_{y_{i}\ne G_{k}(x_{i})}w_{ki}e^{\alpha} =$ </p>
+<p>$ (e^{\alpha}-e^{-\alpha})\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G_{k}(x_{i})) + e^{-\alpha}\sum_{i=1}^{m}w_{ki}$ </p>
+<p>因为 $w_{ki}$ 和 $\alpha$ 和 $G$ 无关，所以 $G_{k}(x) = argmin_{G}\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))$ </p>
+<p>将 $G_{k}(x)$ 代入损失函数，并对 $\alpha$ 求导并令其为 0，可得：</p>
+<p>$\alpha_{k} = \frac{1}{2}log\frac{1-e_{k}}{e_{k}}$ </p>
+<p>其中，$e_{k}$ 即为分类误差率：</p>
+<p>$e_{k} = \frac{\sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))}{\sum_{i=1}^{m}w_{ki}} = \sum_{i=1}^{m}w_{ki}I(y_{i}\ne G(x_{i}))$ </p>
+<p>样本权重更新：</p>
+<p>利用 $f_{k}(x) = f_{k-1}(x) + \alpha_{k}G_{k}(x)$ 和 $w_{ki} = exp(-y_{i}f_{k-1}(x))$ </p>
+<p>$w_{k+1,i} = exp(-y_{i}f_{k}(x))$ </p>
+<p>$w_{k+1,i} = w_{ki}exp[-y_{i}\alpha_{k}G_{k}(x)]$</p>
+<p>这样就得到了样本的权重更新公式</p>
+<h2 id="3-Adaboost回归问题的算法流程"><a href="#3-Adaboost回归问题的算法流程" class="headerlink" title="3. Adaboost回归问题的算法流程"></a>3. Adaboost回归问题的算法流程</h2><p>Adaboost回归算法的变种有很多，这里介绍 Adaboost R2 回归算法过程。</p>
+<p>输入：样本集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{m},y_{m})}$，弱学习器算法，弱学习器迭代次数 $K$ </p>
+<p>输出：最终的强学习器 $f(x)$ </p>
+<p>（1）初始化样本集权重为</p>
+<p>​				$D(1) = (w_{11},w_{12},\dots,w_{1m}); w_{1i}=\frac{1}{m}; i=1,2,\dots,m$</p>
+<p>（2）对于 $k=1,2,\dots,K$</p>
+<p>​			（a）使用具有权重 $D_{k}$ 的样本集来训练数据，得到弱学习器 $G_{k}(x)$</p>
+<p>​			（b）计算训练集上的最大误差</p>
+<p>​					 $E_{k} = max|y_{i}-G_{k}(x_{i})|$，  $i=1,2,\dots,m$ </p>
+<p>​			（c）计算每个样本的相对误差：</p>
+<p>​					  线性误差：$e_{ki} = \frac{|y_{i}-G_{k}(x_{i})|}{E_{k}}$ </p>
+<p>​					  平方误差：$e_{ki} = \frac{(y_{i}-G_{k}(x_{i}))^{2}}{E_{k}^{2}}$</p>
+<p>​					  指数误差：$e_{ki} = 1-exp(\frac{-|y_{i}-G_{k}(x_{i})|}{E_{k}})$</p>
+<p>​			（d）计算回归误差率</p>
+<p>​						$e_{k} = \sum_{i=1}^{m}w_{ki}e_{ki}$</p>
+<p>​			（e）计算弱学习的系数</p>
+<p>​						$\alpha_{k} = \frac{e_{k}}{1-e_{k}}$</p>
+<p>​			（f）更新样本集的权重分布 </p>
+<p>​						$w_{k+1,i} = \frac{w_{ki}}{Z_{k}}\alpha_{k}^{1-e_{ki}}$	</p>
+<p>​						其中 $Z_{k} = \sum_{i=1}^{m}w_{ki}\alpha_{k}^{1-e_{ki}}$，为规范化因子</p>
+<p>（3）构建最终强学习器</p>
+<p>​			$f(x) = G_{k^{\ast}}(x)$，其中 $G_{k^{\ast}}(x)$ 是所有 $ln\frac{1}{\alpha_{k}},k=1,2\dots K$  的 中位数值乘以对应 $k^{\ast}$ 对应的弱学习器。</p>
+<h2 id="4-Adaboost算法的正则化"><a href="#4-Adaboost算法的正则化" class="headerlink" title="4. Adaboost算法的正则化"></a>4. Adaboost算法的正则化</h2><p>Adaboost算法也会产生过拟合，我们也可以在算法中加入正则化项，这个正则化通常叫做步长，定义为 $\nu$ ，之前弱学习器的迭代公式为：</p>
+<p>​		$f_{k}(x) = f_{k-1}(x)+\alpha_{k}G_{k}(x)$</p>
+<p> 加上正则化，就有：</p>
+<p>​		$f_{k}(x) = f_{k-1}(x)+\nu\alpha_{k}G_{k}(x)$ </p>
+<p>$\nu$ 的取值范围为 $0&lt;\nu\le1$，对于同样的训练集，较小的 $\nu$ 意味着需要更多的弱学习器进行迭代。	</p>
+<h2 id="5-提升树"><a href="#5-提升树" class="headerlink" title="5. 提升树"></a>5. 提升树</h2><p>对于 Adaboost 算法，如果弱学习器是分类树或者回归树，那么就是提升树。</p>
+<p>提升树模型实际上采用的是加法模型与前向分步算法，对分类问题采用的是二叉分类树，对回归问题采用的是二叉回归树。提升树模型</p>
+<p>可以表示为决策树的加法模型：</p>
+<p>$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$</p>
+<p>其中，$T(x;\theta_{m})$ 表示决策树，$\theta_{m}$ 为决策树的参数，$M$ 为树的个数</p>
+<p>对于二类分类问题，提升树算法只需将 $Adaboost$ 算法中的基本分类器换成二类分类树即可，其他一样。</p>
+<p>主要介绍回归问题中的提升树算法</p>
+<p>$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$ </p>
+<p>在前向分步的第 $m$ 步，给定当前模型 $f_{m-1}(x)$，需求解</p>
+<p>$\theta_{m} = argmax_{\theta_{m}}\sum_{i=1}^{N}L(y_{i},f_{m-1}(x_{i})+T(x_{i};\theta_{m}))$ </p>
+<p>如果损失函数是平方差损失函数：</p>
+<p>$L(y,f_{m-1}(x)+T(x;\theta_{m}))=[y-f_{m-1}(x)-T(x;\theta_{m})]^{2}=[r-T(x;\theta_{m})]^{2}$</p>
+<p>$r = y - f_{m-1}(x)$，我们称 $r$ 为当前模型拟合数据的残差，所以后面的决策树只需模拟当前模型的残差，就能得到最终的模型</p>
+<p>回归问题的提升树算法：</p>
+<p>输入：训练数据集 $T={(x_{1},y_{1}),(x_{2},y_{2}),\dots,(x_{N},y_{N})}$</p>
+<p>输出：提升树 $f_{M}(x)$ </p>
+<p>（1）初始化 $f_{0}(x) = 0$</p>
+<p>（2）对 $m = 1,2,\dots,M$</p>
+<p>​	  		（a）计算残差</p>
+<p>​					 $r_{mi} = y_{i}-f_{m-1}(x_{i}),i=1,2,\dots,N$</p>
+<p>​			  （b）拟合残差 $r_{mi}$ 学习一个回归树，得到 $T(x;\theta_{m})$</p>
+<p>​		  	（c）更新 $f_{m}(x) = f_{m-1}(x) + T(x;\theta_{m})$</p>
+<p>（3）得到回归问题的提升树</p>
+<p>​				$f_{M}(x) = \sum_{m=1}^{M}T(x;\theta_{m})$ </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'EdXGmMLIf5cgKdOmRM4if8H8-gzGzoHsz',
+        appKey: 'cWEcQ9uc38B1OjmE3t29dtOP',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '请畅所欲言'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/25/%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%A0%91%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/6.jpg" class="responsive-img" alt="梯度提升树(GBDT)算法原理">
+                        
+                        <span class="card-title">梯度提升树(GBDT)算法原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/17/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//medias/featureimages/4.jpg" class="responsive-img" alt="集成学习">
+                        
+                        <span class="card-title">集成学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">XuLei</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/XuLei0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1432923755@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1432923755" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1432923755" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/XuLei0/cdnforblog@1.3.1/source//libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
