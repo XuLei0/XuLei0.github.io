@@ -403,14 +403,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-21
+                    2023-03-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    748
+                    1k
                 </div>
                 
 
@@ -485,6 +485,87 @@ using namespace std<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>力扣 208 - 实现 Trie 树</p>
+<pre class="line-numbers language-c"><code class="language-c">class Trie <span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    vector<span class="token operator">&lt;</span>Trie<span class="token operator">*</span><span class="token operator">></span> children<span class="token punctuation">;</span>
+    bool isEnd<span class="token punctuation">;</span>
+    <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">children</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">isEnd</span><span class="token punctuation">(</span>false<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    
+    <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span>string word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie<span class="token operator">*</span> node <span class="token operator">=</span> this<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>word<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> x <span class="token operator">=</span> word<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span> node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> new <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            node <span class="token operator">=</span> node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        node<span class="token operator">-></span>isEnd <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    bool <span class="token function">search</span><span class="token punctuation">(</span>string word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie<span class="token operator">*</span> node <span class="token operator">=</span> this<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>word<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> x <span class="token operator">=</span> word<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+            node <span class="token operator">=</span> node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> node<span class="token operator">-></span>isEnd<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    bool <span class="token function">startsWith</span><span class="token punctuation">(</span>string prefix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Trie<span class="token operator">*</span> node <span class="token operator">=</span> this<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>prefix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> x <span class="token operator">=</span> prefix<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+            node <span class="token operator">=</span> node<span class="token operator">-></span>children<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>力扣 421 数组中两个数的最大异或值</p>
+<pre class="line-numbers language-c"><code class="language-c">class Trie<span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    vector<span class="token operator">&lt;</span>Trie<span class="token operator">*</span><span class="token operator">></span> v<span class="token punctuation">;</span>
+    <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">v</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Trie<span class="token operator">*</span> node <span class="token operator">=</span> this<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> s <span class="token operator">=</span> x<span class="token operator">>></span>i<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token operator">-></span>v<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token punctuation">)</span> node<span class="token operator">-></span>v<span class="token punctuation">[</span>s<span class="token punctuation">]</span> <span class="token operator">=</span> new <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 不存在就添加</span>
+            node <span class="token operator">=</span> node<span class="token operator">-></span>v<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        Trie<span class="token operator">*</span> node <span class="token operator">=</span> this<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> s <span class="token operator">=</span> x<span class="token operator">>></span>i<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-></span>v<span class="token punctuation">[</span><span class="token operator">!</span>s<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                res <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token operator">&lt;&lt;</span>i<span class="token punctuation">;</span>
+                node <span class="token operator">=</span> node<span class="token operator">-></span>v<span class="token punctuation">[</span><span class="token operator">!</span>s<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                node <span class="token operator">=</span> node<span class="token operator">-></span>v<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+class Solution <span class="token punctuation">{</span>
+public<span class="token punctuation">:</span>
+    <span class="token keyword">int</span> <span class="token function">findMaximumXOR</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        Trie<span class="token operator">*</span> root <span class="token operator">=</span> new <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">:</span>nums<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            root<span class="token operator">-></span><span class="token function">insert</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">:</span>nums<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            res <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span>root<span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
